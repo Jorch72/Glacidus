@@ -21,12 +21,6 @@ public class BlockLumiciaTallGrass extends BlockBush
     }
 
 	@Override
-    public int getLightValue(IBlockState state)
-    {
-    	return 20;
-    }
-
-	@Override
     public BlockRenderLayer getBlockLayer()
     {
         return BlockRenderLayer.CUTOUT_MIPPED;

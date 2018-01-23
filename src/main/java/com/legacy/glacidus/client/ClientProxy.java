@@ -1,6 +1,7 @@
 package com.legacy.glacidus.client;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
 import com.legacy.glacidus.CommonProxy;
@@ -19,6 +20,8 @@ public class ClientProxy extends CommonProxy
 		ModUtils.registerEvent(new ItemRenders());
 
 		EntityRenders.initialization();
+
+		ModelLoaderRegistry.registerLoader(new GlacidusFluidModelLoader());
 	}
 
 	@Override
@@ -43,18 +46,9 @@ public class ClientProxy extends CommonProxy
 			//colors[0] = 1.0F;
 			//colors[1] = 1.0F;
 			//colors[2] = 1.0F;
-			if (player.posY < 100.0D)
-			{
-				double difference = player.posY / 250D;
-
-				colors[0] = colors[0] /2;
-				colors[1] = colors[1] /2;
-				colors[2] = colors[2] /2;
-			}
-			else
-			{
-				colors[2] = 0.25F;
-			}
+			colors[0] = colors[0] + 0.10F;
+			colors[1] = colors[1] + 0.09F;
+			colors[2] = colors[2] + 0.15F;
 		}
 	}
 

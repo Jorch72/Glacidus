@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Random;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
+import com.legacy.glacidus.world.features.WorldGenCoreLakes;
 
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -20,6 +22,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
+import net.minecraft.world.gen.feature.WorldGenLakes;
 
 public class ChunkGeneratorGlacidus implements IChunkGenerator
 {
@@ -67,6 +70,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
     public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer)
     {
         int j = this.world.getSeaLevel() / 2 + 1;
+
         this.buffer = this.getHeights(this.buffer, p_185936_1_ * 4, 0, p_185936_2_ * 4, 5, 17, 5);
 
         for (int j1 = 0; j1 < 4; ++j1)
@@ -104,7 +108,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                                 if (l1 * 8 + i2 < j)
                                 {
-                                    iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
+                                    iblockstate = BlocksGlacidus.glacium.getDefaultState();
                                 }
 
                                 if (d15 > 0.0D)
@@ -116,21 +120,23 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
                                 int i3 = i2 + l1 * 8;
                                 int j3 = k2 + k1 * 4;
 
-                                if (i3 < 70)
-                                {
-                                    iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
-                                }
-
-                                primer.setBlockState(l2, i3, j3, iblockstate);
-
                                 if (i3 <= 50 && i3 >= 20)
                                 {
                                 	if (iblockstate == LAVA)
                                 	{
-                                		iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
+                                		//iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
                                 	}
 
-                                	primer.setBlockState(l2, i3 + 105, j3, iblockstate);
+                                	primer.setBlockState(l2, i3 + 104, j3, iblockstate);
+                                }
+                                else
+                                {
+                                    if (i3 < 70)
+                                    {
+                                        iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
+                                    }
+
+                                    primer.setBlockState(l2, i3, j3, iblockstate);
                                 }
 
                                 d15 += d16;
@@ -342,6 +348,28 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
         this.random.setSeed((long)x * k + (long)z * l ^ this.world.getSeed());
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, this.world, this.random, x, z, false);
+
+        if (this.random.nextInt(5) == 0)
+        if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE))
+        {
+            int i1 = this.random.nextInt(16) + 8;
+            int j1 = this.random.nextInt(31) + 69;
+            int k1 = this.random.nextInt(16) + 8;
+            (new WorldGenCoreLakes(Blocks.WATER)).generate(this.world, this.random, blockpos.add(i1, j1, k1));
+        }
+
+        if (this.random.nextInt(150) == 0)
+        if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA))
+        {
+            int i2 = this.random.nextInt(16) + 8;
+            int l2 = this.random.nextInt(this.random.nextInt(248) + 8);
+            int k3 = this.random.nextInt(16) + 8;
+
+            if (l2 < 60)
+            {
+                (new WorldGenCoreLakes(Blocks.LAVA)).generate(this.world, this.random, blockpos.add(i2, l2, k3));
+            }
+        }
 
         biome.decorate(this.world, this.random, new BlockPos(i, 0, j));
 

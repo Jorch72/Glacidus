@@ -1,6 +1,8 @@
 package com.legacy.glacidus.blocks;
 
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
+import com.legacy.glacidus.blocks.natural.BlockGlaciumDynamic;
+import com.legacy.glacidus.blocks.natural.BlockGlaciumStatic;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
@@ -9,6 +11,10 @@ import com.legacy.glacidus.util.ModInfo;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -46,12 +52,29 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":antinatric_stone")
 	public static Block antinatric_stone;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":glacium")
+	public static Block glacium;
+
+	//@ObjectHolder(ModInfo.MOD_ID + ":flowing_glacium")
+	//public static Block flowing_glacium;
+
+    public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
+    {
+        @Override
+        public String getLocalizedName(FluidStack fs) 
+        {
+            return new TextComponentTranslation("tile.glacium.name").getFormattedText();
+        }
+    }.setLuminosity(10).setDensity(5000).setViscosity(6000).setTemperature(-1500).setUnlocalizedName(ModInfo.locate("glacium").toString());
+
 	public static void initialization()
 	{
 		if (!readyToInitialize())
 		{
 			return;
 		}
+
+		FluidRegistry.registerFluid(GLACIUM);
 
 		small_crystal = register("small_crystal", new BlockSmallCrystal());
 
@@ -65,6 +88,9 @@ public class BlocksGlacidus
 		lumicia_grass = register("lumicia_grass", new BlockLumiciaGrass());
 		lumicia_dirt = register("lumicia_dirt", new BlockLumiciaDirt());
 		antinatric_stone = register("antinatric_stone", new BlockAntinatricStone());
+
+		//flowing_glacium = register("flowing_glacium", new BlockGlaciumDynamic());
+		glacium = register("glacium", new BlockGlaciumStatic());
 	}
 
 	private static boolean readyToInitialize()
