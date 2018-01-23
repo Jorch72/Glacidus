@@ -3,6 +3,7 @@ package com.legacy.glacidus.blocks;
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
+import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
 import com.legacy.glacidus.util.ModInfo;
 
 import net.minecraft.block.Block;
@@ -23,6 +24,15 @@ public class BlocksGlacidus
 
 	@ObjectHolder(ModInfo.MOD_ID + ":crysial_flower")
 	public static Block crysial_flower;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":pulphorus_flower")
+	public static Block pulphorus_flower;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":solegia_flower")
+	public static Block solegia_flower;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_tallgrass")
+	public static Block lumicia_tallgrass;
 
 	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_portal")
 	public static Block glacidus_portal;
@@ -46,6 +56,9 @@ public class BlocksGlacidus
 		small_crystal = register("small_crystal", new BlockSmallCrystal());
 
 		crysial_flower = register("crysial_flower", new BlockGlacidusFlower());
+		pulphorus_flower = register("pulphorus_flower", new BlockGlacidusFlower());
+		solegia_flower = register("solegia_flower", new BlockGlacidusFlower());
+		lumicia_tallgrass = register("lumicia_tallgrass", new BlockLumiciaTallGrass());
 
 		glacidus_portal  = register("glacidus_portal", new BlockGlacidusPortal());
 

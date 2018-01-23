@@ -26,6 +26,9 @@ public class BlockRenders
 	{
 		register(BlocksGlacidus.small_crystal, "small_crystal");
 		register(BlocksGlacidus.crysial_flower, "crysial_flower");
+		register(BlocksGlacidus.pulphorus_flower, "pulphorus_flower");
+		register(BlocksGlacidus.solegia_flower, "solegia_flower");
+		register(BlocksGlacidus.lumicia_tallgrass, "lumicia_tallgrass");
 		register(BlocksGlacidus.lumicia_grass, "lumicia_grass");
 		register(BlocksGlacidus.lumicia_dirt, "lumicia_dirt");
 		register(BlocksGlacidus.antinatric_stone, "antinatric_stone");
