@@ -1,18 +1,18 @@
 package com.legacy.glacidus;
 
-import com.legacy.glacidus.player.PlayerRegistry;
-import com.legacy.glacidus.registry.RegistryEventHandler;
-import com.legacy.glacidus.tiles.TileEntityRegistry;
-import com.legacy.glacidus.util.ModInfo;
-import com.legacy.glacidus.util.ModUtils;
-import com.legacy.glacidus.world.WorldGlacidus;
-
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import com.legacy.glacidus.player.PlayerRegistry;
+import com.legacy.glacidus.registry.RegistryEventHandler;
+import com.legacy.glacidus.tiles.TileEntityRegistry;
+import com.legacy.glacidus.util.ModInfo;
+import com.legacy.glacidus.util.ModUtils;
+import com.legacy.glacidus.world.WorldGlacidus;
 
 @Mod(modid = ModInfo.MOD_ID, name = ModInfo.NAME, version = ModInfo.VERSION)
 public class Glacidus 

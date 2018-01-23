@@ -1,13 +1,24 @@
 {
-	
-	"variants": {
-		
-		"normal": {
-			
-			"model": "glacidus:lumicia_grass"
-		
-		}
-	
-	}
+    
+    "variants": {
+        
+        "normal": [
+            {
+                "model": "glacidus:lumicia_grass"
+            },
+            {
+                "model": "glacidus:lumicia_grass",
+                "y": 90
+            },
+            {
+                "model": "glacidus:lumicia_grass",
+                "y": 180
+            },
+            {
+                "model": "glacidus:lumicia_grass",
+                "y": 270
+            }
+        ]
+    }
 
 }
