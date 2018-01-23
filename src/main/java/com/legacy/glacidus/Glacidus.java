@@ -1,6 +1,11 @@
 package com.legacy.glacidus;
 
+import com.legacy.glacidus.player.PlayerRegistry;
+import com.legacy.glacidus.registry.RegistryEventHandler;
+import com.legacy.glacidus.tiles.TileEntityRegistry;
 import com.legacy.glacidus.util.ModInfo;
+import com.legacy.glacidus.util.ModUtils;
+import com.legacy.glacidus.world.WorldGlacidus;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -24,12 +29,20 @@ public class Glacidus
 	{
 		ModConfig.initialization(event.getSuggestedConfigurationFile());
 
+		ModUtils.registerEvent(new RegistryEventHandler());
+
 		proxy.preInitialization();
 	}
 
 	@EventHandler
 	public void initializationEvent(FMLInitializationEvent event)
 	{
+		PlayerRegistry.initialization();
+		WorldGlacidus.initialization();
+		TileEntityRegistry.initialization();
+
+		ModUtils.registerEvent(new GlacidusEventHandler());
+
 		proxy.initialization();
 	}
 

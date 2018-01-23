@@ -10,8 +10,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import com.legacy.glacidus.blocks.BlocksGlacidus;
+import com.legacy.glacidus.client.renders.tiles.GlacidusPortalRenderer;
+import com.legacy.glacidus.tiles.TileEntityGlacidusPortal;
 import com.legacy.glacidus.util.ModInfo;
 
 public class BlockRenders 
@@ -20,7 +24,13 @@ public class BlockRenders
 	@SubscribeEvent
 	public void onModelRegisterEvent(ModelRegistryEvent event)
 	{
-		
+		register(BlocksGlacidus.small_crystal, "small_crystal");
+		register(BlocksGlacidus.crysial_flower, "crysial_flower");
+		register(BlocksGlacidus.lumicia_grass, "lumicia_grass");
+		register(BlocksGlacidus.lumicia_dirt, "lumicia_dirt");
+		register(BlocksGlacidus.antinatric_stone, "antinatric_stone");
+
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGlacidusPortal.class, new GlacidusPortalRenderer());
 	}
 
 	private static void registerBlockWithStateMapper(Block block, IStateMapper mapper)

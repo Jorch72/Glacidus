@@ -20,4 +20,9 @@ public class CommonProxy
 		return null;
 	}
 
+	public void handleLightMapColor(float partialTicks, float[] colors)
+	{
+		
+	}
+
 }
