@@ -2,11 +2,17 @@
 	
 	"variants": {
 		
-		"normal": {
+		"normal": [
 			
-			"model": "glacidus:antinatric_stone"
+            { "model": "glacidus:antinatric_stone" },
+
+            { "model": "glacidus:antinatric_stone" },
+
+            { "model": "glacidus:antinatric_stone", "y": 180 },
+
+            { "model": "glacidus:antinatric_stone", "y": 180 }
 		
-		}
+		]
 	
 	}
 

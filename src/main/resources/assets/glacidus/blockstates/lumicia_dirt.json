@@ -2,11 +2,15 @@
 	
 	"variants": {
 		
-		"normal": {
-			
-			"model": "glacidus:lumicia_dirt"
-		
-		}
+        "normal": [
+            { "model": "glacidus:lumicia_dirt" },
+
+            { "model": "glacidus:lumicia_dirt", "y": 90 },
+
+            { "model": "glacidus:lumicia_dirt", "y": 180 },
+
+            { "model": "glacidus:lumicia_dirt", "y": 270 }
+        ]
 	
 	}
 
