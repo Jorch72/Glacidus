@@ -1,13 +1,5 @@
 package com.legacy.glacidus.blocks;
 
-import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
-import com.legacy.glacidus.blocks.natural.BlockGlaciumDynamic;
-import com.legacy.glacidus.blocks.natural.BlockGlaciumStatic;
-import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
-import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
-import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
-import com.legacy.glacidus.util.ModInfo;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -17,6 +9,15 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
+
+import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
+import com.legacy.glacidus.blocks.natural.BlockGlaciumStatic;
+import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
+import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
+import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
+import com.legacy.glacidus.blocks.natural.BlockUndergroundLeaves;
+import com.legacy.glacidus.blocks.natural.BlockUndergroundLog;
+import com.legacy.glacidus.util.ModInfo;
 
 public class BlocksGlacidus 
 {
@@ -55,6 +56,12 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":glacium")
 	public static Block glacium;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_log")
+	public static Block underground_log;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_leaves")
+	public static Block underground_leaves;
+
 	//@ObjectHolder(ModInfo.MOD_ID + ":flowing_glacium")
 	//public static Block flowing_glacium;
 
@@ -91,6 +98,9 @@ public class BlocksGlacidus
 
 		//flowing_glacium = register("flowing_glacium", new BlockGlaciumDynamic());
 		glacium = register("glacium", new BlockGlaciumStatic());
+
+		underground_log = register("underground_log", new BlockUndergroundLog());
+		underground_leaves = register("underground_leaves", new BlockUndergroundLeaves());
 	}
 
 	private static boolean readyToInitialize()

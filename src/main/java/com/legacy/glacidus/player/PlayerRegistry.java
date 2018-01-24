@@ -1,5 +1,7 @@
 package com.legacy.glacidus.player;
 
+import com.legacy.glacidus.util.ModUtils;
+
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -45,6 +47,8 @@ public class PlayerRegistry
 			}
 
 		}, PlayerCapability.class);
+
+		ModUtils.registerEvent(new PlayerCapabilityEvents());
 	}
 
 }

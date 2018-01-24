@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "glacidus:blocks/underground_log_top",
+        "side": "glacidus:blocks/underground_log"
+    }
+}

@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=x": {
+			"model": "glacidus:underground_log", "x": 90, "y": 90
+		},
+		"axis=y": {
+			"model": "glacidus:underground_log"
+		},
+		"axis=z": {
+			"model": "glacidus:underground_log", "x": 90
+		},
+		"axis=none": {
+			"model": "glacidus:underground_log_bark"
+		}
+	}
+}

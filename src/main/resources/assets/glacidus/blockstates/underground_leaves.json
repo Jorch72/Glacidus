@@ -1,0 +1,19 @@
+{
+	
+	"variants": {
+		
+		"glowing=true": {
+			
+			"model": "glacidus:underground_leaves_glowing"
+		
+		}
+,
+		"glowing=false": {
+			
+			"model": "glacidus:underground_leaves"
+		
+		}
+
+	}
+
+}

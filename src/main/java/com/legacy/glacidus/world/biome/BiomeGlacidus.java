@@ -4,9 +4,11 @@ import java.util.Random;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 import com.legacy.glacidus.util.ModInfo;
+import com.legacy.glacidus.world.features.WorldGenUndergroundTree;
 
 public class BiomeGlacidus extends Biome
 {
@@ -17,6 +19,12 @@ public class BiomeGlacidus extends Biome
 
 		this.setRegistryName(ModInfo.locate("glacidus"));
 	}
+
+	@Override
+    public WorldGenAbstractTree getRandomTreeFeature(Random rand)
+    {
+        return new WorldGenUndergroundTree();
+    }
 
 	@Override
     public WorldGenerator getRandomWorldGenForGrass(Random rand)

@@ -2,9 +2,11 @@ package com.legacy.glacidus.world.biome;
 
 import java.util.Random;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
 import com.legacy.glacidus.world.features.WorldGenCoreFlowers;
@@ -18,6 +20,23 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
     protected void genDecorations(Biome biomeIn, World worldIn, Random random)
     {
         net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Pre(worldIn, random, this.chunkPos));
+
+        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, this.chunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE))
+        {
+            for (int j2 = 0; j2 < 10; ++j2)
+            {
+                int k6 = random.nextInt(16) + 8;
+                int l = random.nextInt(16) + 8;
+                WorldGenAbstractTree worldgenabstracttree = biomeIn.getRandomTreeFeature(random);
+                worldgenabstracttree.setDecorationDefaults();
+                BlockPos blockpos = this.chunkPos.add(k6, random.nextInt(31) + 70, l);
+
+                if (worldgenabstracttree.generate(worldIn, random, blockpos))
+                {
+                    worldgenabstracttree.generateSaplings(worldIn, random, blockpos);
+                }
+            }
+        }
 
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, this.chunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS))
         {

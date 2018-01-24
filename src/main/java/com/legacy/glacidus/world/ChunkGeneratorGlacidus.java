@@ -3,14 +3,10 @@ package com.legacy.glacidus.world;
 import java.util.List;
 import java.util.Random;
 
-import com.legacy.glacidus.blocks.BlocksGlacidus;
-import com.legacy.glacidus.world.features.WorldGenCoreLakes;
-
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -22,7 +18,9 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
-import net.minecraft.world.gen.feature.WorldGenLakes;
+
+import com.legacy.glacidus.blocks.BlocksGlacidus;
+import com.legacy.glacidus.world.features.WorldGenCoreLakes;
 
 public class ChunkGeneratorGlacidus implements IChunkGenerator
 {

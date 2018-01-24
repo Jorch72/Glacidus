@@ -1,10 +1,12 @@
 package com.legacy.glacidus.client.renders;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.IStateMapper;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -24,6 +26,8 @@ public class BlockRenders
 	@SubscribeEvent
 	public void onModelRegisterEvent(ModelRegistryEvent event)
 	{
+		registerBlockWithStateMapper(BlocksGlacidus.underground_leaves, (new StateMap.Builder()).ignore(BlockLeaves.CHECK_DECAY).ignore(BlockLeaves.DECAYABLE).build());
+
 		register(BlocksGlacidus.small_crystal, "small_crystal");
 		register(BlocksGlacidus.crysial_flower, "crysial_flower");
 		register(BlocksGlacidus.pulphorus_flower, "pulphorus_flower");
@@ -32,6 +36,8 @@ public class BlockRenders
 		register(BlocksGlacidus.lumicia_grass, "lumicia_grass");
 		register(BlocksGlacidus.lumicia_dirt, "lumicia_dirt");
 		register(BlocksGlacidus.antinatric_stone, "antinatric_stone");
+		register(BlocksGlacidus.underground_leaves, "underground_leaves");
+		register(BlocksGlacidus.underground_log, "underground_log");
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGlacidusPortal.class, new GlacidusPortalRenderer());
 	}
