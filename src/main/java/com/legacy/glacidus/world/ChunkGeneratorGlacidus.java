@@ -368,7 +368,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
 		if (biome != null)
 		{
-			return biome.getSpawnableList(null);
+			return biome.getSpawnableList(creatureType);
 		}
 
 		return null;

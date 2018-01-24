@@ -10,6 +10,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import com.legacy.glacidus.blocks.decoration.BlockUndergroundPlanks;
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
 import com.legacy.glacidus.blocks.natural.BlockDeadLumicia;
 import com.legacy.glacidus.blocks.natural.BlockEukeiteOre;
@@ -66,6 +67,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_log")
 	public static Block underground_log;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_planks")
+	public static Block underground_planks;
+
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_leaves")
 	public static Block underground_leaves;
 
@@ -110,6 +114,7 @@ public class BlocksGlacidus
 		glacium = register("glacium", new BlockGlaciumStatic());
 
 		underground_log = register("underground_log", new BlockUndergroundLog());
+		underground_planks = register("underground_planks", new BlockUndergroundPlanks());
 		underground_leaves = register("underground_leaves", new BlockUndergroundLeaves());
 
 		glacidite_ore = register("glacidite_ore", new BlockGlaciditeOre());

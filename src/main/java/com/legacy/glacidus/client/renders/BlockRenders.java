@@ -39,6 +39,7 @@ public class BlockRenders
 		register(BlocksGlacidus.antinatric_stone, "antinatric_stone");
 		register(BlocksGlacidus.underground_leaves, "underground_leaves");
 		register(BlocksGlacidus.underground_log, "underground_log");
+		register(BlocksGlacidus.underground_planks, "underground_planks");
 		register(BlocksGlacidus.glacidite_ore, "glacidite_ore");
 		register(BlocksGlacidus.eukeite_ore, "eukeite_ore");
 
