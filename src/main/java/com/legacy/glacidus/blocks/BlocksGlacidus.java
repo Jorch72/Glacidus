@@ -11,8 +11,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
+import com.legacy.glacidus.blocks.natural.BlockDeadLumicia;
 import com.legacy.glacidus.blocks.natural.BlockEukeiteOre;
 import com.legacy.glacidus.blocks.natural.BlockGlaciditeOre;
+import com.legacy.glacidus.blocks.natural.BlockGlacidusFlower;
 import com.legacy.glacidus.blocks.natural.BlockGlaciumStatic;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;

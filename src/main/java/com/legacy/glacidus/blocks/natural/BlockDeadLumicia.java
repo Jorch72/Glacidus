@@ -1,13 +1,15 @@
-package com.legacy.glacidus.blocks;
+package com.legacy.glacidus.blocks.natural;
+
+import com.legacy.glacidus.blocks.BlocksGlacidus;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
 
-public class BlockGlacidusFlower extends BlockBush
+public class BlockDeadLumicia extends BlockBush
 {
 
-	public BlockGlacidusFlower()
+	public BlockDeadLumicia()
 	{
 		super();
 	}
@@ -15,7 +17,7 @@ public class BlockGlacidusFlower extends BlockBush
 	@Override
     protected boolean canSustainBush(IBlockState state)
     {
-    	return state.getBlock() == BlocksGlacidus.lumicia_grass || state.getBlock() == BlocksGlacidus.lumicia_grass;
+    	return state.getBlock() == BlocksGlacidus.antinatric_stone;
     }
 
 	@Override
