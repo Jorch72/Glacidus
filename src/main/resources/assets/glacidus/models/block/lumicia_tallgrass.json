@@ -32,7 +32,7 @@
 			"textures": [ "glacidus:blocks/lumicia_tallgrass" ],
 			"extra": {
 				"light": {
-					"block": 15,
+					"block": 10,
 					"sky": 0
 				}
 			}
