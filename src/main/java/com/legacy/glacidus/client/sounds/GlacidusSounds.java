@@ -19,6 +19,8 @@ public class GlacidusSounds
 
 	public static SoundEvent MUSIC_TRACK_TWO;
 
+	public static SoundEvent MUSIC_TRACK_THREE;
+
 	public static void initialization(IForgeRegistry<SoundEvent> registry)
 	{
 		iSoundRegistry = registry;
@@ -27,6 +29,7 @@ public class GlacidusSounds
 		BLOCK_GLACIUM_AMBIENT = register("block.glacium.ambient");
 		MUSIC_TRACK_ONE = register("music.track_one");
 		MUSIC_TRACK_TWO = register("music.track_two");
+		MUSIC_TRACK_THREE = register("music.track_three");
 	}
 
 	private static SoundEvent register(String name)

@@ -85,14 +85,15 @@ public class MusicHandler implements ITickable
 
     private MusicHandler.MusicType getRandomMusicType()
     {
-    	return MusicHandler.MusicType.values()[this.rand.nextInt(2)];
+    	return MusicHandler.MusicType.values()[this.rand.nextInt(3)];
     }
 
     @SideOnly(Side.CLIENT)
     public static enum MusicType
     {
         GoodbyePlanet(GlacidusSounds.MUSIC_TRACK_ONE, 1500, 4400),
-        SicutTerrae(GlacidusSounds.MUSIC_TRACK_TWO, 1500, 4400);
+        SicutTerrae(GlacidusSounds.MUSIC_TRACK_TWO, 1500, 4400),
+        Underground(GlacidusSounds.MUSIC_TRACK_THREE, 1500, 4400);
 
         private final SoundEvent musicLocation;
         private final int minDelay;
