@@ -14,14 +14,23 @@ public class EntityRenders
 		
 	}
 
-	private static<T extends Entity> void register(Class<T> clazz, final Render<T> render)
+	private static<T extends Entity> void register(Class<T> clazz, Class<? extends Render<T>> render)
 	{
 		RenderingRegistry.registerEntityRenderingHandler(clazz, new IRenderFactory<T>() 
 		{
 			@Override
 			public Render<T> createRenderFor(RenderManager manager) 
 			{
-				return render;
+				try 
+				{
+					return render.getConstructor(RenderManager.class).newInstance(manager);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+
+				return null;
 			}
 		});
 	}
