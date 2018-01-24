@@ -16,8 +16,6 @@ public class PlayerCapability
 
 	private EntityPlayer player;
 
-	private int previousMotionY;
-
 	private boolean activatedMoonJump;
 
 	public PlayerCapability(EntityPlayer player)

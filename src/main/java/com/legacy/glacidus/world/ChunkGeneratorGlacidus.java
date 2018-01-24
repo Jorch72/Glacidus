@@ -25,12 +25,6 @@ import com.legacy.glacidus.world.features.WorldGenCoreLakes;
 public class ChunkGeneratorGlacidus implements IChunkGenerator
 {
 
-    protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
-    protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
-    protected static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
-    protected static final IBlockState GRAVEL = Blocks.GRAVEL.getDefaultState();
-
-    private double[] gravelNoise = new double[256];
     private double[] depthBuffer = new double[256];
     private double[] buffer;
 
@@ -62,6 +56,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
         this.netherrackExculsivityNoiseGen = new NoiseGeneratorOctaves(this.random, 4);
         this.scaleNoise = new NoiseGeneratorOctaves(this.random, 10);
         this.depthNoise = new NoiseGeneratorOctaves(this.random, 16);
+
         worldIn.setSeaLevel(63);
     }
 
@@ -88,7 +83,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                     for (int i2 = 0; i2 < 8; ++i2)
                     {
-                        double d9 = 0.25D;
                         double d10 = d1;
                         double d11 = d2;
                         double d12 = (d3 - d1) * 0.25D;
@@ -96,7 +90,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                         for (int j2 = 0; j2 < 4; ++j2)
                         {
-                            double d14 = 0.25D;
                             double d15 = d10;
                             double d16 = (d11 - d10) * 0.25D;
 
@@ -120,11 +113,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                                 if (i3 <= 50 && i3 >= 20)
                                 {
-                                	if (iblockstate == LAVA)
-                                	{
-                                		//iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
-                                	}
-
                                 	primer.setBlockState(l2, i3 + 104, j3, iblockstate);
                                 }
                                 else
@@ -157,8 +145,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
     public void buildSurfaces(int p_185937_1_, int p_185937_2_, ChunkPrimer primer)
     {
         if (!net.minecraftforge.event.ForgeEventFactory.onReplaceBiomeBlocks(this, p_185937_1_, p_185937_2_, primer, this.world)) return;
-        int i = this.world.getSeaLevel() + 1;
-        double d0 = 0.03125D;
 
         this.depthBuffer = this.netherrackExculsivityNoiseGen.generateNoiseOctaves(this.depthBuffer, p_185937_1_ * 16, p_185937_2_ * 16, 0, 16, 16, 1, 0.0625D, 0.0625D, 0.0625D);
 
@@ -166,8 +152,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
         {
             for (int k = 0; k < 16; ++k)
             {
-                boolean flag1 = this.gravelNoise[j + k * 16] + this.random.nextDouble() * 0.2D > 0.0D;
-                int l = (int)(this.depthBuffer[j + k * 16] / 3.0D + 3.0D + this.random.nextDouble() * 0.25D);
                 int i1 = -1;
                 int data = (int)(3.0D + this.random.nextDouble() * 0.25D);
 
@@ -217,7 +201,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
                     }
                     else if (j1 == 0)
                     {
-                        primer.setBlockState(k, j1, j, BEDROCK);
+                        primer.setBlockState(k, j1, j, Blocks.BEDROCK.getDefaultState());
                     }
                 }
             }
@@ -251,8 +235,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
         net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event);
         if (event.getResult() == net.minecraftforge.fml.common.eventhandler.Event.Result.DENY) return event.getNoisefield();
 
-        double d0 = 684.412D;
-        double d1 = 2053.236D;
         this.noiseData4 = this.scaleNoise.generateNoiseOctaves(this.noiseData4, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1, p_185938_7_, 1.0D, 0.0D, 1.0D);
         this.dr = this.depthNoise.generateNoiseOctaves(this.dr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1, p_185938_7_, 100.0D, 0.0D, 100.0D);
         this.pnr = this.perlinNoise1.generateNoiseOctaves(this.pnr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_, p_185938_7_, 8.555150000000001D, 34.2206D, 8.555150000000001D);
@@ -282,8 +264,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
         {
             for (int i1 = 0; i1 < p_185938_7_; ++i1)
             {
-                double d3 = 0.0D;
-
                 for (int k = 0; k < p_185938_6_; ++k)
                 {
                     double d4 = adouble[k];
@@ -388,7 +368,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
 		if (biome != null)
 		{
-			return biome.getSpawnableList(creatureType);
+			return biome.getSpawnableList(null);
 		}
 
 		return null;
