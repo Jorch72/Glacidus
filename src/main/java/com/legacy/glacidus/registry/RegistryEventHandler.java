@@ -1,6 +1,7 @@
 package com.legacy.glacidus.registry;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
+import com.legacy.glacidus.client.sounds.GlacidusSounds;
 import com.legacy.glacidus.items.ItemsGlacidus;
 import com.legacy.glacidus.player.PlayerCapabilityProvider;
 import com.legacy.glacidus.util.ModInfo;
@@ -10,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -53,4 +55,9 @@ public class RegistryEventHandler
 		event.getRegistry().register(WorldGlacidus.baseBiome);
 	}
 
+	@SubscribeEvent
+	public void onRegisterSounds(RegistryEvent.Register<SoundEvent> event)
+	{
+		GlacidusSounds.initialization(event.getRegistry());
+	}
 }

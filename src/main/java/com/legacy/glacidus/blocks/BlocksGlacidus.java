@@ -11,6 +11,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
+import com.legacy.glacidus.blocks.natural.BlockEukeiteOre;
+import com.legacy.glacidus.blocks.natural.BlockGlaciditeOre;
 import com.legacy.glacidus.blocks.natural.BlockGlaciumStatic;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
@@ -41,6 +43,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_tallgrass")
 	public static Block lumicia_tallgrass;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":dead_lumicia")
+	public static Block dead_lumicia;
+
 	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_portal")
 	public static Block glacidus_portal;
 
@@ -62,8 +67,11 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_leaves")
 	public static Block underground_leaves;
 
-	//@ObjectHolder(ModInfo.MOD_ID + ":flowing_glacium")
-	//public static Block flowing_glacium;
+	@ObjectHolder(ModInfo.MOD_ID + ":eukeite_ore")
+	public static Block eukeite_ore;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":glacidite_ore")
+	public static Block glacidite_ore;
 
     public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
     {
@@ -89,6 +97,7 @@ public class BlocksGlacidus
 		pulphorus_flower = register("pulphorus_flower", new BlockGlacidusFlower());
 		solegia_flower = register("solegia_flower", new BlockGlacidusFlower());
 		lumicia_tallgrass = register("lumicia_tallgrass", new BlockLumiciaTallGrass());
+		dead_lumicia = register("dead_lumicia", new BlockDeadLumicia());
 
 		glacidus_portal  = register("glacidus_portal", new BlockGlacidusPortal());
 
@@ -96,11 +105,13 @@ public class BlocksGlacidus
 		lumicia_dirt = register("lumicia_dirt", new BlockLumiciaDirt());
 		antinatric_stone = register("antinatric_stone", new BlockAntinatricStone());
 
-		//flowing_glacium = register("flowing_glacium", new BlockGlaciumDynamic());
 		glacium = register("glacium", new BlockGlaciumStatic());
 
 		underground_log = register("underground_log", new BlockUndergroundLog());
 		underground_leaves = register("underground_leaves", new BlockUndergroundLeaves());
+
+		glacidite_ore = register("glacidite_ore", new BlockGlaciditeOre());
+		eukeite_ore = register("eukeite_ore", new BlockEukeiteOre());
 	}
 
 	private static boolean readyToInitialize()

@@ -1,0 +1,20 @@
+{
+	"block.glacium.pop": {
+		"category": "block",
+		"subtitle": "subtitles.block.glacium.pop",
+		"sounds": [
+			{
+				"name": "glacidus:glacium_pop"
+			}
+		]
+	},
+	"block.glacium.ambient": {
+		"category": "block",
+		"subtitle": "subtitles.block.glacium.ambient",
+		"sounds": [
+			{
+				"name": "glacidus:glacium_ambient"
+			}
+		]
+	}
+}
