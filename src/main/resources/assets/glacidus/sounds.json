@@ -17,6 +17,15 @@
 			}
 		]
 	},
+	"music.track_three": {
+		"category": "music",
+		"sounds":[
+			{
+				"name": "glacidus:music/underground",
+				"stream": true
+			}
+		]
+	},
 	"block.glacium.pop": {
 		"category": "block",
 		"subtitle": "subtitles.block.glacium.pop",
