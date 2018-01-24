@@ -68,6 +68,11 @@ public class MusicHandler implements ITickable
         }
     }
 
+    public boolean isMusicPlaying()
+    {
+    	return this.currentMusic != null;
+    }
+
     /**
      * Plays a music track for the maximum allowable period of time
      */

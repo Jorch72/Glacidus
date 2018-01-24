@@ -30,9 +30,8 @@ public class ClientEventHandler
 
 		if (player != null && player.dimension == ModConfig.dimensionID && category == SoundCategory.MUSIC)
 		{
-			if (!event.getSound().getSoundLocation().getResourceDomain().equals("glacidus"))
+			if (!event.getSound().getSoundLocation().getResourceDomain().equals("glacidus") || MusicHandler.getInstance().isMusicPlaying())
 			{
-				System.out.println(event.getSound().getSoundLocation().toString());
 				event.setResultSound(null);
 			}
 
