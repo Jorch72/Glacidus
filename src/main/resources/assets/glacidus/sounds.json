@@ -1,4 +1,22 @@
 {
+	"music.track_one": {
+		"category": "music",
+		"sounds":[
+			{
+				"name": "glacidus:music/goodbye_planet",
+				"stream": true
+			}
+		]
+	},
+	"music.track_two": {
+		"category": "music",
+		"sounds":[
+			{
+				"name": "glacidus:music/sicut_terrae",
+				"stream": true
+			}
+		]
+	},
 	"block.glacium.pop": {
 		"category": "block",
 		"subtitle": "subtitles.block.glacium.pop",

@@ -15,12 +15,18 @@ public class GlacidusSounds
 
 	public static SoundEvent BLOCK_GLACIUM_AMBIENT;
 
+	public static SoundEvent MUSIC_TRACK_ONE;
+
+	public static SoundEvent MUSIC_TRACK_TWO;
+
 	public static void initialization(IForgeRegistry<SoundEvent> registry)
 	{
 		iSoundRegistry = registry;
 
 		BLOCK_GLACIUM_POP = register("block.glacium.pop");
 		BLOCK_GLACIUM_AMBIENT = register("block.glacium.ambient");
+		MUSIC_TRACK_ONE = register("music.track_one");
+		MUSIC_TRACK_TWO = register("music.track_two");
 	}
 
 	private static SoundEvent register(String name)

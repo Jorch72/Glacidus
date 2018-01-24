@@ -27,7 +27,7 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void initialization()
 	{
-
+		ModUtils.registerEvent(new ClientEventHandler());
 	}
 
 	@Override
