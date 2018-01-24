@@ -113,7 +113,14 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                                 if (i3 <= 50 && i3 >= 20)
                                 {
-                                	primer.setBlockState(l2, i3 + 104, j3, iblockstate);
+                                	primer.setBlockState(l2, i3 + 103, j3, iblockstate);
+               
+                                	if (iblockstate != null && iblockstate.getBlock() == BlocksGlacidus.glacium)
+                                	{
+                                		iblockstate = Blocks.LAVA.getDefaultState();
+                                	}
+
+                                	primer.setBlockState(l2, i3, j3, iblockstate);
                                 }
                                 else
                                 {
@@ -160,7 +167,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                 for (int j1 = 127; j1 >= 0; --j1)
                 {
-                    if (j1 < 127 - this.random.nextInt(5) && j1 > this.random.nextInt(5))
+                    if (j1 < 120 && j1 > 64)
                     {
                         IBlockState iblockstate2 = primer.getBlockState(k, j1, j);
 
