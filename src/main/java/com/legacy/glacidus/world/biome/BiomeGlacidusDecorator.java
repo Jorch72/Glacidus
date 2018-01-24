@@ -48,6 +48,19 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
 
                 if (j14 > 0)
                 {
+                    this.coreFlowerGen.setGeneratedBlock(BlocksGlacidus.dead_lumicia);
+                    this.coreFlowerGen.generate(worldIn, random, this.chunkPos.add(i7, random.nextInt(j14), l10));
+                }
+            }
+
+            for (int l2 = 0; l2 < 5; ++l2)
+            {
+                int i7 = random.nextInt(16) + 8;
+                int l10 = random.nextInt(16) + 8;
+                int j14 = worldIn.getHeight(this.chunkPos.add(i7, 0, l10)).getY() + 32;
+
+                if (j14 > 0)
+                {
                     this.coreFlowerGen.setGeneratedBlock(BlocksGlacidus.crysial_flower);
                     this.coreFlowerGen.generate(worldIn, random, this.chunkPos.add(i7, random.nextInt(j14), l10));
                 }
