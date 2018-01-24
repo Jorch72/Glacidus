@@ -35,24 +35,20 @@ public class BlockLumiciaGrass extends Block
             }
             else
             {
-                if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
+                for (int i = 0; i < 4; ++i)
                 {
-                    for (int i = 0; i < 4; ++i)
+                    BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
+
+                    if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos))
                     {
-                        BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
+                        return;
+                    }
 
-                        if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos))
-                        {
-                            return;
-                        }
+                    IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
 
-                        IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
-                        IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
-
-                        if (iblockstate1.getBlock() == BlocksGlacidus.lumicia_dirt && worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
-                        {
-                            worldIn.setBlockState(blockpos, BlocksGlacidus.lumicia_grass.getDefaultState());
-                        }
+                    if (iblockstate1.getBlock() == BlocksGlacidus.lumicia_dirt)
+                    {
+                        worldIn.setBlockState(blockpos, BlocksGlacidus.lumicia_grass.getDefaultState());
                     }
                 }
             }
