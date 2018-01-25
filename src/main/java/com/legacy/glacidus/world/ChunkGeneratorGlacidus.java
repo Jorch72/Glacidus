@@ -97,7 +97,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
                             {
                                 IBlockState iblockstate = null;
 
-                                if (l1 * 8 + i2 < j)
+                                if (l1 * 8 + i2 < 24)
                                 {
                                     iblockstate = BlocksGlacidus.glacium.getDefaultState();
                                 }
@@ -111,7 +111,49 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
                                 int i3 = i2 + l1 * 8;
                                 int j3 = k2 + k1 * 4;
 
-                                if (i3 <= 50 && i3 >= 20)
+                                if (i3 <= 26 && i3 > 0)
+                                {
+                                	if (i3 <= 10 && iblockstate == null)
+                                	{
+                                		iblockstate = BlocksGlacidus.glacium.getDefaultState();
+                                	}
+
+                                	primer.setBlockState(l2, i3 + 70, j3, iblockstate);
+
+                                	if (iblockstate != null)
+                                	{
+                                		if (iblockstate.getBlock() == BlocksGlacidus.glacium)
+                                		{
+                                    		iblockstate = BlocksGlacidus.molten_lava.getDefaultState();
+                                		}
+                                		else if (iblockstate.getBlock() == BlocksGlacidus.frozen_antinatric_stone)
+                                		{
+                                			iblockstate = BlocksGlacidus.thawed_antinatric_stone.getDefaultState();
+                                		}
+                                	}
+
+                                	primer.setBlockState(l2, i3, j3, iblockstate);
+                                }
+                                else
+                                {
+                                	if ((i3 <= 69 && i3 >= 65) || (i3 <= 29 && i3 >= 23))
+                                	{
+                                        iblockstate = BlocksGlacidus.frozen_antinatric_stone.getDefaultState();
+                                	}
+
+                                	if (i3 >= 75)
+                                	{
+                                		iblockstate = null;
+                                	}
+
+                                	if (i3 <= 72 && i3 >= 70 && iblockstate == null)
+                                	{
+                                		iblockstate = BlocksGlacidus.glacium.getDefaultState();
+                                	}
+
+                                    primer.setBlockState(l2, i3, j3, iblockstate);
+                                }
+                                /*if (i3 <= 35 && i3 >= 20)
                                 {
                                 	if (i3 <= 10 && iblockstate == null)
                                 	{
@@ -124,7 +166,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
                                 	{
                                 		if (iblockstate.getBlock() == BlocksGlacidus.glacium)
                                 		{
-                                    		iblockstate = Blocks.LAVA.getDefaultState();
+                                    		iblockstate = null;//BlocksGlacidus.molten_lava.getDefaultState();
                                 		}
                                 		else if (iblockstate.getBlock() == BlocksGlacidus.frozen_antinatric_stone)
                                 		{
@@ -142,7 +184,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
                                     }
 
                                     primer.setBlockState(l2, i3, j3, iblockstate);
-                                }
+                                }*/
 
                                 d15 += d16;
                             }
@@ -179,7 +221,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                 for (int j1 = 127; j1 >= 0; --j1)
                 {
-                    if (j1 < 120 && j1 > 64)
+                    if (j1 < 66 && j1 > 27)
                     {
                         IBlockState iblockstate2 = primer.getBlockState(k, j1, j);
 
@@ -238,7 +280,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
         Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 
-        chunk.generateSkylightMap();
+        chunk.resetRelightChecks();
 
         return chunk;
 	}

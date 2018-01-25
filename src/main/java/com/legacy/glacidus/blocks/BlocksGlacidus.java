@@ -1,8 +1,11 @@
 package com.legacy.glacidus.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.particle.ParticleDrip.LavaFactory;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -69,6 +72,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":glacium")
 	public static Block glacium;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":molten_lava")
+	public static Block molten_lava;
+
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_log")
 	public static Block underground_log;
 
@@ -96,6 +102,15 @@ public class BlocksGlacidus
         }
     }.setLuminosity(10).setDensity(5000).setViscosity(6000).setTemperature(-1500).setUnlocalizedName(ModInfo.locate("glacium").toString());
 
+    public static final Fluid MOLTEN_LAVA = new Fluid("molten_lava", new ResourceLocation("blocks/lava_still"), new ResourceLocation("blocks/lava_flow"))
+    {
+        @Override
+        public String getLocalizedName(FluidStack fs) 
+        {
+            return new TextComponentTranslation("tile.molten_lava.name").getFormattedText();
+        }
+    }.setLuminosity(15).setDensity(3000).setViscosity(6000).setTemperature(1300).setUnlocalizedName(ModInfo.locate("molten_lava").toString());
+
 	public static void initialization()
 	{
 		if (!readyToInitialize())
@@ -104,6 +119,7 @@ public class BlocksGlacidus
 		}
 
 		FluidRegistry.registerFluid(GLACIUM);
+		FluidRegistry.registerFluid(MOLTEN_LAVA);
 
 		small_crystal = register("small_crystal", new BlockSmallCrystal());
 
@@ -121,6 +137,7 @@ public class BlocksGlacidus
 		thawed_antinatric_stone = register("thawed_antinatric_stone", new BlockAntinatricStone());
 
 		glacium = register("glacium", new BlockGlaciumStatic());
+		molten_lava = register("molten_lava", new BlockMoltenLava());
 
 		underground_log = register("underground_log", new BlockUndergroundLog());
 		underground_planks = register("underground_planks", new BlockUndergroundPlanks());

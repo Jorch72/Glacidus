@@ -19,7 +19,7 @@ public class TeleporterGlacidus extends Teleporter
         int i = MathHelper.floor(entityIn.posX);
         int k = MathHelper.floor(entityIn.posZ);
 
-        entityIn.setLocationAndAngles((double)i, 254.0D, (double)k, entityIn.rotationYaw, 0.0F);
+        entityIn.setLocationAndAngles((double)i, 120.0D, (double)k, entityIn.rotationYaw, 0.0F);
         entityIn.motionX = 0.0D;
         entityIn.motionY = 0.0D;
         entityIn.motionZ = 0.0D;

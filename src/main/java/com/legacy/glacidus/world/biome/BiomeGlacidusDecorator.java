@@ -42,7 +42,7 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
                 int l = random.nextInt(16) + 8;
                 WorldGenAbstractTree worldgenabstracttree = biomeIn.getRandomTreeFeature(random);
                 worldgenabstracttree.setDecorationDefaults();
-                BlockPos blockpos = this.chunkPos.add(k6, random.nextInt(31) + 70, l);
+                BlockPos blockpos = this.chunkPos.add(k6, random.nextInt(31) + 27, l);
 
                 if (worldgenabstracttree.generate(worldIn, random, blockpos))
                 {

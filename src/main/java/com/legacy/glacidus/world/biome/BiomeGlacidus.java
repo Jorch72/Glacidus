@@ -1,5 +1,6 @@
 package com.legacy.glacidus.world.biome;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -23,15 +24,24 @@ public class BiomeGlacidus extends Biome
 		super(new BiomeProperties("glacidus").setRainDisabled().setWaterColor(0xE0FFFF));
 
 		this.setRegistryName(ModInfo.locate("glacidus"));
+
+		this.addSpawnableCreatureList();
+	}
+
+	public void addSpawnableCreatureList()
+	{
+		ArrayList<SpawnListEntry> entityList = new ArrayList<SpawnListEntry>();
+
+		entityList.add(new Biome.SpawnListEntry(EntityPorcali.class, 10, 4, 4));
+
+		this.modSpawnableLists.put(EnumCreatureType.CREATURE, entityList);
 	}
 
 	@Override
-    public List<Biome.SpawnListEntry> getSpawnableList(EnumCreatureType creatureType)
+    public List<SpawnListEntry> getSpawnableList(EnumCreatureType creatureType)
     {
-        if (!this.modSpawnableLists.containsKey(creatureType)) this.modSpawnableLists.put(creatureType, Lists.<Biome.SpawnListEntry>newArrayList());
+        if (!this.modSpawnableLists.containsKey(creatureType)) this.modSpawnableLists.put(creatureType, Lists.<SpawnListEntry>newArrayList());
 
-        this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityPorcali.class, 10, 4, 4));
-        
         return this.modSpawnableLists.get(creatureType);
     }
  

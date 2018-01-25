@@ -56,7 +56,7 @@ public class PlayerCapability
 
 			if (!this.player.onGround && this.player.posY > 0)
 			{
-				float math = MathHelper.clamp(0.1F + ((0.3F / (float) this.player.posY) * -100.0F), -0.35F, -0.06F);
+				float math = MathHelper.clamp(0.1F + ((0.3F / (float) this.player.posY) * -100.0F), -0.35F, -0.10F);
 
 				if (this.player.motionY < math)
 				{
