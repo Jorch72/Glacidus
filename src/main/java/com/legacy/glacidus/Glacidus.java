@@ -40,7 +40,6 @@ public class Glacidus
 	{
 		EntitiesGlacidus.initialization();
 		PlayerRegistry.initialization();
-		EntitiesGlacidus.initialization();
 		WorldGlacidus.initialization();
 		TileEntityRegistry.initialization();
 
