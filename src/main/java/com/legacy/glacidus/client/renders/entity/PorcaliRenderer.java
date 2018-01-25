@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 import com.legacy.glacidus.client.models.entity.ModelPorcali;
+import com.legacy.glacidus.client.renders.entity.layers.PorcaliGlow;
 import com.legacy.glacidus.entities.passive.EntityPorcali;
 
 public class PorcaliRenderer extends RenderLiving<EntityPorcali>
@@ -15,7 +16,8 @@ public class PorcaliRenderer extends RenderLiving<EntityPorcali>
 
 	public PorcaliRenderer(RenderManager rendermanagerIn)
 	{
-		super(rendermanagerIn, new ModelPorcali(), 0.7F);
+		super(rendermanagerIn, new ModelPorcali(0.0F), 0.7F);
+        this.addLayer(new PorcaliGlow((ModelPorcali) this.getMainModel()));
 	}
 	
 	protected void scalePorc(EntityPorcali porc)

@@ -23,7 +23,8 @@ public class ModelPorcali extends ModelBase
     protected float childZOffset = 4.0F;
 
 
-    public ModelPorcali() {
+    public ModelPorcali(float scale) 
+    {
     	this.textureWidth = 64;
         this.textureHeight = 32;
         this.leg2 = new ModelRenderer(this, 0, 16);
@@ -32,17 +33,14 @@ public class ModelPorcali extends ModelBase
         this.hornbottom1 = new ModelRenderer(this, 24, 0);
         this.hornbottom1.setRotationPoint(0.0F, 12.0F, -6.0F);
         this.hornbottom1.addBox(1.1F, 1.2F, -8.6F, 3, 1, 1, 0.0F);
-        this.setRotateAngle(hornbottom1, 0.0F, 0.0F, -0.31869712141416456F);
         this.horntop2 = new ModelRenderer(this, 37, 0);
         this.horntop2.mirror = true;
         this.horntop2.setRotationPoint(0.0F, 12.0F, -6.0F);
         this.horntop2.addBox(-4.25F, 3.3F, -8.6F, 3, 1, 1, 0.0F);
-        this.setRotateAngle(horntop2, 0.0F, 0.0F, 1.0471975511965976F);
         this.hornbottom2 = new ModelRenderer(this, 24, 0);
         this.hornbottom2.mirror = true;
         this.hornbottom2.setRotationPoint(0.0F, 12.0F, -6.0F);
         this.hornbottom2.addBox(-3.9F, 1.2F, -8.6F, 3, 1, 1, 0.0F);
-        this.setRotateAngle(hornbottom2, 0.0F, 0.0F, 0.27314402793711257F);
         this.leg1 = new ModelRenderer(this, 0, 16);
         this.leg1.setRotationPoint(-3.0F, 18.0F, -5.0F);
         this.leg1.addBox(-2.0F, 0.0F, -2.0F, 4, 6, 4, 0.0F);
@@ -63,14 +61,12 @@ public class ModelPorcali extends ModelBase
         this.horntop1 = new ModelRenderer(this, 37, 0);
         this.horntop1.setRotationPoint(0.0F, 12.0F, -6.0F);
         this.horntop1.addBox(1.0F, 3.55F, -8.6F, 3, 1, 1, 0.0F);
-        this.setRotateAngle(horntop1, 0.0F, 0.0F, -1.1838568316277536F);
         this.body = new ModelRenderer(this, 28, 8);
         this.body.setRotationPoint(0.0F, 11.0F, 2.0F);
         this.body.addBox(-5.0F, -10.0F, -7.0F, 10, 16, 8, 0.0F);
         this.setRotateAngle(body, 1.5707963267948966F, 0.0F, 0.0F);
     }
 
-    @SuppressWarnings("unused")
 	@Override
     public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) 
     {         
@@ -78,7 +74,6 @@ public class ModelPorcali extends ModelBase
 
         if (this.isChild)
         {
-            float f = 2.0F;
             GlStateManager.pushMatrix();
             GlStateManager.translate(0.0F, this.childYOffset * scale, this.childZOffset * scale);
             this.head.render(scale);
@@ -132,9 +127,21 @@ public class ModelPorcali extends ModelBase
         this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.snoot.rotateAngleX = head.rotateAngleX;
     	this.snoot.rotateAngleY = head.rotateAngleY;
+    	
+    	this.hornbottom1.rotateAngleZ = -0.31869712141416456F;
+    	this.hornbottom2.rotateAngleZ = 0.27314402793711257F;
+    	this.horntop1.rotateAngleZ = -1.1838568316277536F;
+     	this.horntop2.rotateAngleZ = 1.0471975511965976F;
+    	
         this.horntop1.rotateAngleX = head.rotateAngleX;
-    	this.horntop2.rotateAngleY = head.rotateAngleY;
+    	this.horntop1.rotateAngleY = head.rotateAngleY;
     	this.hornbottom1.rotateAngleX = head.rotateAngleX;
+    	this.hornbottom1.rotateAngleY = head.rotateAngleY;
+    	
+    	this.horntop2.rotateAngleX = head.rotateAngleX;
+    	this.horntop2.rotateAngleY = head.rotateAngleY;
+    	this.hornbottom2.rotateAngleX = head.rotateAngleX;
     	this.hornbottom2.rotateAngleY = head.rotateAngleY;
+
     }
 }

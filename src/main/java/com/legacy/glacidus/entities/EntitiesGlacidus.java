@@ -2,6 +2,7 @@ package com.legacy.glacidus.entities;
 
 import com.legacy.glacidus.Glacidus;
 import com.legacy.glacidus.entities.passive.EntityPorcali;
+import com.legacy.glacidus.entities.util.EntityGlimmer;
 import com.legacy.glacidus.util.ModInfo;
 
 import net.minecraft.entity.Entity;
@@ -15,6 +16,7 @@ public class EntitiesGlacidus
 	public static void initialization()
 	{
 		register("porcali", EntityPorcali.class, 0xffffff, 0xffffff);
+		register("glimmer", EntityGlimmer.class);
 	}
 
 	private static void register(String entityName, Class<? extends Entity> clazz, int primaryEggColor, int secondaryEggColor)

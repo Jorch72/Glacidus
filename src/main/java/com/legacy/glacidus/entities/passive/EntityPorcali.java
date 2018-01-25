@@ -1,19 +1,18 @@
 package com.legacy.glacidus.entities.passive;
 
 import com.google.common.collect.Sets;
-import com.legacy.glacidus.entities.EntityGlacidusAnimal;
+import com.legacy.glacidus.entities.util.EntityMount;
 
 import java.util.Set;
 import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
-import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
@@ -37,19 +36,15 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
-public class EntityPorcali extends EntityGlacidusAnimal
+public class EntityPorcali extends EntityMount
 {
     private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityPorcali.class, DataSerializers.BOOLEAN);
-    //private static final DataParameter<Integer> BOOST_TIME = EntityDataManager.<Integer>createKey(EntityPig.class, DataSerializers.VARINT);
     private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.CARROT, Items.POTATO, Items.BEETROOT);
-    //private boolean boosting;
-    private int boostTime;
-    private int totalBoostTime;
 
     public EntityPorcali(World worldIn)
     {
         super(worldIn);
-        this.setSize(0.9F, 0.9F);
+        this.setSize(1.3F, 1.3F);
     }
 
     protected void initEntityAI()
@@ -57,7 +52,7 @@ public class EntityPorcali extends EntityGlacidusAnimal
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
         this.tasks.addTask(4, new EntityAITempt(this, 1.2D, Items.CARROT_ON_A_STICK, false));
-        //this.tasks.addTask(4, new EntityAITempt(this, 1.2D, false, TEMPTATION_ITEMS));
+        this.tasks.addTask(4, new EntityAITempt(this, 1.2D, false, TEMPTATION_ITEMS));
         this.tasks.addTask(5, new EntityAIFollowParent(this, 1.1D));
         this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -67,24 +62,24 @@ public class EntityPorcali extends EntityGlacidusAnimal
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
     
-    public boolean attackEntityFrom(DamageSource ds, float i) 
-    {
-        if (ds.getImmediateSource() instanceof EntityPlayer && world.getDifficulty() != EnumDifficulty.PEACEFUL)
-        {
-            EntityPlayer player = (EntityPlayer)ds.getImmediateSource();
+    @Override
+	public void onEntityUpdate()
+	{
+		super.onEntityUpdate();
 
-            if (ds.getImmediateSource() instanceof EntityLivingBase)
-            {
-            	this.setAttackTarget((EntityLivingBase) ds.getImmediateSource());
-            }
-        } 
-        boolean flag = super.attackEntityFrom(ds, i);
-        return flag;
-    }
+		if (this.getAttackingEntity() != null && world.getDifficulty() != EnumDifficulty.PEACEFUL)
+		{
+			this.tasks.addTask(3, new EntityAIAttackMelee(this, 1.7F, true));
+			this.updateAITasks();
+		}
+		this.setAttackTarget(this.getAttackingEntity());
+	}
+    
+    
     
     @Nullable
     public Entity getControllingPassenger()
@@ -105,7 +100,6 @@ public class EntityPorcali extends EntityGlacidusAnimal
     {
         super.entityInit();
         this.dataManager.register(SADDLED, Boolean.valueOf(false));
-        //this.dataManager.register(BOOST_TIME, Integer.valueOf(0));
     }
 
     public void writeEntityToNBT(NBTTagCompound compound)
@@ -278,13 +272,17 @@ public class EntityPorcali extends EntityGlacidusAnimal
     {
         return new EntityPorcali(this.world);
     }
-
-    /**
-     * Checks if the parameter is an item which this animal can be fed to breed it (wheat, carrots or seeds depending on
-     * the animal type)
-     */
+    
     public boolean isBreedingItem(ItemStack stack)
     {
         return TEMPTATION_ITEMS.contains(stack.getItem());
     }
+    
+    @Override
+	public boolean attackEntityAsMob(Entity entityIn)
+	{
+		entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), 1.0F);
+		return true;
+	}
+    
 }

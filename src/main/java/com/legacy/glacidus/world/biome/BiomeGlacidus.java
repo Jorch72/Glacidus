@@ -10,6 +10,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 import com.google.common.collect.Lists;
+import com.legacy.glacidus.entities.passive.EntityPorcali;
 import com.legacy.glacidus.util.ModInfo;
 import com.legacy.glacidus.world.features.WorldGenCoreTallGrass;
 import com.legacy.glacidus.world.features.WorldGenUndergroundTree;
@@ -29,6 +30,8 @@ public class BiomeGlacidus extends Biome
     {
         if (!this.modSpawnableLists.containsKey(creatureType)) this.modSpawnableLists.put(creatureType, Lists.<Biome.SpawnListEntry>newArrayList());
 
+        this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityPorcali.class, 10, 4, 4));
+        
         return this.modSpawnableLists.get(creatureType);
     }
  
