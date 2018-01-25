@@ -1,6 +1,7 @@
 package com.legacy.glacidus.entities;
 
 import com.legacy.glacidus.Glacidus;
+import com.legacy.glacidus.entities.passive.EntityPorcali;
 import com.legacy.glacidus.util.ModInfo;
 
 import net.minecraft.entity.Entity;
@@ -13,17 +14,18 @@ public class EntitiesGlacidus
 
 	public static void initialization()
 	{
-		
+		register("porcali", EntityPorcali.class, 0x9fc3f7, 0x3e3122);
 	}
 
-	private static void register(String entityName, Class<Entity> clazz, int primaryEggColor, int secondaryEggColor)
+	private static void register(String entityName, Class<? extends Entity> clazz, int primaryEggColor, int secondaryEggColor)
 	{
 		EntityRegistry.registerModEntity(ModInfo.locate(entityName), clazz, entityName, modEntityId, Glacidus.instance, 80, 3, false, primaryEggColor, secondaryEggColor);
 
 		modEntityId++;
 	}
 
-	private static void register(String entityName, Class<Entity> clazz)
+	@SuppressWarnings("unused")
+	private static void register(String entityName, Class<? extends Entity> clazz)
 	{
 		EntityRegistry.registerModEntity(ModInfo.locate(entityName), clazz, entityName, modEntityId, Glacidus.instance, 64, 3, false);
 

@@ -1,5 +1,8 @@
 package com.legacy.glacidus.client.renders;
 
+import com.legacy.glacidus.client.renders.entity.PorcaliRenderer;
+import com.legacy.glacidus.entities.passive.EntityPorcali;
+
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
@@ -11,7 +14,7 @@ public class EntityRenders
 
 	public static void initialization()
 	{
-		
+		register(EntityPorcali.class, PorcaliRenderer.class);
 	}
 
 	private static<T extends Entity> void register(Class<T> clazz, Class<? extends Render<T>> render)

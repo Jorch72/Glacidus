@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import com.legacy.glacidus.entities.EntitiesGlacidus;
 import com.legacy.glacidus.player.PlayerRegistry;
 import com.legacy.glacidus.registry.RegistryEventHandler;
 import com.legacy.glacidus.tiles.TileEntityRegistry;
@@ -37,6 +38,7 @@ public class Glacidus
 	@EventHandler
 	public void initializationEvent(FMLInitializationEvent event)
 	{
+		EntitiesGlacidus.initialization();
 		PlayerRegistry.initialization();
 		WorldGlacidus.initialization();
 		TileEntityRegistry.initialization();
