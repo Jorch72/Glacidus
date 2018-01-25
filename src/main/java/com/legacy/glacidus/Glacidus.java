@@ -38,6 +38,7 @@ public class Glacidus
 	@EventHandler
 	public void initializationEvent(FMLInitializationEvent event)
 	{
+		EntitiesGlacidus.initialization();
 		PlayerRegistry.initialization();
 		EntitiesGlacidus.initialization();
 		WorldGlacidus.initialization();
