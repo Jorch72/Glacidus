@@ -3,6 +3,7 @@ package com.legacy.glacidus.blocks.natural;
 import com.legacy.glacidus.blocks.BlocksGlacidus;
 
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
 
@@ -12,6 +13,8 @@ public class BlockDeadLumicia extends BlockBush
 	public BlockDeadLumicia()
 	{
 		super();
+
+		this.setSoundType(SoundType.PLANT);
 	}
 
 	@Override

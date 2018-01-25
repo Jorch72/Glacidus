@@ -14,7 +14,7 @@ public class BlockGlacidusFlower extends BlockBush
 	{
 		super();
 
-		this.setSoundType(SoundType.STONE);
+		this.setSoundType(SoundType.PLANT);
 	}
 
 	@Override
