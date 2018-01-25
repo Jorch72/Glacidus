@@ -11,6 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import com.google.common.collect.Lists;
 import com.legacy.glacidus.util.ModInfo;
+import com.legacy.glacidus.world.features.WorldGenCoreTallGrass;
 import com.legacy.glacidus.world.features.WorldGenUndergroundTree;
 
 public class BiomeGlacidus extends Biome

@@ -46,9 +46,25 @@ public class ClientProxy extends CommonProxy
 			//colors[0] = 1.0F;
 			//colors[1] = 1.0F;
 			//colors[2] = 1.0F;
-			colors[0] = colors[0] + 0.10F;
-			colors[1] = colors[1] + 0.09F;
-			colors[2] = colors[2] + 0.15F;
+			if (player.posY > 60)
+			{
+				colors[0] = colors[0] + 0.10F;
+				colors[1] = colors[1] + 0.09F;
+				colors[2] = colors[2] + 0.15F;
+			}
+			else
+			{
+				float light = 0.20F;
+
+				if (player.posY <= 60 && player.posY >= 40)
+				{
+					light = (float) (60.0F - player.posY) / 100.0F;
+				}
+
+				colors[0] = colors[0] + light + (light / 2.0F) + 0.05F;
+				colors[1] = colors[1] + light +  0.09F;
+				colors[2] = colors[2] + light +  0.05F;
+			}
 		}
 	}
 

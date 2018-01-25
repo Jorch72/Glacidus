@@ -1,4 +1,4 @@
-package com.legacy.glacidus.world.biome;
+package com.legacy.glacidus.world.features;
 
 import java.util.Random;
 

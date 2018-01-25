@@ -10,16 +10,29 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
 import com.legacy.glacidus.world.features.WorldGenCoreFlowers;
+import com.legacy.glacidus.world.features.WorldGenTopSpikes;
 
 public class BiomeGlacidusDecorator extends BiomeDecorator
 {
 
 	public WorldGenCoreFlowers coreFlowerGen = new WorldGenCoreFlowers(BlocksGlacidus.crysial_flower);
 
+	public WorldGenTopSpikes spikeGen = new WorldGenTopSpikes();
+
 	@Override
     protected void genDecorations(Biome biomeIn, World worldIn, Random random)
     {
         net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Pre(worldIn, random, this.chunkPos));
+
+        if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, this.chunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE))
+        {
+            if (random.nextInt(3) == 0)
+            {
+                int j = random.nextInt(16) + 8;
+                int k = random.nextInt(16) + 8;
+                this.spikeGen.generate(worldIn, random, this.chunkPos.add(j, random.nextInt(50) + 140, k));
+            }
+        }
 
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, this.chunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE))
         {
