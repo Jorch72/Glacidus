@@ -12,6 +12,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import com.legacy.glacidus.blocks.decoration.BlockUndergroundPlanks;
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
+import com.legacy.glacidus.blocks.natural.BlockCrysiumOre;
 import com.legacy.glacidus.blocks.natural.BlockDeadLumicia;
 import com.legacy.glacidus.blocks.natural.BlockEukeiteOre;
 import com.legacy.glacidus.blocks.natural.BlockGlaciditeOre;
@@ -22,6 +23,7 @@ import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLeaves;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLog;
+import com.legacy.glacidus.creativetab.GlacidusCreativeTabs;
 import com.legacy.glacidus.util.ModInfo;
 
 public class BlocksGlacidus 
@@ -82,6 +84,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":glacidite_ore")
 	public static Block glacidite_ore;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":crysium_ore")
+	public static Block crysium_ore;
+
     public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
     {
         @Override
@@ -123,6 +128,7 @@ public class BlocksGlacidus
 
 		glacidite_ore = register("glacidite_ore", new BlockGlaciditeOre());
 		eukeite_ore = register("eukeite_ore", new BlockEukeiteOre());
+		crysium_ore = register("crysium_ore", new BlockCrysiumOre());
 	}
 
 	private static boolean readyToInitialize()
@@ -137,6 +143,7 @@ public class BlocksGlacidus
 
 	private static Block register(String unlocalizedName, Block block, ItemBlock itemBlock)
 	{
+		block.setCreativeTab(GlacidusCreativeTabs.BLOCKS);
 		block.setUnlocalizedName(unlocalizedName);
 
 		block.setRegistryName(ModInfo.locate(unlocalizedName));
