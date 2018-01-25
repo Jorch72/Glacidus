@@ -14,7 +14,7 @@ public class EntitiesGlacidus
 
 	public static void initialization()
 	{
-		register("porcali", EntityPorcali.class, 0x9fc3f7, 0x3e3122);
+		register("porcali", EntityPorcali.class, 0xffffff, 0xffffff);
 	}
 
 	private static void register(String entityName, Class<? extends Entity> clazz, int primaryEggColor, int secondaryEggColor)
