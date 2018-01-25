@@ -49,9 +49,9 @@ public class WorldGenTopSpikes extends WorldGenerator
                         IBlockState iblockstate = worldIn.getBlockState(position.add(i1, k, j1));
                         Block block = iblockstate.getBlock();
 
-                        if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, k, j1)) || block == BlocksGlacidus.antinatric_stone)
+                        if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, k, j1)) || block == BlocksGlacidus.frozen_antinatric_stone)
                         {
-                            this.setBlockAndNotifyAdequately(worldIn, position.add(i1, k, j1), BlocksGlacidus.antinatric_stone.getDefaultState());
+                            this.setBlockAndNotifyAdequately(worldIn, position.add(i1, k, j1), BlocksGlacidus.frozen_antinatric_stone.getDefaultState());
                         }
 
                         if (k != 0 && l > 1)
@@ -59,9 +59,9 @@ public class WorldGenTopSpikes extends WorldGenerator
                             iblockstate = worldIn.getBlockState(position.add(i1, -k, j1));
                             block = iblockstate.getBlock();
 
-                            if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, -k, j1)) || block == BlocksGlacidus.antinatric_stone)
+                            if (iblockstate.getBlock().isAir(iblockstate, worldIn, position.add(i1, -k, j1)) || block == BlocksGlacidus.frozen_antinatric_stone)
                             {
-                                this.setBlockAndNotifyAdequately(worldIn, position.add(i1, -k, j1), BlocksGlacidus.antinatric_stone.getDefaultState());
+                                this.setBlockAndNotifyAdequately(worldIn, position.add(i1, -k, j1), BlocksGlacidus.frozen_antinatric_stone.getDefaultState());
                             }
                         }
                     }
@@ -97,12 +97,12 @@ public class WorldGenTopSpikes extends WorldGenerator
                     IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
                     Block block1 = iblockstate1.getBlock();
 
-                    if (!iblockstate1.getBlock().isAir(iblockstate1, worldIn, blockpos) && block1 != BlocksGlacidus.antinatric_stone)
+                    if (!iblockstate1.getBlock().isAir(iblockstate1, worldIn, blockpos) && block1 != BlocksGlacidus.frozen_antinatric_stone)
                     {
                         break;
                     }
 
-                    this.setBlockAndNotifyAdequately(worldIn, blockpos, BlocksGlacidus.antinatric_stone.getDefaultState());
+                    this.setBlockAndNotifyAdequately(worldIn, blockpos, BlocksGlacidus.frozen_antinatric_stone.getDefaultState());
                     blockpos = blockpos.down();
                     --j2;
 

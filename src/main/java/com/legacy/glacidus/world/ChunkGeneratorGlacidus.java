@@ -104,7 +104,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                                 if (d15 > 0.0D)
                                 {
-                                    iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
+                                    iblockstate = BlocksGlacidus.frozen_antinatric_stone.getDefaultState();
                                 }
 
                                 int l2 = j2 + j1 * 4;
@@ -120,18 +120,25 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                                 	primer.setBlockState(l2, i3 + 100, j3, iblockstate);
 
-                                	if (iblockstate != null && iblockstate.getBlock() == BlocksGlacidus.glacium)
+                                	if (iblockstate != null)
                                 	{
-                                		iblockstate = Blocks.LAVA.getDefaultState();
+                                		if (iblockstate.getBlock() == BlocksGlacidus.glacium)
+                                		{
+                                    		iblockstate = Blocks.LAVA.getDefaultState();
+                                		}
+                                		else if (iblockstate.getBlock() == BlocksGlacidus.frozen_antinatric_stone)
+                                		{
+                                			iblockstate = BlocksGlacidus.thawed_antinatric_stone.getDefaultState();
+                                		}
                                 	}
 
                                 	primer.setBlockState(l2, i3, j3, iblockstate);
                                 }
                                 else
                                 {
-                                    if (i3 < 70)
+                                    if (i3 <= 70 && i3 > 50)
                                     {
-                                        iblockstate = BlocksGlacidus.antinatric_stone.getDefaultState();
+                                        iblockstate = BlocksGlacidus.frozen_antinatric_stone.getDefaultState();
                                     }
 
                                     primer.setBlockState(l2, i3, j3, iblockstate);
@@ -178,14 +185,14 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                         if (iblockstate2.getBlock() != null && iblockstate2.getMaterial() != Material.AIR)
                         {
-                            if (iblockstate2.getBlock() == BlocksGlacidus.antinatric_stone)
+                            if (iblockstate2.getBlock() == BlocksGlacidus.frozen_antinatric_stone)
                             {
         						if (i1 == -1)
         						{
         							if (data <= 0)
         							{
         								iblockstate = Blocks.AIR.getDefaultState();
-        								iblockstate1 = BlocksGlacidus.antinatric_stone.getDefaultState();
+        								iblockstate1 = BlocksGlacidus.frozen_antinatric_stone.getDefaultState();
         							}
 
         							i1 = data;

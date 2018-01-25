@@ -36,7 +36,8 @@ public class BlockRenders
 		register(BlocksGlacidus.dead_lumicia, "dead_lumicia");
 		register(BlocksGlacidus.lumicia_grass, "lumicia_grass");
 		register(BlocksGlacidus.lumicia_dirt, "lumicia_dirt");
-		register(BlocksGlacidus.antinatric_stone, "antinatric_stone");
+		register(BlocksGlacidus.frozen_antinatric_stone, "frozen_antinatric_stone");
+		register(BlocksGlacidus.thawed_antinatric_stone, "thawed_antinatric_stone");
 		register(BlocksGlacidus.underground_leaves, "underground_leaves");
 		register(BlocksGlacidus.underground_log, "underground_log");
 		register(BlocksGlacidus.underground_planks, "underground_planks");

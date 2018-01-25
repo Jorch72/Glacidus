@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumSkyBlock;
@@ -128,6 +129,8 @@ public class WorldGenCoreLakes extends WorldGenerator
                 }
             }
 
+            IBlockState stoneState = position.getY() <= 50 ? BlocksGlacidus.thawed_antinatric_stone.getDefaultState() : BlocksGlacidus.frozen_antinatric_stone.getDefaultState();
+
             if (this.block.getDefaultState().getMaterial() == Material.LAVA)
             {
                 for (int j2 = 0; j2 < 16; ++j2)
@@ -140,7 +143,7 @@ public class WorldGenCoreLakes extends WorldGenerator
 
                             if (flag1 && (k4 < 4 || rand.nextInt(2) != 0) && worldIn.getBlockState(position.add(j2, k4, k3)).getMaterial().isSolid())
                             {
-                                worldIn.setBlockState(position.add(j2, k4, k3), BlocksGlacidus.antinatric_stone.getDefaultState(), 2);
+                                worldIn.setBlockState(position.add(j2, k4, k3), stoneState, 2);
                             }
                         }
                     }

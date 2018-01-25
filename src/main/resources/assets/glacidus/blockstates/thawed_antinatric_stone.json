@@ -1,0 +1,19 @@
+{
+	
+	"variants": {
+		
+		"normal": [
+			
+            { "model": "glacidus:thawed_antinatric_stone" },
+
+            { "model": "glacidus:thawed_antinatric_stone" },
+
+            { "model": "glacidus:thawed_antinatric_stone", "y": 180 },
+
+            { "model": "glacidus:thawed_antinatric_stone", "y": 180 }
+		
+		]
+	
+	}
+
+}

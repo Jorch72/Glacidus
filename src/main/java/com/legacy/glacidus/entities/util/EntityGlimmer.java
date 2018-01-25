@@ -100,7 +100,6 @@ public class EntityGlimmer extends Entity
         }
 
         this.pushOutOfBlocks(this.posX, (this.getEntityBoundingBox().minY + this.getEntityBoundingBox().maxY) / 2.0D, this.posZ);
-        double d0 = 8.0D;
 
         if (this.targetColor < this.glimmerColor - 20 + this.getEntityId() % 100)
         {

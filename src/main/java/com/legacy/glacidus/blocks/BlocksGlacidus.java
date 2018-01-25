@@ -58,8 +58,11 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_dirt")
 	public static Block lumicia_dirt;
 
-	@ObjectHolder(ModInfo.MOD_ID + ":antinatric_stone")
-	public static Block antinatric_stone;
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_stone")
+	public static Block frozen_antinatric_stone;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":thawed_antinatric_stone")
+	public static Block thawed_antinatric_stone;
 
 	@ObjectHolder(ModInfo.MOD_ID + ":glacium")
 	public static Block glacium;
@@ -109,7 +112,8 @@ public class BlocksGlacidus
 
 		lumicia_grass = register("lumicia_grass", new BlockLumiciaGrass());
 		lumicia_dirt = register("lumicia_dirt", new BlockLumiciaDirt());
-		antinatric_stone = register("antinatric_stone", new BlockAntinatricStone());
+		frozen_antinatric_stone = register("frozen_antinatric_stone", new BlockAntinatricStone());
+		thawed_antinatric_stone = register("thawed_antinatric_stone", new BlockAntinatricStone());
 
 		glacium = register("glacium", new BlockGlaciumStatic());
 

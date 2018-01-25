@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "glacidus:blocks/antinatric_stone"
+        "all": "glacidus:blocks/frozen_antinatric_stone"
     }
 }

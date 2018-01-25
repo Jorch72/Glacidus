@@ -17,7 +17,7 @@ public class BlockDeadLumicia extends BlockBush
 	@Override
     protected boolean canSustainBush(IBlockState state)
     {
-    	return state.getBlock() == BlocksGlacidus.antinatric_stone;
+    	return state.getBlock() == BlocksGlacidus.frozen_antinatric_stone || state.getBlock() == BlocksGlacidus.thawed_antinatric_stone;
     }
 
 	@Override
