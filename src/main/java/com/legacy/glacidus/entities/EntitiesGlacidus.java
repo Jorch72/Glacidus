@@ -1,12 +1,9 @@
 package com.legacy.glacidus.entities;
 
 import com.legacy.glacidus.Glacidus;
-<<<<<<< HEAD
 import com.legacy.glacidus.entities.hostile.EntityDropSpider;
-=======
 import com.legacy.glacidus.entities.passive.EntityPorcali;
 import com.legacy.glacidus.entities.util.EntityGlimmer;
->>>>>>> origin/master
 import com.legacy.glacidus.util.ModInfo;
 
 import net.minecraft.entity.Entity;
@@ -19,12 +16,9 @@ public class EntitiesGlacidus
 
 	public static void initialization()
 	{
-<<<<<<< HEAD
 		register("drop_spider", EntityDropSpider.class, 0xFFFFF, 0x555555);
-=======
 		register("porcali", EntityPorcali.class, 0xffffff, 0xffffff);
 		register("glimmer", EntityGlimmer.class);
->>>>>>> origin/master
 	}
 
 	private static void register(String entityName, Class<? extends Entity> clazz, int primaryEggColor, int secondaryEggColor)
@@ -34,10 +28,6 @@ public class EntitiesGlacidus
 		modEntityId++;
 	}
 
-<<<<<<< HEAD
-=======
-	@SuppressWarnings("unused")
->>>>>>> origin/master
 	private static void register(String entityName, Class<? extends Entity> clazz)
 	{
 		EntityRegistry.registerModEntity(ModInfo.locate(entityName), clazz, entityName, modEntityId, Glacidus.instance, 64, 3, false);
