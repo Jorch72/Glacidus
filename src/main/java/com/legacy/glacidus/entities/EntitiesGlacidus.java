@@ -1,6 +1,7 @@
 package com.legacy.glacidus.entities;
 
 import com.legacy.glacidus.Glacidus;
+import com.legacy.glacidus.entities.hostile.EntityDropSpider;
 import com.legacy.glacidus.util.ModInfo;
 
 import net.minecraft.entity.Entity;
@@ -13,17 +14,17 @@ public class EntitiesGlacidus
 
 	public static void initialization()
 	{
-		
+		register("drop_spider", EntityDropSpider.class, 0xFFFFF, 0x555555);
 	}
 
-	private static void register(String entityName, Class<Entity> clazz, int primaryEggColor, int secondaryEggColor)
+	private static void register(String entityName, Class<? extends Entity> clazz, int primaryEggColor, int secondaryEggColor)
 	{
 		EntityRegistry.registerModEntity(ModInfo.locate(entityName), clazz, entityName, modEntityId, Glacidus.instance, 80, 3, false, primaryEggColor, secondaryEggColor);
 
 		modEntityId++;
 	}
 
-	private static void register(String entityName, Class<Entity> clazz)
+	private static void register(String entityName, Class<? extends Entity> clazz)
 	{
 		EntityRegistry.registerModEntity(ModInfo.locate(entityName), clazz, entityName, modEntityId, Glacidus.instance, 64, 3, false);
 
