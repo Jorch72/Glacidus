@@ -1,0 +1,24 @@
+# Items
+
+# Blocks
+
+# Entities
+entity.porcali.name=Porcali
+entity.glimmer.name=Glimmer
+
+# Advancements
+advancement.glacidus.enter=It's Freezing here..
+
+# Advancement Descriptions
+advancement.glacidus.enter.desc=Enter the Glacidus world.
+
+# Creative Tabs Names
+tab.glacidus.blocks=Glacidus Blocks
+tab.glacidus.items=Glacidus Items
+
+# Subtitles
+subtitles.mob.porcali.say=Porcali Growls
+subtitles.mob.porcali.hurt=Porcali Hurts
+subtitles.mob.porcali.death=Porcali Dies
+subtitles.block.glacium.ambient=Glacium crackles
+subtitles.block.glacium.pop=Glacium pops

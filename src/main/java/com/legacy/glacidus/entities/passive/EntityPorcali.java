@@ -1,6 +1,7 @@
 package com.legacy.glacidus.entities.passive;
 
 import com.google.common.collect.Sets;
+import com.legacy.glacidus.client.sounds.GlacidusSounds;
 import com.legacy.glacidus.entities.util.EntityMount;
 
 import java.util.Set;
@@ -44,7 +45,7 @@ public class EntityPorcali extends EntityMount
     public EntityPorcali(World worldIn)
     {
         super(worldIn);
-        this.setSize(1.3F, 1.3F);
+        this.setSize(1.4F, 1.4F);
     }
 
     protected void initEntityAI()
@@ -119,17 +120,17 @@ public class EntityPorcali extends EntityMount
 
     protected SoundEvent getAmbientSound()
     {
-        return SoundEvents.ENTITY_PIG_AMBIENT;
+        return GlacidusSounds.PORCALI_SAY;
     }
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-        return SoundEvents.ENTITY_PIG_HURT;
+        return GlacidusSounds.PORCALI_HURT;
     }
 
     protected SoundEvent getDeathSound()
     {
-        return SoundEvents.ENTITY_PIG_DEATH;
+        return GlacidusSounds.PORCALI_DEATH;
     }
 
     protected void playStepSound(BlockPos pos, Block blockIn)

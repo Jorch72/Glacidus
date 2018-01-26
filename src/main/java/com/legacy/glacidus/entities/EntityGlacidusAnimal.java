@@ -14,9 +14,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public abstract class EntityGlacidusAnimal extends EntityAnimal
-{
-    protected Block spawnableBlock = BlocksGlacidus.lumicia_grass;
-    
+{    
     Random random;
 
     public EntityGlacidusAnimal(World worldIn)
@@ -30,7 +28,7 @@ public abstract class EntityGlacidusAnimal extends EntityAnimal
         int j = MathHelper.floor(this.getEntityBoundingBox().minY);
         int k = MathHelper.floor(this.posZ);
         BlockPos blockpos = new BlockPos(i, j, k);
-        return this.world.getBlockState(blockpos.down()).getBlock() == this.spawnableBlock && super.getCanSpawnHere();
+        return this.world.getBlockState(blockpos.down()).getBlock() == BlocksGlacidus.lumicia_grass && super.getCanSpawnHere();
     }
 
     protected boolean canDespawn()
