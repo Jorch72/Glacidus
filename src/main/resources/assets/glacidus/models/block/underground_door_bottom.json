@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "glacidus:blocks/underground_door_lower",
+        "top": "glacidus:blocks/underground_door_upper"
+    }
+}

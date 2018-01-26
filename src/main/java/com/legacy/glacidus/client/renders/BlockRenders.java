@@ -1,6 +1,7 @@
 package com.legacy.glacidus.client.renders;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemMeshDefinition;
@@ -27,6 +28,7 @@ public class BlockRenders
 	public void onModelRegisterEvent(ModelRegistryEvent event)
 	{
 		registerBlockWithStateMapper(BlocksGlacidus.underground_leaves, (new StateMap.Builder()).ignore(BlockLeaves.CHECK_DECAY).ignore(BlockLeaves.DECAYABLE).build());
+		registerBlockWithStateMapper(BlocksGlacidus.underground_door, (new StateMap.Builder()).ignore(BlockDoor.POWERED).build());
 
 		register(BlocksGlacidus.small_crystal, "small_crystal");
 		register(BlocksGlacidus.crysial_flower, "crysial_flower");
@@ -44,6 +46,8 @@ public class BlockRenders
 		register(BlocksGlacidus.glacidite_ore, "glacidite_ore");
 		register(BlocksGlacidus.eukeite_ore, "eukeite_ore");
 		register(BlocksGlacidus.crysium_ore, "crysium_ore");
+		register(BlocksGlacidus.underground_door, "underground_door");
+
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGlacidusPortal.class, new GlacidusPortalRenderer());
 	}

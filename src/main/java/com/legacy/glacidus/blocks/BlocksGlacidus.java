@@ -1,8 +1,6 @@
 package com.legacy.glacidus.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.particle.ParticleDrip.LavaFactory;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
@@ -27,6 +25,7 @@ import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLeaves;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLog;
 import com.legacy.glacidus.creativetab.GlacidusCreativeTabs;
+import com.legacy.glacidus.items.block.ItemGlacidusDoor;
 import com.legacy.glacidus.util.ModInfo;
 
 public class BlocksGlacidus 
@@ -93,6 +92,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":crysium_ore")
 	public static Block crysium_ore;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_door")
+	public static Block underground_door;
+
     public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
     {
         @Override
@@ -146,6 +148,8 @@ public class BlocksGlacidus
 		glacidite_ore = register("glacidite_ore", new BlockGlaciditeOre());
 		eukeite_ore = register("eukeite_ore", new BlockEukeiteOre());
 		crysium_ore = register("crysium_ore", new BlockCrysiumOre());
+
+		underground_door = register("underground_door", new BlockUndergroundDoor(), ItemGlacidusDoor.class);
 	}
 
 	private static boolean readyToInitialize()
@@ -155,11 +159,22 @@ public class BlocksGlacidus
 
 	private static Block register(String unlocalizedName, Block block)
 	{
-		return register(unlocalizedName, block, new ItemBlock(block));
+		return register(unlocalizedName, block, ItemBlock.class);
 	}
 
-	private static Block register(String unlocalizedName, Block block, ItemBlock itemBlock)
+	private static Block register(String unlocalizedName, Block block, Class<? extends Item> itemClass)
 	{
+		Item itemBlock = null;
+
+		try 
+		{
+			itemBlock = itemClass.getConstructor(Block.class).newInstance(block);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
 		block.setCreativeTab(GlacidusCreativeTabs.BLOCKS);
 		block.setUnlocalizedName(unlocalizedName);
 
