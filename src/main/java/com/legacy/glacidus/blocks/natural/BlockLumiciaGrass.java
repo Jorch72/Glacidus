@@ -42,7 +42,7 @@ public class BlockLumiciaGrass extends Block
 
                     IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
 
-                    if (iblockstate1.getBlock() == BlocksGlacidus.lumicia_dirt)
+                    if (iblockstate1.getBlock() == BlocksGlacidus.lumicia_dirt && worldIn.isAirBlock(blockpos.up()))
                     {
                         worldIn.setBlockState(blockpos, BlocksGlacidus.lumicia_grass.getDefaultState());
                     }
