@@ -29,11 +29,7 @@ public class BlockLumiciaGrass extends Block
     {
         if (!worldIn.isRemote)
         {
-            if (worldIn.getLightFromNeighbors(pos.up()) < 4 && worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2)
-            {
-                worldIn.setBlockState(pos, BlocksGlacidus.lumicia_dirt.getDefaultState());
-            }
-            else
+            if (worldIn.isAirBlock(pos.up()))
             {
                 for (int i = 0; i < 4; ++i)
                 {

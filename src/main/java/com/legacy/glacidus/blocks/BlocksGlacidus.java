@@ -22,6 +22,7 @@ import com.legacy.glacidus.blocks.natural.BlockGlaciumStatic;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
+import com.legacy.glacidus.blocks.natural.BlockLumiciaVine;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLeaves;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLog;
 import com.legacy.glacidus.creativetab.GlacidusCreativeTabs;
@@ -82,6 +83,12 @@ public class BlocksGlacidus
 
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_leaves")
 	public static Block underground_leaves;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_vine")
+	public static Block lumicia_vine;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_grape_vine")
+	public static Block lumicia_grape_vine;
 
 	@ObjectHolder(ModInfo.MOD_ID + ":eukeite_ore")
 	public static Block eukeite_ore;
@@ -144,6 +151,9 @@ public class BlocksGlacidus
 		underground_log = register("underground_log", new BlockUndergroundLog());
 		underground_planks = register("underground_planks", new BlockUndergroundPlanks());
 		underground_leaves = register("underground_leaves", new BlockUndergroundLeaves());
+
+		lumicia_vine = register("lumicia_vine", new BlockLumiciaVine());
+		lumicia_grape_vine = register("lumicia_grape_vine", new BlockLumiciaVine());
 
 		glacidite_ore = register("glacidite_ore", new BlockGlaciditeOre());
 		eukeite_ore = register("eukeite_ore", new BlockEukeiteOre());

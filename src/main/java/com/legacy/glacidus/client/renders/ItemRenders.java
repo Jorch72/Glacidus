@@ -21,6 +21,8 @@ public class ItemRenders
 		register(ItemsGlacidus.eukeite_shovel, "eukeite_shovel");
 		register(ItemsGlacidus.eukeite_hoe, "eukeite_hoe");
 		register(ItemsGlacidus.eukeite_sword, "eukeite_sword");
+
+		register(ItemsGlacidus.grapes, "grapes");
 	}
 
 	private static void register(Item item, String model)
