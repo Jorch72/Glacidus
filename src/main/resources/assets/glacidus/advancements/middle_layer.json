@@ -1,0 +1,22 @@
+{
+  	"display": {
+	  	"icon": {
+			"item": "glacidus:lumicia_grass"
+		},
+		"title": {
+			"translate": "advancements.glacidus.middle_layer"
+		},
+		"description": {
+			"translate": "advancements.glacidus.middle_layer.desc"
+		}
+	},
+  	"parent": "glacidus:enter",
+	"criteria": {
+		"touch_grass": {
+			"trigger": "minecraft:enter_block",
+			"conditions": {
+				"block": "glacidus:lumicia_tallgrass"
+			}
+		}
+	}
+}

@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;

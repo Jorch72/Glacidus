@@ -1,0 +1,25 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:frozen_antinatric_stone"
+        },
+        "title": {
+            "translate": "advancements.glacidus.root.title"
+        },
+        "description": {
+            "translate": "advancements.glacidus.root.desc"
+        },
+        "background": "glacidus:textures/blocks/lumicia_dirt.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "root": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "Glacidus",
+                "from": "overworld"
+            }
+        }
+    }
+}

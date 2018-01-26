@@ -7,10 +7,18 @@ entity.porcali.name=Porcali
 entity.glimmer.name=Glimmer
 
 # Advancements
-advancement.glacidus.enter=It's Freezing here..
+advancements.glacidus.root.title=Glacidus
+advancements.glacidus.enter=It's Freezing here..
+advancements.glacidus.middle_layer=Don't Judge a Book the cover
+advancements.glacidus.get_wood=New world, same routine
+advancements.glacidus.glowey_flowers=Glowey flowers?
 
 # Advancement Descriptions
-advancement.glacidus.enter.desc=Enter the Glacidus world.
+advancements.glacidus.root.desc=The Glacidus dimension.
+advancements.glacidus.enter.desc=Enter the Glacidus world.
+advancements.glacidus.middle_layer.desc=Find signs of plant life.
+advancements.glacidus.get_wood.desc=Punch an Underground tree and get a log.
+advancements.glacidus.glowey_flowers.desc=Find all 3 flowers.
 
 # Creative Tabs Names
 tab.glacidus.blocks=Glacidus Blocks

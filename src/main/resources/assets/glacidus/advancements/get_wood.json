@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:underground_log"
+        },
+        "title": {
+            "translate": "advancements.glacidus.get_wood"
+        },
+        "description": {
+            "translate": "advancements.glacidus.get_wood.desc"
+        }
+    },
+    "parent": "glacidus:middle_layer",
+    "criteria": {
+        "have_log": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "glacidus:underground_log"
+                    }
+                ]
+            }
+        }
+    }
+}

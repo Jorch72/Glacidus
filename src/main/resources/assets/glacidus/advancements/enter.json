@@ -1,0 +1,23 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:packed_ice"
+        },
+        "title": {
+            "translate": "advancements.glacidus.enter"
+        },
+        "description": {
+            "translate": "advancements.glacidus.enter.desc"
+        }
+    },
+    "parent": "glacidus:root",
+    "criteria": {
+        "enter": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "Glacidus",
+                "from": "overworld"
+            }
+        }
+    }
+}

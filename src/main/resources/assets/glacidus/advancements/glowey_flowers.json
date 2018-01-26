@@ -1,0 +1,46 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:crysial_flower"
+        },
+        "title": {
+            "translate": "advancements.glacidus.glowey_flowers"
+        },
+        "description": {
+            "translate": "advancements.glacidus.glowey_flowers.desc"
+        }
+    },
+    "parent": "glacidus:middle_layer",
+    "criteria": {
+        "flower1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "glacidus:crysial_flower"
+                    }
+                ]
+            }
+        },
+        "flower2": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "glacidus:pulphorus_flower"
+                    }
+                ]
+            }
+        },
+        "flower3": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "glacidus:solegia_flower"
+                    }
+                ]
+            }
+        }
+    }
+}
