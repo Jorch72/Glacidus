@@ -280,7 +280,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
         Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 
-        chunk.resetRelightChecks();
+        chunk.generateSkylightMap();
 
         return chunk;
 	}
@@ -392,7 +392,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE))
         {
             int i1 = this.random.nextInt(16) + 8;
-            int j1 = this.random.nextInt(31) + 69;
+            int j1 = this.random.nextInt(35) + 30;
             int k1 = this.random.nextInt(16) + 8;
             (new WorldGenCoreLakes(Blocks.WATER)).generate(this.world, this.random, blockpos.add(i1, j1, k1));
         }
