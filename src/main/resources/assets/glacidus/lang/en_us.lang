@@ -1,11 +1,67 @@
 # Items
+item.grapes.name=Grapes
+item.eukeite.name=Eukeite
+item.crysium.name=Crysium
+item.raw_porcali_meat.name=Raw Porcali Meat
+item.grilled_porcali_meat.name=Grilled Porcali Meat
+item.glacidite_fragment.name=Glacidite Fragment
+
+# Tools
+item.eukeite_hoe.name=Eukeite Hoe
+item.eukeite_pickaxe.name=Eukeite Pickaxe
+item.eukeite_axe.name=Eukeite Axe
+item.eukeite_shovel.name=Eukeite Shovel
+item.eukeite_sword.name=Eukeite Sword
+item.antinatric_hoe.name=Antinatric Hoe
+item.antinatric_pickaxe.name=Antinatric Pickaxe
+item.antinatric_axe.name=Antinatric Axe
+item.antinatric_shovel.name=Antinatric Shovel
+item.antinatric_sword.name=Antinatric Sword
+item.glacidite_hoe.name=Glacidite Hoe
+item.glacidite_pickaxe.name=Glacidite Pickaxe
+item.glacidite_axe.name=Glacidite Axe
+item.glacidite_shovel.name=Glacidite Shovel
+item.glacidite_sword.name=Glacidite Sword
+item.underground_hoe.name=Underground Hoe
+item.underground_pickaxe.name=Underground Pickaxe
+item.underground_axe.name=Underground Axe
+item.underground_shovel.name=Underground Shovel
+item.underground_sword.name=Underground Sword
 
 # Blocks
+tile.small_crystal.name=Small Crystal
+tile.crysial_flower.name=Crysial Flower
+tile.pulphorus_flower.name=Pulphorus Flower
+tile.solegia_flower.name=Solegia Flower
+tile.dead_lumicia.name=Dead Lumicia Stalk
+tile.lumicia_tallgrass.name=Lumicia Grass
+tile.lumicia_tallgrass.name=Lumicia Double Grass
+tile.glacidus_portal.name=Glacidus Portal Block
+tile.lumicia_grass.name=Lumicia Grass Block
+tile.lumicia_dirt.name=Lumicia Dirt
+tile.frozen_antinatric_stone.name=Frozen Antinatric Stone
+tile.thawed_antinatric_stone.name=Thawed Antinatric Stone
+tile.glacium.name=Glacium
+tile.underground_log.name=Underground Wood
+tile.underground_planks.name=Underground Planks
+tile.underground_leaves.name=Underground Leaves
+tile.lumicia_vine.name=Lumicia Vine
+tile.lumicia_grape_vine.name=Lumicia Grape Vine
+tile.glacidite_ore.name=Glacidite Ore
+tile.eukeite_ore.name=Eukeite Ore
+tile.crysium_ore.name=Crysium Ore
+tile.underground_door.name=Underground Door
+tile.underground_bookshelf.name=Underground Bookshelf
+tile.underground_ladder.name=Underground Ladder
+tile.underground_sapling.name=Underground Sapling
+tile.crystal_block.name=Crystal Block
+tile.glacidus_portal_frame.name=Glacidus Portal Frame
 
 # Entities
 entity.porcali.name=Porcali
 entity.glimmer.name=Glimmer
 entity.drop_spider.name=Drop Spider
+entity.merialces.name=Merialces
 
 # Advancements
 advancements.glacidus.root.title=Glacidus
@@ -13,6 +69,7 @@ advancements.glacidus.enter=It's Freezing Here...
 advancements.glacidus.middle_layer=Don't Judge a Book by it's Cover
 advancements.glacidus.get_wood=New World, Same Routine
 advancements.glacidus.glowey_flowers=Glowey Flowers!
+advancements.glacidus.bounty_hunter=Bounty Hunter
 
 # Advancement Descriptions
 advancements.glacidus.root.desc=The Glacidus dimension.
@@ -20,15 +77,20 @@ advancements.glacidus.enter.desc=Enter the Glacidus world.
 advancements.glacidus.middle_layer.desc=Find signs of plant life.
 advancements.glacidus.get_wood.desc=Punch an Underground tree and get a log.
 advancements.glacidus.glowey_flowers.desc=Find all 3 flowers.
+advancements.glacidus.bounty_hunter.desc=Slay a mob from the dimension.
 
 # Creative Tabs Names
 itemGroup.glacidus.blocks.tab=Glacidus Blocks
 itemGroup.glacidus.items.tab=Glacidus Items
+itemGroup.glacidus.tools.tab=Glacidus Tools
 
 # Subtitles
 subtitles.mob.porcali.say=Porcali growls
 subtitles.mob.porcali.hurt=Porcali hurts
 subtitles.mob.porcali.death=Porcali dies
+subtitles.mob.merialces.say=Merialces grumbles
+subtitles.mob.merialces.hurt=Merialces hurts
+subtitles.mob.merialces.death=Merialces dies
 subtitles.block.glacium.ambient=Glacium crackles
 subtitles.block.glacium.pop=Glacium pops
 
