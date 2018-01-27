@@ -1,5 +1,7 @@
 package com.legacy.glacidus.util;
 
+import com.legacy.glacidus.blocks.BlocksGlacidus;
+
 import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.block.state.pattern.BlockPattern.PatternHelper;
@@ -16,6 +18,8 @@ public class ModUtils
 
 	private static BlockPattern bottomShape, middleShape, highMiddleShape, topShape;
 
+	private static BlockPattern solidBottomShape, solidMiddleShape, solidHighMiddleShape, solidTopShape;
+
 	public static void registerEvent(Object object)
 	{
 		MinecraftForge.EVENT_BUS.register(object);
@@ -26,22 +30,43 @@ public class ModUtils
         if (bottomShape == null)
         {
         	bottomShape = FactoryBlockPattern.start().aisle("IIGII", "IAAAI", "IAAAI", "IAAAI", "IIIII").where('G', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.GLOWSTONE))).where('A', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR))).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.PACKED_ICE))).build();
+        	solidBottomShape = FactoryBlockPattern.start().aisle("IIGII", "IXXXI", "IXXXI", "IXXXI", "IIIII").where('X', BlockWorldState.hasState(BlockStateMatcher.forBlock(BlocksGlacidus.glacidus_portal))).where('G', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.GLOWSTONE))).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(BlocksGlacidus.glacidus_portal_frame))).build();
         }
 
         if (middleShape == null)
         {
-        	middleShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "IAAAI", "IIIII").where('A', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR))).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.PACKED_ICE))).build();
+        	middleShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "IAAAI", "IIIII").where('A', BlockWorldState.hasState(BlockStateMatcher.ANY)).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.PACKED_ICE))).build();
+        	solidMiddleShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "IAAAI", "IIIII").where('A', BlockWorldState.hasState(BlockStateMatcher.ANY)).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(BlocksGlacidus.glacidus_portal_frame))).build();
         }
 
         if (highMiddleShape == null)
         {
-        	highMiddleShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "AAAAA", "IIIII").where('A', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR))).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.PACKED_ICE))).build();
+        	highMiddleShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "AAAAA", "IIIII").where('A', BlockWorldState.hasState(BlockStateMatcher.ANY)).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.PACKED_ICE))).build();
+        	solidHighMiddleShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "AAAAA", "IIIII").where('A', BlockWorldState.hasState(BlockStateMatcher.ANY)).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(BlocksGlacidus.glacidus_portal_frame))).build();
         }
 
         if (topShape == null)
         {
-        	topShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "AAAAA", "AIIIA").where('A', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR))).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.PACKED_ICE))).build();
+        	topShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "AAAAA", "AIIIA").where('A', BlockWorldState.hasState(BlockStateMatcher.ANY)).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.PACKED_ICE))).build();
+        	solidTopShape = FactoryBlockPattern.start().aisle("AAAAA", "AAAAA", "AAAAA", "AAAAA", "AIIIA").where('A', BlockWorldState.hasState(BlockStateMatcher.ANY)).where('I', BlockWorldState.hasState(BlockStateMatcher.forBlock(BlocksGlacidus.glacidus_portal_frame))).build();
         }
+    }
+
+    public static PatternHelper matchesGlacidusSolidPortalShape(World world, BlockPos pos)
+    {
+    	getOrCreateGlacidusPortalShape();
+
+    	PatternHelper bottomPattern = solidBottomShape.match(world, pos);
+    	PatternHelper middlePattern = solidMiddleShape.match(world, pos.up());
+    	PatternHelper highMiddlePattern = solidHighMiddleShape.match(world, pos.up(2));
+    	PatternHelper topPattern = solidTopShape.match(world, pos.up(3));
+
+    	if (bottomPattern != null && middlePattern != null && highMiddlePattern != null && topPattern != null)
+    	{
+    		return bottomPattern;
+    	}
+
+    	return null;
     }
 
     public static PatternHelper matchesGlacidusPortalShape(World world, BlockPos pos)

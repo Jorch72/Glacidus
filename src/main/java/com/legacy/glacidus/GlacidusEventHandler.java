@@ -33,13 +33,60 @@ public class GlacidusEventHandler
         {
             BlockPos blockpos = ModUtils.offsetPortalPosition(blockpattern$patternhelper);
 
-            for (int j = 0; j < 3; ++j)
+            for (int j = -1; j < 4; ++j)
             {
-                for (int k = 0; k < 3; ++k)
-                {
-                	event.getWorld().setBlockState(blockpos.add(j, 0, k), BlocksGlacidus.glacidus_portal.getDefaultState(), 2);
-                }
+            	for (int y = 0; y < 4; ++y)
+            	{
+                    for (int k = -1; k < 4; ++k)
+                    {
+                    	BlockPos pos = blockpos.add(j, y, k);
+
+                    	if ((j <= 2 && j >= 0) && (k <= 2 && k >= 0) && y == 0)
+                    	{
+                        	event.getWorld().setBlockState(pos, BlocksGlacidus.glacidus_portal.getDefaultState(), 2);
+                    	}
+
+                    	if (event.getWorld().getBlockState(pos).getBlock() == Blocks.PACKED_ICE)
+                    	{
+                    		event.getWorld().setBlockState(pos, BlocksGlacidus.glacidus_portal_frame.getDefaultState(), 2);
+                    	}
+                    }
+            	}
             }
+
+            event.setCanceled(true);
+            return;
+        }
+
+        BlockPattern.PatternHelper blockpattern$patternhelper1 = ModUtils.matchesGlacidusSolidPortalShape(event.getWorld(), event.getPos());
+
+        if (blockpattern$patternhelper1 != null)
+        {
+            BlockPos blockpos = ModUtils.offsetPortalPosition(blockpattern$patternhelper1);
+
+            for (int j = -1; j < 4; ++j)
+            {
+            	for (int y = 0; y < 4; ++y)
+            	{
+                    for (int k = -1; k < 4; ++k)
+                    {
+                    	BlockPos pos = blockpos.add(j, y, k);
+
+                    	if ((j <= 2 && j >= 0) && (k <= 2 && k >= 0) && y == 0)
+                    	{
+                        	event.getWorld().setBlockState(pos, Blocks.AIR.getDefaultState(), 2);
+                    	}
+
+                    	if (event.getWorld().getBlockState(pos).getBlock() == BlocksGlacidus.glacidus_portal_frame)
+                    	{
+                    		event.getWorld().setBlockState(pos, Blocks.PACKED_ICE.getDefaultState(), 2);
+                    	}
+                    }
+            	}
+            }
+
+            event.setCanceled(true);
+            return;
         }
 	}
 

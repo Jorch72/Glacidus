@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -31,7 +32,9 @@ public class BlockGlacidusPortal extends BlockContainer
 		super(Material.PORTAL);
 
 		this.setLightLevel(1.0F);
+		this.setSoundType(SoundType.STONE);
 		this.setBlockUnbreakable();
+		this.setResistance(99999999F);
 	}
 
     public EnumBlockRenderType getRenderType(IBlockState state)

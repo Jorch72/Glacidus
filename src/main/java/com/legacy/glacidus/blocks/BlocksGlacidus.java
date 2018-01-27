@@ -56,6 +56,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_portal")
 	public static Block glacidus_portal;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_portal_frame")
+	public static Block glacidus_portal_frame;
+
 	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_grass")
 	public static Block lumicia_grass;
 
@@ -125,6 +128,7 @@ public class BlocksGlacidus
 		dead_lumicia = register("dead_lumicia", new BlockDeadLumicia());
 
 		glacidus_portal  = register("glacidus_portal", new BlockGlacidusPortal());
+		glacidus_portal_frame = register("glacidus_portal_frame", new BlockGlacidusPortalFrame());
 
 		lumicia_grass = register("lumicia_grass", new BlockLumiciaGrass());
 		lumicia_dirt = register("lumicia_dirt", new BlockLumiciaDirt());
