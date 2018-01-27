@@ -12,6 +12,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.legacy.glacidus.ModConfig;
+import com.legacy.glacidus.client.sounds.ambient.LayerAmbientSound;
 
 @SideOnly(Side.CLIENT)
 public class MusicHandler implements ITickable
@@ -19,6 +20,8 @@ public class MusicHandler implements ITickable
     private final Random rand = new Random();
     private final Minecraft mc;
     private ISound currentMusic;
+    private boolean ambienceMusicPlaying;
+    private final LayerAmbientSound topLayerAmbience;
     private int timeUntilNextMusic = 100;
 
     private static MusicHandler INSTANCE;
@@ -26,6 +29,7 @@ public class MusicHandler implements ITickable
     public MusicHandler(Minecraft mcIn)
     {
         this.mc = mcIn;
+        this.topLayerAmbience = new LayerAmbientSound(null, GlacidusSounds.AMBIENT_WIND_HUM, 0);
     }
 
     public static MusicHandler getInstance()
@@ -43,6 +47,23 @@ public class MusicHandler implements ITickable
      */
     public void update()
     {
+    	if (this.topLayerAmbience.isDonePlaying() && this.ambienceMusicPlaying)
+    	{
+    		this.topLayerAmbience.resetSong();
+    		this.ambienceMusicPlaying = false;
+    	}
+
+    	if (this.mc.player != null)
+    	{
+    		this.topLayerAmbience.setPlayer(this.mc.player);
+
+    		if (!this.ambienceMusicPlaying && this.topLayerAmbience.canPlay())
+    		{
+        		this.mc.getSoundHandler().playSound(this.topLayerAmbience);
+        		this.ambienceMusicPlaying = true;
+    		}
+    	}
+
         MusicHandler.MusicType musicticker$musictype = this.getRandomMusicType();
 
         if (this.currentMusic != null)
@@ -70,7 +91,14 @@ public class MusicHandler implements ITickable
 
     public boolean isMusicPlaying()
     {
-    	return this.currentMusic != null;
+    	boolean flag = false;
+
+    	for (MusicType value : MusicType.values())
+    	{
+    		flag = this.playingMusic(value);
+    	}
+
+    	return flag;
     }
 
     /**
@@ -78,9 +106,14 @@ public class MusicHandler implements ITickable
      */
     public void playMusic(MusicHandler.MusicType requestedMusicType)
     {
-        this.currentMusic = PositionedSoundRecord.getMusicRecord(requestedMusicType.getMusicLocation());
+        this.currentMusic = requestedMusicType.getSound();
         this.mc.getSoundHandler().playSound(this.currentMusic);
         this.timeUntilNextMusic = Integer.MAX_VALUE;
+    }
+
+    private boolean playingMusic(MusicType musicType)
+    {
+    	return this.mc.getSoundHandler().isSoundPlaying(musicType.getSound());
     }
 
     private MusicHandler.MusicType getRandomMusicType()
@@ -91,27 +124,27 @@ public class MusicHandler implements ITickable
     @SideOnly(Side.CLIENT)
     public static enum MusicType
     {
-        GoodbyePlanet(GlacidusSounds.MUSIC_TRACK_ONE, 1500, 4400),
-        SicutTerrae(GlacidusSounds.MUSIC_TRACK_TWO, 1500, 4400),
-        Underground(GlacidusSounds.MUSIC_TRACK_THREE, 1500, 4400);
+        GoodbyePlanet(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_ONE), 1500, 4400),
+        SicutTerrae(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_TWO), 1500, 4400),
+        Underground(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_THREE), 1500, 4400);
 
-        private final SoundEvent musicLocation;
+        private final ISound sound;
         private final int minDelay;
         private final int maxDelay;
 
-        private MusicType(SoundEvent musicLocationIn, int minDelayIn, int maxDelayIn)
+        private MusicType(ISound soundIn, int minDelayIn, int maxDelayIn)
         {
-            this.musicLocation = musicLocationIn;
+            this.sound = soundIn;
             this.minDelay = minDelayIn;
             this.maxDelay = maxDelayIn;
         }
 
         /**
-         * Gets the {@link SoundEvent} containing the current music track's location
+         * Gets the {@link ISound} containing the current music track
          */
-        public SoundEvent getMusicLocation()
+        public ISound getSound()
         {
-            return this.musicLocation;
+            return this.sound;
         }
 
         /**

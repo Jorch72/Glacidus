@@ -24,6 +24,8 @@ public class GlacidusSounds
 	public static SoundEvent PORCALI_HURT;
 	public static SoundEvent PORCALI_DEATH;
 
+	public static SoundEvent AMBIENT_WIND_HUM;
+
 	public static void initialization(IForgeRegistry<SoundEvent> registry)
 	{
 		iSoundRegistry = registry;
@@ -39,7 +41,8 @@ public class GlacidusSounds
 		MUSIC_TRACK_TWO = register("music.track_two");
 		MUSIC_TRACK_THREE = register("music.track_three");
 		
-		MUSIC_TRACK_THREE = register("music.disc_one");
+		//MUSIC_DISC_ONE = register("music.disc_one");
+		AMBIENT_WIND_HUM = register("ambient.wind_hum");
 	}
 
 	private static SoundEvent register(String name)

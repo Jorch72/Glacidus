@@ -26,6 +26,14 @@
 			}
 		]
 	},
+	"ambient.wind_hum": {
+		"category": "ambient",
+		"sounds":[
+			{
+				"name": "glacidus:ambient/glacidus_wind_hum"
+			}
+		]
+	},
 	"block.glacium.pop": {
 		"category": "block",
 		"subtitle": "subtitles.block.glacium.pop",
