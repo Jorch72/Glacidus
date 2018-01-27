@@ -14,6 +14,7 @@ public class BlockCrysiumOre extends Block
 		this.setHardness(3.0F);
 		this.setResistance(5.0F);
 		this.setSoundType(SoundType.STONE);
+		this.setLightLevel(1F);
 	}
 
 }
