@@ -62,8 +62,6 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
     public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer)
     {
-        int j = this.world.getSeaLevel() / 2 + 1;
-
         this.buffer = this.getHeights(this.buffer, p_185936_1_ * 4, 0, p_185936_2_ * 4, 5, 17, 5);
 
         for (int j1 = 0; j1 < 4; ++j1)
@@ -435,6 +433,14 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
             if (l2 < 60)
             {
                 (new WorldGenCoreLakes(Blocks.LAVA)).generate(this.world, this.random, blockpos.add(i2, l2, k3));
+            }
+        }
+
+        if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.GLOWSTONE))
+        {
+            for (int j1 = 0; j1 < this.random.nextInt(this.random.nextInt(10) + 1); ++j1)
+            {
+                (new WorldGenCoreCrysiumOre()).generate(this.world, this.random, blockpos.add(this.random.nextInt(16) + 8, this.random.nextInt(10) + 70, this.random.nextInt(16) + 8));
             }
         }
 

@@ -10,6 +10,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
 import com.legacy.glacidus.world.features.WorldGenCoreFlowers;
+import com.legacy.glacidus.world.features.WorldGenCoreMinable;
 import com.legacy.glacidus.world.features.WorldGenTopSpikes;
 
 public class BiomeGlacidusDecorator extends BiomeDecorator
@@ -18,6 +19,10 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
 	public WorldGenCoreFlowers coreFlowerGen = new WorldGenCoreFlowers(BlocksGlacidus.crysial_flower);
 
 	public WorldGenTopSpikes spikeGen = new WorldGenTopSpikes();
+
+	public WorldGenCoreMinable dirtGen = new WorldGenCoreMinable(BlocksGlacidus.lumicia_dirt.getDefaultState(), 32);
+
+	public WorldGenCoreMinable eukieteGen = new WorldGenCoreMinable(BlocksGlacidus.eukeite_ore.getDefaultState(), 6);
 
 	@Override
     protected void genDecorations(Biome biomeIn, World worldIn, Random random)
@@ -125,4 +130,14 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
         net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Post(worldIn, random, this.chunkPos));
     }
 
+	@Override
+    protected void generateOres(World worldIn, Random random)
+    {
+        net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Pre(worldIn, random, this.chunkPos));
+        if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, this.dirtGen, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM))
+        this.genStandardOre1(worldIn, random, 20, this.dirtGen, 70, 28);
+        if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, this.eukieteGen, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM))
+        this.genStandardOre1(worldIn, random, 6, this.eukieteGen, 70, 28);
+        net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(worldIn, random, this.chunkPos));
+    }
 }
