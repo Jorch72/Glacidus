@@ -2,7 +2,7 @@
 	"parent": "item/generated",
 	"textures": {
         
-		"layer0": "glacidus:items/glacidus_portal_block"
+		"layer0": "glacidus:items/grilled_porcali_meat"
     
 	}
 
