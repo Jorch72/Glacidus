@@ -20,7 +20,7 @@ public class EntitiesGlacidus
 		register("drop_spider", EntityDropSpider.class, 0xFFFFF, 0x555555);
 		register("porcali", EntityPorcali.class, 0xd4a8fb, 0x3dff66);
 		register("merialces", EntityMerialces.class, 0x835235, 0x8ed2f9);
-		register("glimmer", EntityGlimmer.class);
+		//register("glimmer", EntityGlimmer.class);
 	}
 
 	private static void register(String entityName, Class<? extends Entity> clazz, int primaryEggColor, int secondaryEggColor)
