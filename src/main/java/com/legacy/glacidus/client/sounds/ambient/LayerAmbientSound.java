@@ -10,6 +10,7 @@ import com.legacy.glacidus.ModConfig;
 public class LayerAmbientSound extends MovingSound
 {
 
+	@SuppressWarnings("unused")
 	private int layerId;
 
 	private EntityPlayer player;
@@ -48,22 +49,20 @@ public class LayerAmbientSound extends MovingSound
 			return;
 		}
 
-		if ((this.layerId == 0 && !this.isInRange(73, 255)) || (this.layerId == 1 && !this.isInRange(51, 72)) || (this.layerId == 2 && !this.isInRange(0, 50)))
+		/*if ((this.layerId == 0 && !this.isInRange(73, 255)) || (this.layerId == 1 && !this.isInRange(51, 72)) || (this.layerId == 2 && !this.isInRange(0, 50)))
 		{
 			this.volume -= 0.1F;
-		}
+		}*/
 
 		if (this.volume <= 0.0F)
 		{
 			this.donePlaying = true;
 		}
-
-		System.out.println(this.donePlaying);
 	}
 
 	public boolean canPlay()
 	{
-		return this.player != null && this.player.dimension == ModConfig.dimensionID && ((this.layerId == 0 && this.isInRange(73, 255)) || (this.layerId == 1 && this.isInRange(51, 72)) || (this.layerId == 2 && this.isInRange(0, 50)));
+		return this.player != null && this.player.dimension == ModConfig.dimensionID;/* && ((this.layerId == 0 && this.isInRange(73, 255)) || (this.layerId == 1 && this.isInRange(51, 72)) || (this.layerId == 2 && this.isInRange(0, 50)));*/
 	}
 
 	public void setPlayer(EntityPlayer player)
@@ -80,6 +79,7 @@ public class LayerAmbientSound extends MovingSound
 		this.donePlaying = false;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean isInRange(int min, int max)
 	{
 		return this.player.posY <= max && this.player.posY >= min;
