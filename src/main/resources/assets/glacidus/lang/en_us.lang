@@ -9,10 +9,10 @@ entity.drop_spider.name=Drop Spider
 
 # Advancements
 advancements.glacidus.root.title=Glacidus
-advancements.glacidus.enter=It's Freezing Here..
-advancements.glacidus.middle_layer=Don't Judge a Book by the Cover
-advancements.glacidus.get_wood=New world, same Routine
-advancements.glacidus.glowey_flowers=Glowey Flowers?
+advancements.glacidus.enter=It's Freezing Here...
+advancements.glacidus.middle_layer=Don't Judge a Book by it's Cover
+advancements.glacidus.get_wood=New World, Same Routine
+advancements.glacidus.glowey_flowers=Glowey Flowers!
 
 # Advancement Descriptions
 advancements.glacidus.root.desc=The Glacidus dimension.
