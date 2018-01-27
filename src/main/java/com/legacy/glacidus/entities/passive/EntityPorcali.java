@@ -1,11 +1,9 @@
 package com.legacy.glacidus.entities.passive;
 
-import com.google.common.collect.Sets;
-import com.legacy.glacidus.client.sounds.GlacidusSounds;
-import com.legacy.glacidus.entities.util.EntityMount;
-
 import java.util.Set;
+
 import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
@@ -32,10 +30,13 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
+
+import com.google.common.collect.Sets;
+import com.legacy.glacidus.client.sounds.GlacidusSounds;
+import com.legacy.glacidus.entities.util.EntityMount;
 
 public class EntityPorcali extends EntityMount
 {
@@ -79,23 +80,6 @@ public class EntityPorcali extends EntityMount
 		}
 		this.setAttackTarget(this.getAttackingEntity());
 	}
-    
-    
-    
-    @Nullable
-    public Entity getControllingPassenger()
-    {
-        return this.getPassengers().isEmpty() ? null : (Entity)this.getPassengers().get(0);
-    }
-
-    /**
-     * returns true if all the conditions for steering the entity are met. For pigs, this is true if it is being ridden
-     * by a player and the player is holding a carrot-on-a-stick
-     */
-    public boolean canBeSteered()
-    {
-        return true;
-    }
 
     protected void entityInit()
     {
@@ -216,56 +200,6 @@ public class EntityPorcali extends EntityMount
         else
         {
             this.dataManager.set(SADDLED, Boolean.valueOf(false));
-        }
-    }
-
-    public void travel(float strafe, float vertical, float forward)
-    {
-        Entity entity = this.getPassengers().isEmpty() ? null : (Entity)this.getPassengers().get(0);
-
-        if (this.isBeingRidden() && this.canBeSteered())
-        {
-            this.rotationYaw = entity.rotationYaw;
-            this.prevRotationYaw = this.rotationYaw;
-            this.rotationPitch = entity.rotationPitch * 0.5F;
-            this.setRotation(this.rotationYaw, this.rotationPitch);
-            this.renderYawOffset = this.rotationYaw;
-            this.rotationYawHead = this.rotationYaw;
-            this.stepHeight = 1.0F;
-            this.jumpMovementFactor = this.getAIMoveSpeed() * 0.1F;
-
-            if (this.canPassengerSteer())
-            {
-                float f = (float)this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 0.225F;
-
-                this.setAIMoveSpeed(f);
-                super.travel(0.0F, 0.0F, 1.0F);
-            }
-            else
-            {
-                this.motionX = 0.0D;
-                this.motionY = 0.0D;
-                this.motionZ = 0.0D;
-            }
-
-            this.prevLimbSwingAmount = this.limbSwingAmount;
-            double d1 = this.posX - this.prevPosX;
-            double d0 = this.posZ - this.prevPosZ;
-            float f1 = MathHelper.sqrt(d1 * d1 + d0 * d0) * 4.0F;
-
-            if (f1 > 1.0F)
-            {
-                f1 = 1.0F;
-            }
-
-            this.limbSwingAmount += (f1 - this.limbSwingAmount) * 0.4F;
-            this.limbSwing += this.limbSwingAmount;
-        }
-        else
-        {
-            this.stepHeight = 0.5F;
-            this.jumpMovementFactor = 0.02F;
-            super.travel(strafe, vertical, forward);
         }
     }
 

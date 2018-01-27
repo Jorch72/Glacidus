@@ -16,7 +16,7 @@ public class WorldGlacidus
 
 	public static void initialization()
 	{
-		dimension = DimensionType.register("Glacidus", "_glacidus", ModConfig.dimensionID, WorldProviderGlacidus.class, true);
+		dimension = DimensionType.register("Glacidus", "_glacidus", ModConfig.dimensionID, WorldProviderGlacidus.class, false);
 
 		DimensionManager.registerDimension(ModConfig.dimensionID, dimension);
 	}

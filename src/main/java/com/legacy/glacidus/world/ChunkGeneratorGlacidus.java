@@ -11,7 +11,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
@@ -20,6 +19,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
+import com.legacy.glacidus.world.features.GlacidusEntitySpawner;
 import com.legacy.glacidus.world.features.WorldGenCoreLakes;
 
 public class ChunkGeneratorGlacidus implements IChunkGenerator
@@ -47,8 +47,8 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 	private Random random;
 
     public ChunkGeneratorGlacidus(World worldIn, long seed)
-    {
-    	this.world = worldIn;
+	    {
+	    	this.world = worldIn;
     	this.random = new Random(seed);
         this.lperlinNoise1 = new NoiseGeneratorOctaves(this.random, 16);
         this.lperlinNoise2 = new NoiseGeneratorOctaves(this.random, 16);
@@ -118,41 +118,69 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
                                 		iblockstate = BlocksGlacidus.glacium.getDefaultState();
                                 	}
 
-                                	primer.setBlockState(l2, i3 + 70, j3, iblockstate);
+                                	primer.setBlockState(l2, i3 + 80, j3, iblockstate);
 
                                 	if (iblockstate != null)
                                 	{
                                 		if (iblockstate.getBlock() == BlocksGlacidus.glacium)
                                 		{
-                                    		iblockstate = BlocksGlacidus.molten_lava.getDefaultState();
-                                		}
-                                		else if (iblockstate.getBlock() == BlocksGlacidus.frozen_antinatric_stone)
-                                		{
-                                			iblockstate = BlocksGlacidus.thawed_antinatric_stone.getDefaultState();
+                                			iblockstate = null;
+
+                                			if (i3 <= 10)
+                                			{
+                                        		iblockstate = Blocks.LAVA.getDefaultState();
+                                			}
                                 		}
                                 	}
 
+                        			iblockstate = null;
                                 	primer.setBlockState(l2, i3, j3, iblockstate);
                                 }
                                 else
                                 {
-                                	if ((i3 <= 69 && i3 >= 65) || (i3 <= 29 && i3 >= 23))
+                                	if ((i3 <= 80 && i3 >= 72) || i3 == 29)
                                 	{
                                         iblockstate = BlocksGlacidus.frozen_antinatric_stone.getDefaultState();
                                 	}
-
-                                	if (i3 >= 75)
+                                	else if ((i3 <= 28 && i3 >= 23))
                                 	{
-                                		iblockstate = null;
+                                		iblockstate = BlocksGlacidus.thawed_antinatric_stone.getDefaultState();
                                 	}
 
-                                	if (i3 <= 72 && i3 >= 70 && iblockstate == null)
+                                	if (i3 <= 50 && i3 >= 25)
+                                	{
+                                		IBlockState newState = iblockstate;
+
+                                        if (d15 > 0.0D)
+                                        {
+                                        	newState = BlocksGlacidus.thawed_antinatric_stone.getDefaultState();
+                                        }
+
+                                        if (newState == BlocksGlacidus.frozen_antinatric_stone.getDefaultState())
+                                        {
+                                        	newState = Blocks.LAVA.getDefaultState();
+                                        }
+
+                                		primer.setBlockState(l2, i3 - 24, j3, newState);
+                                	}
+
+                                	if (i3 <= 83 && i3 >= 81 && iblockstate == null)
                                 	{
                                 		iblockstate = BlocksGlacidus.glacium.getDefaultState();
                                 	}
 
+                                	if (i3 >= 90)
+                                	{
+                                		iblockstate = null;
+                                	}
+
+                                	if (i3 <= 63 && i3 >= 28)
+                                	{
+                                		i3 += 7;
+                                	}
                                     primer.setBlockState(l2, i3, j3, iblockstate);
                                 }
+
                                 /*if (i3 <= 35 && i3 >= 20)
                                 {
                                 	if (i3 <= 10 && iblockstate == null)
@@ -221,7 +249,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                 for (int j1 = 127; j1 >= 0; --j1)
                 {
-                    if (j1 < 66 && j1 > 27)
+                    if (j1 < 71 && j1 > 27)
                     {
                         IBlockState iblockstate2 = primer.getBlockState(k, j1, j);
 
@@ -414,7 +442,7 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS))
         {
-            WorldEntitySpawner.performWorldGenSpawning(this.world, biome, i + 8, j + 8, 16, 16, this.random);
+            GlacidusEntitySpawner.performWorldGenSpawning(this.world, biome, i + 8, j + 8, 16, 16, this.random);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);

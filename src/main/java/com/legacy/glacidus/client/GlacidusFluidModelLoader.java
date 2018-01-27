@@ -25,7 +25,7 @@ public class GlacidusFluidModelLoader implements ICustomModelLoader
 			return false;
 		}
 
-		return modelLocation.getResourcePath().contains("glacium") || modelLocation.getResourcePath().contains("molten_lava");
+		return modelLocation.getResourcePath().contains("glacium");
 	}
 
 	@Override
@@ -34,10 +34,6 @@ public class GlacidusFluidModelLoader implements ICustomModelLoader
 		if (modelLocation.getResourcePath().contains("glacium"))
 		{
 			return new ModelFluid(BlocksGlacidus.GLACIUM);
-		}
-		else if (modelLocation.getResourcePath().contains("molten_lava"))
-		{
-			return new ModelFluid(BlocksGlacidus.MOLTEN_LAVA);
 		}
 
 		return null;

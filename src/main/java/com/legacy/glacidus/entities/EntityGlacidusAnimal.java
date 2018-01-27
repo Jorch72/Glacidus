@@ -1,9 +1,5 @@
 package com.legacy.glacidus.entities;
 
-import java.util.Random;
-
-import com.legacy.glacidus.blocks.BlocksGlacidus;
-
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -12,27 +8,26 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
+import com.legacy.glacidus.blocks.BlocksGlacidus;
+
 public abstract class EntityGlacidusAnimal extends EntityAnimal
-{    
-    Random random;
+{
 
     public EntityGlacidusAnimal(World worldIn)
     {
         super(worldIn);
     }
 
+    @Override
     public boolean getCanSpawnHere()
     {
         int i = MathHelper.floor(this.posX);
         int j = MathHelper.floor(this.getEntityBoundingBox().minY);
         int k = MathHelper.floor(this.posZ);
         BlockPos blockpos = new BlockPos(i, j, k);
-        return this.world.getBlockState(blockpos.down()).getBlock() == BlocksGlacidus.lumicia_grass && super.getCanSpawnHere();
-    }
 
-    protected boolean canDespawn()
-    {
-        return false;
+        System.out.println(blockpos.getY());
+        return blockpos.getY() <= 71 && blockpos.getY() >= 34 && this.world.getBlockState(blockpos.down()).getBlock() == BlocksGlacidus.lumicia_grass && super.getCanSpawnHere();
     }
 
     public boolean isBreedingItem(ItemStack stack)

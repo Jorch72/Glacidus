@@ -25,7 +25,7 @@ public class BiomeGlacidus extends Biome
 
 	public BiomeGlacidus()
 	{
-		super(new BiomeProperties("glacidus").setRainDisabled().setWaterColor(0xE0FFFF));
+		super(new BiomeProperties("glacidus").setRainDisabled().setWaterColor(0xFFFFFF));
 
 		this.setRegistryName(ModInfo.locate("glacidus"));
 

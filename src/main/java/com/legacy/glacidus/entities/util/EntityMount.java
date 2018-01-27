@@ -1,7 +1,5 @@
 package com.legacy.glacidus.entities.util;
 
-import com.legacy.glacidus.entities.EntityGlacidusAnimal;
-
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -11,13 +9,15 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
+import com.legacy.glacidus.entities.EntityGlacidusAnimal;
+
 public class EntityMount extends EntityGlacidusAnimal 
 {
-	
+
     protected float jumpPower;
+
     protected boolean mountJumping;
 
-	
 	public EntityMount(World worldIn)
 	{
 		super(worldIn);
@@ -27,7 +27,7 @@ public class EntityMount extends EntityGlacidusAnimal
     {
         if (this.isBeingRidden() && this.canBeSteered())
         {
-            EntityLivingBase entitylivingbase = (EntityLivingBase)this.getControllingPassenger();
+            EntityLivingBase entitylivingbase = (EntityLivingBase)this.getPassengers().get(0);
             this.rotationYaw = entitylivingbase.rotationYaw;
             this.prevRotationYaw = this.rotationYaw;
             this.rotationPitch = entitylivingbase.rotationPitch * 0.5F;
@@ -56,7 +56,7 @@ public class EntityMount extends EntityGlacidusAnimal
                     this.motionY += (double)((float)(this.getActivePotionEffect(MobEffects.JUMP_BOOST).getAmplifier() + 1) * 0.1F);
                 }
 
-                //this.setJumping(true);
+                this.setJumping(true);
                 this.jump();
                 this.isAirBorne = true;
 
@@ -111,30 +111,36 @@ public class EntityMount extends EntityGlacidusAnimal
             super.travel(strafe, vertical, forward);
         }
     }
-	
+
+	@Override
+    public boolean canBeSteered()
+    {
+        return true;
+    }
+
 	protected double getModifiedJumpStrength()
     {
         return 0.2D;
     }
 
-    /**
-     * Returns randomized movement speed
-     */
     protected double getModifiedMovementSpeed()
     {
         return (0.4D);
     }
-	
+
 	public boolean isJumping()
     {
         return this.mountJumping;
     }
-	
+
+	@Override
 	public void setJumping(boolean jumping)
     {
+		super.setJumping(jumping);
+
         this.mountJumping = jumping;
     }
-	
+
 	@Override
     public float getAIMoveSpeed()
     {

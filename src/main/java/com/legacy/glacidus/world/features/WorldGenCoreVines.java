@@ -25,7 +25,7 @@ public class WorldGenCoreVines extends WorldGenerator
 	@Override
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        for (; position.getY() < 128; position = position.up())
+        for (; position.getY() < 63; position = position.up())
         {
             if (worldIn.isAirBlock(position))
             {

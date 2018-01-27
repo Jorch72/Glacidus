@@ -2,15 +2,12 @@ package com.legacy.glacidus.blocks.natural;
 
 import java.util.Random;
 
-import javax.annotation.Nonnull;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.relauncher.Side;
@@ -27,12 +24,6 @@ public class BlockGlaciumStatic extends BlockFluidClassic
 	{
 		super(BlocksGlacidus.GLACIUM, GlacidusMaterial.GLACIUM);
 	}
-
-	@Override
-    public int getLightValue(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos)
-    {
-    	return 0;
-    }
 
 	@Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
