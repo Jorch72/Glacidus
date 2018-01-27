@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "glacidus",
+  "name": "Glacidus",
+  "description": "A frozen alien world on top, but underground... lies a different story.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "http://moddinglegacy.com",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["115kino, KingPhygieBoo, xJonL"],
+  "credits": "The ModOff team for allowing this mod to be entered in the competition.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
