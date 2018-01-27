@@ -24,6 +24,10 @@ public class GlacidusSounds
 	public static SoundEvent PORCALI_SAY;
 	public static SoundEvent PORCALI_HURT;
 	public static SoundEvent PORCALI_DEATH;
+	
+	public static SoundEvent MERIALCES_SAY;
+	public static SoundEvent MERIALCES_HURT;
+	public static SoundEvent MERIALCES_DEATH;
 
 	public static SoundEvent AMBIENT_WIND_HUM;
 
@@ -34,6 +38,10 @@ public class GlacidusSounds
 		PORCALI_SAY = register("mob.porcali.say");
 		PORCALI_HURT = register("mob.porcali.hurt");
 		PORCALI_DEATH = register("mob.porcali.death");
+		
+		MERIALCES_SAY = register("mob.merialces.say");
+		MERIALCES_HURT = register("mob.merialces.hurt");
+		MERIALCES_DEATH = register("mob.merialces.death");
 		
 		BLOCK_GLACIUM_POP = register("block.glacium.pop");
 		BLOCK_GLACIUM_AMBIENT = register("block.glacium.ambient");

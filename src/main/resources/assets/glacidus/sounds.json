@@ -62,7 +62,7 @@
 		]
 	},
 	"mob.porcali.say": {
-		"category": "block",
+		"category": "neutral",
 		"subtitle": "subtitles.mob.porcali.say",
 		"sounds": [
 	    	"glacidus:mob/porcali/porcali_idle1",
@@ -71,7 +71,7 @@
 		]	
 	},
 	"mob.porcali.hurt": {
-		"category": "block",
+		"category": "neutral",
 		"subtitle": "subtitles.mob.porcali.hurt",
 		"sounds": [
 	    	"glacidus:mob/porcali/porcali_hurt1",
@@ -80,10 +80,35 @@
 		]	
 	},
 	"mob.porcali.death": {
-		"category": "block",
+		"category": "neutral",
 		"subtitle": "subtitles.mob.porcali.death",
 		"sounds": [
 	    	"glacidus:mob/porcali/porcali_death"
+		]	
+	},
+	"mob.merialces.say": {
+		"category": "neutral",
+		"subtitle": "subtitles.mob.merialces.say",
+		"sounds": [
+	    	"glacidus:mob/merialces/merialces_idle1",
+			"glacidus:mob/merialces/merialces_idle2",
+			"glacidus:mob/merialces/merialces_idle3"
+		]	
+	},
+	"mob.merialces.hurt": {
+		"category": "neutral",
+		"subtitle": "subtitles.mob.merialces.hurt",
+		"sounds": [
+	    	"glacidus:mob/merialces/merialces_hurt1",
+			"glacidus:mob/merialces/merialces_hurt2",
+			"glacidus:mob/merialces/merialces_hurt3"
+		]	
+	},
+	"mob.merialces.death": {
+		"category": "neutral",
+		"subtitle": "subtitles.mob.merialces.death",
+		"sounds": [
+	    	"glacidus:mob/merialces/merialces_death"
 		]	
 	}
 }

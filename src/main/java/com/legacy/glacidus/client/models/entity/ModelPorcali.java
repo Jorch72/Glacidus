@@ -1,12 +1,13 @@
 package com.legacy.glacidus.client.models.entity;
 
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelPig;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class ModelPorcali extends ModelBase 
+public class ModelPorcali extends ModelPig 
 {	
     public ModelRenderer body;
     public ModelRenderer leg4;
@@ -19,8 +20,8 @@ public class ModelPorcali extends ModelBase
     public ModelRenderer hornbottom2;
     public ModelRenderer horntop2;
     public ModelRenderer horntop1;
-    protected float childYOffset = 8.0F;
-    protected float childZOffset = 4.0F;
+    protected float childYOffset = 4.0F;
+    //protected float childZOffset = 4.0F;
 
 
     public ModelPorcali(float scale) 
@@ -74,23 +75,25 @@ public class ModelPorcali extends ModelBase
 
         if (this.isChild)
         {
-            GlStateManager.pushMatrix();
-            GlStateManager.translate(0.0F, this.childYOffset * scale, this.childZOffset * scale);
-            this.head.render(scale);
-            GlStateManager.popMatrix();
-            GlStateManager.pushMatrix();
-            GlStateManager.scale(0.5F, 0.5F, 0.5F);
-            GlStateManager.translate(0.0F, 24.0F * scale, 0.0F);
+
+        	 float f = 2.0F;
+             GlStateManager.pushMatrix();
+             GlStateManager.translate(0.0F, this.childYOffset * scale, this.childZOffset * scale);
+             this.head.render(scale);
+             this.snoot.render(scale);
+             this.horntop1.render(scale);
+             this.horntop2.render(scale);
+             this.hornbottom1.render(scale);
+             this.hornbottom2.render(scale);
+             GlStateManager.popMatrix();
+             GlStateManager.pushMatrix();
+             GlStateManager.scale(0.6F, 0.6F, 0.6F);
+             GlStateManager.translate(0.0F, 16.0F * scale, 0.0F);
             this.body.render(scale);
             this.leg1.render(scale);
             this.leg2.render(scale);
             this.leg3.render(scale);
             this.leg4.render(scale);
-            this.snoot.render(scale);
-            this.horntop1.render(scale);
-            this.horntop2.render(scale);
-            this.hornbottom1.render(scale);
-            this.hornbottom2.render(scale);
             GlStateManager.popMatrix();
         }
         else

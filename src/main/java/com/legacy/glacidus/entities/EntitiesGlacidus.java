@@ -2,6 +2,7 @@ package com.legacy.glacidus.entities;
 
 import com.legacy.glacidus.Glacidus;
 import com.legacy.glacidus.entities.hostile.EntityDropSpider;
+import com.legacy.glacidus.entities.passive.EntityMerialces;
 import com.legacy.glacidus.entities.passive.EntityPorcali;
 import com.legacy.glacidus.entities.util.EntityGlimmer;
 import com.legacy.glacidus.util.ModInfo;
@@ -17,7 +18,8 @@ public class EntitiesGlacidus
 	public static void initialization()
 	{
 		register("drop_spider", EntityDropSpider.class, 0xFFFFF, 0x555555);
-		register("porcali", EntityPorcali.class, 0xffffff, 0xffffff);
+		register("porcali", EntityPorcali.class, 0xd4a8fb, 0x3dff66);
+		register("merialces", EntityMerialces.class, 0x835235, 0x8ed2f9);
 		register("glimmer", EntityGlimmer.class);
 	}
 

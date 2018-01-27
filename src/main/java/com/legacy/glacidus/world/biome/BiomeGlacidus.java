@@ -15,6 +15,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import com.google.common.collect.Lists;
 import com.legacy.glacidus.blocks.BlocksGlacidus;
 import com.legacy.glacidus.entities.passive.EntityPorcali;
+import com.legacy.glacidus.entities.passive.EntityMerialces;
 import com.legacy.glacidus.util.ModInfo;
 import com.legacy.glacidus.world.features.WorldGenCoreTallGrass;
 import com.legacy.glacidus.world.features.WorldGenCoreVines;
@@ -36,8 +37,9 @@ public class BiomeGlacidus extends Biome
 	{
 		ArrayList<SpawnListEntry> entityList = new ArrayList<SpawnListEntry>();
 
-		entityList.add(new Biome.SpawnListEntry(EntityPorcali.class, 10, 4, 4));
-
+		entityList.add(new Biome.SpawnListEntry(EntityPorcali.class, 7, 2, 3));
+		entityList.add(new Biome.SpawnListEntry(EntityMerialces.class, 5, 1, 2));
+		
 		this.modSpawnableLists.put(EnumCreatureType.CREATURE, entityList);
 	}
 

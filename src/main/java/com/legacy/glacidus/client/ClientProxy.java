@@ -48,7 +48,7 @@ public class ClientProxy extends CommonProxy
 			//colors[2] = 1.0F;
 			
 			//Surface
-			if (player.posY > 60)
+			if (player.posY > 74)
 			{				
 				colors[0] = colors[0] + 0.10F;
 				colors[1] = colors[1] + 0.09F;

@@ -9,6 +9,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
+import com.legacy.glacidus.items.ItemsGlacidus;
 
 public abstract class EntityGlacidusAnimal extends EntityAnimal
 {
@@ -32,7 +33,7 @@ public abstract class EntityGlacidusAnimal extends EntityAnimal
 
     public boolean isBreedingItem(ItemStack stack)
     {
-        return stack.getItem() == Items.WHEAT;
+        return stack.getItem() == ItemsGlacidus.grapes;
     }
 
     public void onLivingUpdate()

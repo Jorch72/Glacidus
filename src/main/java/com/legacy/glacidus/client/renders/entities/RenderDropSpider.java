@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.legacy.glacidus.client.models.ModelDropSpider;
+import com.legacy.glacidus.client.models.entity.ModelDropSpider;
 import com.legacy.glacidus.client.renders.entities.layers.LayerDropSpiderEyes;
 import com.legacy.glacidus.entities.hostile.EntityDropSpider;
 

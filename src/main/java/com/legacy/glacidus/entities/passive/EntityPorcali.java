@@ -38,11 +38,12 @@ import net.minecraft.world.storage.loot.LootTableList;
 import com.google.common.collect.Sets;
 import com.legacy.glacidus.client.sounds.GlacidusSounds;
 import com.legacy.glacidus.entities.util.EntityMount;
+import com.legacy.glacidus.items.ItemsGlacidus;
 
 public class EntityPorcali extends EntityMount
 {
     private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityPorcali.class, DataSerializers.BOOLEAN);
-    private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.CARROT, Items.POTATO, Items.BEETROOT);
+    //private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.CARROT, Items.POTATO, Items.BEETROOT);
     
     public EntityPorcali(World worldIn)
     {
@@ -54,8 +55,7 @@ public class EntityPorcali extends EntityMount
     {
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(4, new EntityAITempt(this, 1.2D, Items.CARROT_ON_A_STICK, false));
-        this.tasks.addTask(4, new EntityAITempt(this, 1.2D, false, TEMPTATION_ITEMS));
+        this.tasks.addTask(4, new EntityAITempt(this, 1.2D, ItemsGlacidus.grapes, false));
         this.tasks.addTask(5, new EntityAIFollowParent(this, 1.1D));
         this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -215,11 +215,6 @@ public class EntityPorcali extends EntityMount
     public EntityPorcali createChild(EntityAgeable ageable)
     {
         return new EntityPorcali(this.world);
-    }
-    
-    public boolean isBreedingItem(ItemStack stack)
-    {
-        return TEMPTATION_ITEMS.contains(stack.getItem());
     }
     
     @Override

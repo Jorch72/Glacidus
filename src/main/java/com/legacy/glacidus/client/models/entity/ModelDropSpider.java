@@ -1,4 +1,4 @@
-package com.legacy.glacidus.client.models;
+package com.legacy.glacidus.client.models.entity;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
