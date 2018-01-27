@@ -58,6 +58,12 @@ public class MusicHandler implements ITickable
 
     		if (!this.ambienceMusicPlaying && this.topLayerAmbience.canPlay())
     		{
+    			if (this.mc.getSoundHandler().isSoundPlaying(this.topLayerAmbience))
+    			{
+    				this.mc.getSoundHandler().stopSound(this.topLayerAmbience);
+    				return;
+    			}
+
         		this.mc.getSoundHandler().playSound(this.topLayerAmbience);
         		this.ambienceMusicPlaying = true;
     		}
