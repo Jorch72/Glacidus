@@ -6,7 +6,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -118,7 +117,7 @@ public class MusicHandler implements ITickable
 
     private MusicHandler.MusicType getRandomMusicType()
     {
-    	return MusicHandler.MusicType.values()[this.rand.nextInt(3)];
+    	return MusicHandler.MusicType.values()[this.rand.nextInt(4)];
     }
 
     @SideOnly(Side.CLIENT)
@@ -126,7 +125,8 @@ public class MusicHandler implements ITickable
     {
         GoodbyePlanet(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_ONE), 1500, 4400),
         SicutTerrae(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_TWO), 1500, 4400),
-        Underground(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_THREE), 1500, 4400);
+        Underground(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_THREE), 1500, 4400),
+        Mitescere(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_FOUR), 1500, 4400);
 
         private final ISound sound;
         private final int minDelay;

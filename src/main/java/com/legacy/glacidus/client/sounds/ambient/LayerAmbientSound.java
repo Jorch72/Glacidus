@@ -1,12 +1,11 @@
 package com.legacy.glacidus.client.sounds.ambient;
 
-import com.legacy.glacidus.ModConfig;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+
+import com.legacy.glacidus.ModConfig;
 
 public class LayerAmbientSound extends MovingSound
 {

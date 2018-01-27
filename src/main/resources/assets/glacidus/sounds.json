@@ -26,6 +26,15 @@
 			}
 		]
 	},
+	"music.track_four": {
+		"category": "music",
+		"sounds":[
+			{
+				"name": "glacidus:music/mitescere",
+				"stream": true
+			}
+		]
+	},
 	"ambient.wind_hum": {
 		"category": "ambient",
 		"sounds":[
