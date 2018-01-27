@@ -1,11 +1,12 @@
 {
     "textures": {
+        "-1": "glacidus:blocks/solidifier_side",
         "0": "blocks/solidifier_side",
-        "1": "glacidus:blocks/solidifier_sidesolidifier_side",
-        "2": "glacidus:blocks/solidifier_2solidifier_",
-        "3": "glacidus:blocks/solidifier_sidesolidifier_",
-        "4": "blocks/solidifier_",
-        "5": "glacidus:blocks/solidifier_4solidifier_side"
+        "1": "glacidus:blocks/solidifier_1",
+        "2": "glacidus:blocks/solidifier_2",
+        "3": "glacidus:blocks/solidifier_3",
+        "4": "blocks/solidifier_2",
+        "5": "glacidus:blocks/solidifier_4"
     },
     "elements": [
         {
