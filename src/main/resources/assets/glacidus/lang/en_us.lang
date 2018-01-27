@@ -5,13 +5,14 @@
 # Entities
 entity.porcali.name=Porcali
 entity.glimmer.name=Glimmer
+entity.drop_spider.name=Drop Spider
 
 # Advancements
 advancements.glacidus.root.title=Glacidus
-advancements.glacidus.enter=It's Freezing here..
-advancements.glacidus.middle_layer=Don't Judge a Book the cover
-advancements.glacidus.get_wood=New world, same routine
-advancements.glacidus.glowey_flowers=Glowey flowers?
+advancements.glacidus.enter=It's Freezing Here..
+advancements.glacidus.middle_layer=Don't Judge a Book by the Cover
+advancements.glacidus.get_wood=New world, same Routine
+advancements.glacidus.glowey_flowers=Glowey Flowers?
 
 # Advancement Descriptions
 advancements.glacidus.root.desc=The Glacidus dimension.
@@ -21,12 +22,15 @@ advancements.glacidus.get_wood.desc=Punch an Underground tree and get a log.
 advancements.glacidus.glowey_flowers.desc=Find all 3 flowers.
 
 # Creative Tabs Names
-tab.glacidus.blocks=Glacidus Blocks
-tab.glacidus.items=Glacidus Items
+itemGroup.glacidus.blocks.tab=Glacidus Blocks
+itemGroup.glacidus.items.tab=Glacidus Items
 
 # Subtitles
-subtitles.mob.porcali.say=Porcali Growls
-subtitles.mob.porcali.hurt=Porcali Hurts
-subtitles.mob.porcali.death=Porcali Dies
+subtitles.mob.porcali.say=Porcali growls
+subtitles.mob.porcali.hurt=Porcali hurts
+subtitles.mob.porcali.death=Porcali dies
 subtitles.block.glacium.ambient=Glacium crackles
 subtitles.block.glacium.pop=Glacium pops
+
+# Death messages
+death.attack.glacium_frosted=% died of Hyopthermia

@@ -12,6 +12,7 @@ import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
+import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
@@ -42,7 +43,7 @@ public class EntityPorcali extends EntityMount
 {
     private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityPorcali.class, DataSerializers.BOOLEAN);
     private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.CARROT, Items.POTATO, Items.BEETROOT);
-
+    
     public EntityPorcali(World worldIn)
     {
         super(worldIn);
@@ -78,7 +79,15 @@ public class EntityPorcali extends EntityMount
 			this.tasks.addTask(3, new EntityAIAttackMelee(this, 1.7F, true));
 			this.updateAITasks();
 		}
+		else
+		{
+			this.tasks.removeTask(new EntityAIAttackMelee(this, 1.7F, true));
+			//this.tasks.addTask(3, new EntityAIPanic(this, 1.25D));
+			this.updateAITasks();
+		}
 		this.setAttackTarget(this.getAttackingEntity());
+		
+		
 	}
 
     protected void entityInit()
@@ -127,7 +136,7 @@ public class EntityPorcali extends EntityMount
         if (!super.processInteract(player, hand))
         {
             ItemStack itemstack = player.getHeldItem(hand);
-
+ 
             if (itemstack.getItem() == Items.NAME_TAG)
             {
                 itemstack.interactWithEntity(player, this, hand);
