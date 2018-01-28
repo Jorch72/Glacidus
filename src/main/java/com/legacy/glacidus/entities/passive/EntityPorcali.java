@@ -135,7 +135,7 @@ public class EntityPorcali extends EntityMount
                 itemstack.interactWithEntity(player, this, hand);
                 return true;
             }
-            else if (this.getSaddled() && !this.isBeingRidden())
+            else if (this.getSaddled() && !this.isBeingRidden() && this.getAttackingEntity() == null)
             {
                 if (!this.world.isRemote)
                 {
@@ -147,6 +147,8 @@ public class EntityPorcali extends EntityMount
             else if (itemstack.getItem() == Items.SADDLE)
             {
                 itemstack.interactWithEntity(player, this, hand);
+                //this.setSaddled(true);
+                player.startRiding(this);
                 return true;
             }
             else
@@ -201,6 +203,12 @@ public class EntityPorcali extends EntityMount
             this.dataManager.set(SADDLED, Boolean.valueOf(false));
         }
     }
+    
+    @Override
+	public double getMountedYOffset()
+	{
+		return 0.85D;
+	}
 
     public EntityPorcali createChild(EntityAgeable ageable)
     {

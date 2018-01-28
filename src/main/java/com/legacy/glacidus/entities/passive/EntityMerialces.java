@@ -3,12 +3,11 @@ package com.legacy.glacidus.entities.passive;
 import javax.annotation.Nullable;
 
 import com.legacy.glacidus.client.sounds.GlacidusSounds;
-import com.legacy.glacidus.entities.EntityGlacidusAnimal;
+import com.legacy.glacidus.entities.util.EntityMount;
 import com.legacy.glacidus.items.ItemsGlacidus;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -26,12 +25,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
-public class EntityMerialces extends EntityGlacidusAnimal
+public class EntityMerialces extends EntityMount
 {
     public EntityMerialces(World worldIn)
     {
@@ -77,14 +75,17 @@ public class EntityMerialces extends EntityGlacidusAnimal
     {
         this.playSound(SoundEvents.ENTITY_COW_STEP, 0.15F, 1.0F);
     }
-
-    /**
-     * Returns the volume for the sounds this mob makes.
-     */
+    
     protected float getSoundVolume()
     {
         return 0.7F;
     }
+    
+    @Override
+	public double getMountedYOffset()
+	{
+		return 1.5D;
+	}
 
     @Nullable
     protected ResourceLocation getLootTable()
@@ -92,31 +93,33 @@ public class EntityMerialces extends EntityGlacidusAnimal
         return LootTableList.ENTITIES_COW;
     }
 
-    /*public boolean processInteract(EntityPlayer player, EnumHand hand)
+    public boolean processInteract(EntityPlayer player, EnumHand hand)
     {
-        ItemStack itemstack = player.getHeldItem(hand);
-
-        if (itemstack.getItem() == Items.BUCKET && !player.capabilities.isCreativeMode && !this.isChild())
+        if (!super.processInteract(player, hand))
         {
-            player.playSound(SoundEvents.ENTITY_COW_MILK, 1.0F, 1.0F);
-            itemstack.shrink(1);
-
-            if (itemstack.isEmpty())
+            ItemStack itemstack = player.getHeldItem(hand);
+ 
+            if (itemstack.getItem() == Items.NAME_TAG)
             {
-                player.setHeldItem(hand, new ItemStack(Items.MILK_BUCKET));
+                itemstack.interactWithEntity(player, this, hand);
+                return true;
             }
-            else if (!player.inventory.addItemStackToInventory(new ItemStack(Items.MILK_BUCKET)))
+            else if (itemstack.getItem() == Items.SADDLE)
             {
-                player.dropItem(new ItemStack(Items.MILK_BUCKET), false);
+                itemstack.interactWithEntity(player, this, hand);
+                player.startRiding(this);
+                return true;
             }
-
-            return true;
+            else
+            {
+                return false;
+            }
         }
         else
         {
-            return super.processInteract(player, hand);
+            return true;
         }
-    }*/
+    }
 
     public EntityMerialces createChild(EntityAgeable ageable)
     {

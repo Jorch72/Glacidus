@@ -4,7 +4,6 @@ import com.legacy.glacidus.Glacidus;
 import com.legacy.glacidus.entities.hostile.EntityDropSpider;
 import com.legacy.glacidus.entities.passive.EntityMerialces;
 import com.legacy.glacidus.entities.passive.EntityPorcali;
-import com.legacy.glacidus.entities.util.EntityGlimmer;
 import com.legacy.glacidus.util.ModInfo;
 
 import net.minecraft.entity.Entity;
@@ -30,6 +29,7 @@ public class EntitiesGlacidus
 		modEntityId++;
 	}
 
+	@SuppressWarnings("unused")
 	private static void register(String entityName, Class<? extends Entity> clazz)
 	{
 		EntityRegistry.registerModEntity(ModInfo.locate(entityName), clazz, entityName, modEntityId, Glacidus.instance, 64, 3, false);

@@ -3,6 +3,7 @@ package com.legacy.glacidus.player;
 import com.legacy.glacidus.ModConfig;
 import com.legacy.glacidus.world.TeleporterGlacidus;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
@@ -10,6 +11,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
 
 public class PlayerCapability
 {
@@ -17,6 +19,8 @@ public class PlayerCapability
 	private EntityPlayer player;
 
 	private boolean activatedMoonJump;
+	
+	private boolean isJumping;
 
 	public PlayerCapability(EntityPlayer player)
 	{
@@ -30,6 +34,11 @@ public class PlayerCapability
 
 	public void onUpdate()
 	{
+		
+		boolean hasJumped = ReflectionHelper.getPrivateValue(EntityLivingBase.class, this.player, "isJumping", "field_70703_bu");
+
+		this.setJumping(hasJumped);
+		
 		if (this.player.dimension == ModConfig.dimensionID)
 		{
 			if (this.player.onGround && this.activatedMoonJump)
@@ -93,6 +102,16 @@ public class PlayerCapability
 	public void readCapabilityFromNBT(NBTTagCompound compound)
 	{
 		
+	}
+	
+	public boolean isJumping()
+	{
+		return this.isJumping;
+	}
+
+	public void setJumping(boolean isJumping)
+	{
+		this.isJumping = isJumping;
 	}
 
 	public EntityPlayer getPlayer()
