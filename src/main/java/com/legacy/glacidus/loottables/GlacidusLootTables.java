@@ -8,12 +8,13 @@ import com.legacy.glacidus.util.ModInfo;
 public class GlacidusLootTables 
 {
 
-	public static ResourceLocation test;
+	public static ResourceLocation porcali;
 
 	public static void initialization()
 	{
-		//test = get("entities/whatever"); There ya go Bailey~ Have fun!
+		porcali = get("entities/porcali");
 	}
+	//wheezing
 
 	public static ResourceLocation get(String location)
 	{

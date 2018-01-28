@@ -29,16 +29,14 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import net.minecraft.world.storage.loot.LootTableList;
-
 import com.legacy.glacidus.client.sounds.GlacidusSounds;
 import com.legacy.glacidus.entities.util.EntityMount;
 import com.legacy.glacidus.items.ItemsGlacidus;
+import com.legacy.glacidus.loottables.GlacidusLootTables;
 
 public class EntityPorcali extends EntityMount
 {
     private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityPorcali.class, DataSerializers.BOOLEAN);
-    //private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.CARROT, Items.POTATO, Items.BEETROOT);
     
     public EntityPorcali(World worldIn)
     {
@@ -162,9 +160,6 @@ public class EntityPorcali extends EntityMount
         }
     }
 
-    /**
-     * Called when the mob's health reaches 0.
-     */
     public void onDeath(DamageSource cause)
     {
         super.onDeath(cause);
@@ -181,7 +176,7 @@ public class EntityPorcali extends EntityMount
     @Nullable
     protected ResourceLocation getLootTable()
     {
-        return LootTableList.ENTITIES_PIG;
+        return GlacidusLootTables.porcali;
     }
 
     /**

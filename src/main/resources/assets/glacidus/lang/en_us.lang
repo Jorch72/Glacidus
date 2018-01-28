@@ -54,6 +54,9 @@ tile.underground_door.name=Underground Door
 tile.underground_bookshelf.name=Underground Bookshelf
 tile.underground_ladder.name=Underground Ladder
 tile.underground_sapling.name=Underground Sapling
+tile.underground_stairs.name=Underground Stairs
+underground_slab.name=Underground Slab
+tile.underground_double-slab.name=Underground Double Slab
 tile.crystal_block.name=Crystal Block
 tile.glacidus_portal_frame.name=Glacidus Portal Frame
 
@@ -95,4 +98,4 @@ subtitles.block.glacium.ambient=Glacium crackles
 subtitles.block.glacium.pop=Glacium pops
 
 # Death messages
-death.attack.glacium_frosted=% died of Hyopthermia
+death.attack.glacium_frosted=%1$s died of Hyopthermia
