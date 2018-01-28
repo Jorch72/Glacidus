@@ -144,7 +144,7 @@ public class EntityPorcali extends EntityMount
 
                 return true;
             }
-            else if (itemstack.getItem() == Items.SADDLE)
+            else if (itemstack.getItem() == Items.SADDLE && !this.isChild())
             {
                 itemstack.interactWithEntity(player, this, hand);
                 //this.setSaddled(true);

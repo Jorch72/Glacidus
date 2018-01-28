@@ -13,8 +13,6 @@ import com.legacy.glacidus.player.PlayerCapability;
 
 public class EntityMount extends EntityGlacidusAnimal 
 {
-
-    protected float jumpPower;
     
     protected boolean mountJumping;
 
@@ -35,8 +33,8 @@ public class EntityMount extends EntityGlacidusAnimal
 
 			this.prevRotationYaw = this.rotationYaw = entitylivingbase.rotationYaw;
 			this.prevRotationPitch = this.rotationPitch = entitylivingbase.rotationPitch;
-
-			this.rotationYawHead = entitylivingbase.rotationYawHead;
+			this.rotationYawHead = this.rotationYaw;
+			this.renderYawOffset = this.rotationYaw;
 
 			strafe = entitylivingbase.moveStrafing;
 			vertical = entitylivingbase.moveVertical;
@@ -60,26 +58,6 @@ public class EntityMount extends EntityGlacidusAnimal
 
 	        MathHelper.atan2(d2, d01);
 
-			if (this.jumpPower > 0.0F)
-			{
-				this.motionY = this.getModifiedJumpStrength() * (double) this.jumpPower;
-
-				if (this.isPotionActive(MobEffects.JUMP_BOOST))
-				{
-					this.motionY += (double) ((float) (this.getActivePotionEffect(MobEffects.JUMP_BOOST).getAmplifier() + 1) * 0.1F);
-				}
-
-				
-				this.isAirBorne = true;
-
-				this.jumpPower = 0.0F;
-
-				if (!this.world.isRemote)
-				{
-					this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
-				}
-			}
-
 			this.motionX *= 0.35F;
 			this.motionZ *= 0.35F;
 						
@@ -90,11 +68,6 @@ public class EntityMount extends EntityGlacidusAnimal
 				super.travel(strafe, vertical, forward);
 			}
 
-			if (this.onGround)
-			{
-				this.jumpPower = 0.0F;
-				this.setJumping(false);
-			}
 
 			this.prevLimbSwingAmount = this.limbSwingAmount;
 			double d0 = this.posX - this.prevPosX;
