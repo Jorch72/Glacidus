@@ -1,0 +1,38 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:eukeite_sword"
+        },
+        "title": {
+            "translate": "advancements.glacidus.bounty_hunter"
+        },
+        "description": {
+            "translate": "advancements.glacidus.bounty_hunter.desc"
+        }
+    },
+    "parent": "glacidus:enter",
+    "criteria": {
+        "porcali": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "glacidus:porcali"
+                }
+            }
+        },
+        "merialces": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "glacidus:merialces"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "porcali",
+            "merialces"
+        ]
+    ]
+}

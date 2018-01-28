@@ -39,6 +39,7 @@ public class BlockRenders
 		register(BlocksGlacidus.lumicia_grass, "lumicia_grass");
 		register(BlocksGlacidus.lumicia_dirt, "lumicia_dirt");
 		register(BlocksGlacidus.glacidus_portal_frame, "glacidus_portal_frame");
+		register(BlocksGlacidus.glacidus_portal, "glacidus_portal");
 		register(BlocksGlacidus.frozen_antinatric_stone, "frozen_antinatric_stone");
 		register(BlocksGlacidus.thawed_antinatric_stone, "thawed_antinatric_stone");
 		register(BlocksGlacidus.underground_leaves, "underground_leaves");
@@ -50,7 +51,10 @@ public class BlockRenders
 		register(BlocksGlacidus.eukeite_ore, "eukeite_ore");
 		register(BlocksGlacidus.crysium_ore, "crysium_ore");
 		register(BlocksGlacidus.underground_door, "underground_door");
-
+		register(BlocksGlacidus.underground_bookshelf, "underground_bookshelf");
+		register(BlocksGlacidus.underground_slab, "underground_slab");
+		register(BlocksGlacidus.underground_double_slab, "underground_planks");
+		register(BlocksGlacidus.underground_stairs, "underground_stairs");
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGlacidusPortal.class, new GlacidusPortalRenderer());
 	}
@@ -82,6 +86,7 @@ public class BlockRenders
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(ModInfo.MOD_ID + ":" + model, "inventory"));
 	}
 
+	@SuppressWarnings("unused")
 	private static void registerMetadata(Block block, ResourceLocation... model)
 	{
 		ModelLoader.registerItemVariants(Item.getItemFromBlock(block), model);

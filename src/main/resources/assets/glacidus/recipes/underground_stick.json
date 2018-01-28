@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "glacidus:underground_planks"
+      }
+    ]
+  },
+  "result": {
+    "item": "minecraft:stick",
+    "count": 4
+  }
+}

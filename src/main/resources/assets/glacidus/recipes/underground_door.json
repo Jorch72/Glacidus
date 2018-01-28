@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "glacidus:underground_planks"
+    }
+  },
+  "result": {
+    "item": "glacidus:underground_door",
+    "count": 3
+  }
+}

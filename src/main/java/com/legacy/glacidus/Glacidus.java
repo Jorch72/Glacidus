@@ -1,5 +1,7 @@
 package com.legacy.glacidus;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -8,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import com.legacy.glacidus.entities.EntitiesGlacidus;
+import com.legacy.glacidus.items.ItemsGlacidus;
 import com.legacy.glacidus.loottables.GlacidusLootTables;
 import com.legacy.glacidus.player.PlayerRegistry;
 import com.legacy.glacidus.registry.RegistryEventHandler;
@@ -46,6 +49,9 @@ public class Glacidus
 		TileEntityRegistry.initialization();
 
 		ModUtils.registerEvent(new GlacidusEventHandler());
+		
+		FurnaceRecipes.instance().addSmelting(ItemsGlacidus.raw_porcali_meat, new ItemStack(ItemsGlacidus.grilled_porcali_meat), 0.35F);
+
 
 		proxy.initialization();
 	}

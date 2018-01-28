@@ -68,7 +68,7 @@ public class BlockLumiciaTallGrass extends BlockBush
 	@Override
     protected boolean canSustainBush(IBlockState state)
     {
-    	return state.getBlock() == BlocksGlacidus.lumicia_grass || state.getBlock() == BlocksGlacidus.lumicia_grass;
+    	return state.getBlock() == BlocksGlacidus.lumicia_grass || state.getBlock() == BlocksGlacidus.lumicia_dirt;
     }
 
 	@Override

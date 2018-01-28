@@ -1,0 +1,15 @@
+{
+    
+	"parent": "block/half_slab",
+    
+	"textures": {
+        
+		"bottom": "glacidus:blocks/underground_planks",
+        
+		"top": "glacidus:blocks/underground_planks",
+        
+		"side": "glacidus:blocks/underground_planks"
+    
+	}
+
+}

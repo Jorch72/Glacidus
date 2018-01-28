@@ -1,8 +1,12 @@
 package com.legacy.glacidus.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -10,6 +14,9 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import com.legacy.glacidus.blocks.decoration.BlockGlacidusSlab;
+import com.legacy.glacidus.blocks.decoration.BlockGlacidusStairs;
+import com.legacy.glacidus.blocks.decoration.BlockUndergroundBookshelf;
 import com.legacy.glacidus.blocks.decoration.BlockUndergroundPlanks;
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
 import com.legacy.glacidus.blocks.natural.BlockCrysiumOre;
@@ -26,6 +33,7 @@ import com.legacy.glacidus.blocks.natural.BlockUndergroundLeaves;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLog;
 import com.legacy.glacidus.creativetab.GlacidusCreativeTabs;
 import com.legacy.glacidus.items.block.ItemGlacidusDoor;
+import com.legacy.glacidus.items.block.ItemGlacidusSlab;
 import com.legacy.glacidus.util.ModInfo;
 
 public class BlocksGlacidus 
@@ -97,9 +105,21 @@ public class BlocksGlacidus
 
 	@ObjectHolder(ModInfo.MOD_ID + ":crysium_ore")
 	public static Block crysium_ore;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_bookshelf")
+	public static Block underground_bookshelf;
 
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_door")
 	public static Block underground_door;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_slab")
+	public static Block underground_slab;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_double_slab")
+	public static Block underground_double_slab;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_stairs")
+	public static Block underground_stairs;
 
     public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
     {
@@ -135,7 +155,7 @@ public class BlocksGlacidus
 		frozen_antinatric_stone = register("frozen_antinatric_stone", new BlockAntinatricStone());
 		thawed_antinatric_stone = register("thawed_antinatric_stone", new BlockAntinatricStone());
 
-		glacium = register("glacium", new BlockGlaciumStatic());
+		glacium = register("glacium", new BlockGlaciumStatic().setCreativeTab(null));
 
 		underground_log = register("underground_log", new BlockUndergroundLog());
 		underground_planks = register("underground_planks", new BlockUndergroundPlanks());
@@ -147,8 +167,17 @@ public class BlocksGlacidus
 		glacidite_ore = register("glacidite_ore", new BlockGlaciditeOre());
 		eukeite_ore = register("eukeite_ore", new BlockEukeiteOre());
 		crysium_ore = register("crysium_ore", new BlockCrysiumOre());
+		
+		underground_bookshelf = register("underground_bookshelf", new BlockUndergroundBookshelf());
+		
+		underground_stairs = register("underground_stairs", new BlockGlacidusStairs(underground_planks.getDefaultState()));
 
 		underground_door = register("underground_door", new BlockUndergroundDoor(), ItemGlacidusDoor.class);
+		
+		underground_double_slab = register("underground_double_slab", new BlockGlacidusSlab("underground_double_slab", true, Material.WOOD).setHardness(2.0F).setResistance(5.0F)).setCreativeTab(null);
+		underground_slab = registerSlab("underground_slab", new BlockGlacidusSlab("underground_slab", false, Material.WOOD).setHardness(2.0F).setResistance(5.0F), underground_double_slab);
+
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(frozen_antinatric_stone, new ItemStack(thawed_antinatric_stone), 0.1F);
 	}
 
 	private static boolean readyToInitialize()
@@ -159,6 +188,16 @@ public class BlocksGlacidus
 	private static Block register(String unlocalizedName, Block block)
 	{
 		return register(unlocalizedName, block, ItemBlock.class);
+	}
+	
+	public static Block registerSlab(String unlocalizedName, Block slab1, Block slab2)
+	{
+		slab1.setCreativeTab(GlacidusCreativeTabs.BLOCKS);
+
+		iBlockRegistry.register(slab1.setRegistryName(ModInfo.locate(unlocalizedName)));
+		iItemRegistry.register(new ItemGlacidusSlab(slab1, (BlockSlab) slab1, (BlockSlab) slab2).setRegistryName(ModInfo.locate(unlocalizedName)));
+		
+		return slab1;
 	}
 
 	private static Block register(String unlocalizedName, Block block, Class<? extends Item> itemClass)

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "planks",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+
+    "#": {
+      "item": "glacidus:underground_log",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "glacidus:underground_planks",
+    "count": 4
+  }
+}

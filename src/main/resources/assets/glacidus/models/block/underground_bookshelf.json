@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "glacidus:blocks/underground_planks",
+        "side": "glacidus:blocks/underground_bookshelf"
+    }
+}

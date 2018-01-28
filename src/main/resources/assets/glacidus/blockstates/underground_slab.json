@@ -1,0 +1,11 @@
+{
+    
+	"variants": 
+	{
+        
+		"half=bottom": { "model": "glacidus:underground_half_slab" },
+        			"half=top": { "model": "glacidus:underground_upper_slab" }
+    
+	}
+
+}

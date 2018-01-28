@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "glacidus:underground_planks"
+    }
+  },
+  "result": {
+    "item": "glacidus:underground_slab",
+    "data": 0,
+    "count": 6
+  }
+}
