@@ -16,10 +16,13 @@ import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 
 import com.legacy.glacidus.blocks.BlocksGlacidus;
 import com.legacy.glacidus.world.features.GlacidusEntitySpawner;
+import com.legacy.glacidus.world.features.MapGenGlacidusCaves;
+import com.legacy.glacidus.world.features.MapGenGlacidusRavine;
 import com.legacy.glacidus.world.features.WorldGenCoreLakes;
 
 public class ChunkGeneratorGlacidus implements IChunkGenerator
@@ -41,6 +44,9 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
     double[] br;
     double[] noiseData4;
     double[] dr;
+
+    private MapGenBase caveGenerator = new MapGenGlacidusCaves();
+    private MapGenBase ravineGenerator = new MapGenGlacidusRavine();
 
 	private World world;
 
@@ -174,8 +180,14 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
                                 	if (i3 <= 63 && i3 >= 28)
                                 	{
+                                		if (i3 <= 35)
+                                		{
+                                            primer.setBlockState(l2, i3, j3, BlocksGlacidus.thawed_antinatric_stone.getDefaultState());
+                                		}
+
                                 		i3 += 7;
                                 	}
+
                                     primer.setBlockState(l2, i3, j3, iblockstate);
                                 }
 
@@ -303,6 +315,9 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
         this.prepareHeights(x, z, chunkprimer);
         this.buildSurfaces(x, z, chunkprimer);
+
+        this.caveGenerator.generate(this.world, x, z, chunkprimer);
+        this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 
         Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 

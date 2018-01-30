@@ -33,18 +33,14 @@ public class TileEntitySolidifier extends TileEntity implements ITickable, ISide
 
     private NonNullList<ItemStack> solidifierItemStacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
 
-    /** The number of ticks that the furnace will keep burning */
     private int furnaceBurnTime;
-    /** The number of ticks that a fresh copy of the currently-burning item would keep the furnace burning for */
+
     private int currentItemBurnTime;
     private int cookTime;
     private int totalCookTime;
 
     private String customName;
 
-    /**
-     * Returns the number of slots in the inventory.
-     */
     public int getSizeInventory()
     {
         return this.solidifierItemStacks.size();
