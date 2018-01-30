@@ -115,8 +115,8 @@ public class ModelMoose extends ModelBase
         this.leg3.setRotationPoint(4.0F, 12.0F, 7.0F);
         this.leg3.addBox(-2.0F, 0.0F, -2.0F, 3, 12, 3, size);
         this.snoot = new ModelRenderer(this, 0, 33);
-        this.snoot.setRotationPoint(0.0F, 4.0F, -9.1F);
-        this.snoot.addBox(-2.0F, 0.0F, -8.0F, 4, 3, 3, size);
+        this.snoot.setRotationPoint(0.0F, 4.0F, -8.0F); //-9.1F
+        this.snoot.addBox(-2.0F, 0.0F, -9.0F, 4, 3, 3, size);
         this.body = new ModelRenderer(this, 18, 7);
         this.body.setRotationPoint(0.0F, 5.0F, 2.0F);
         this.body.addBox(-5.0F, -10.0F, -7.0F, 10, 17, 10, size);
@@ -132,18 +132,13 @@ public class ModelMoose extends ModelBase
     	if (this.isChild)
         {
             GlStateManager.pushMatrix();
-            GlStateManager.translate(0.0F, 0.55F, 0F);
-             GlStateManager.scale(0.6F, 0.6F, 0.6F);
+            GlStateManager.translate(0.0F, 0.52F, 0.14F);
              this.rightantlerbase.render(f5);
              this.rightantlerspike4.render(f5);
              this.rightantlerspike5.render(f5);
              this.leftantlerspike1.render(f5);
-             this.leg4.render(f5);
              this.leftantlerspike3.render(f5);
              this.leftantlerspike5.render(f5);
-             //this.leftantlerspike5_1.render(f5);
-             this.leg2.render(f5);
-             //this.leftantlerspike5_2.render(f5);
              this.rightantlerspike2.render(f5);
              this.rightantlerbeginning.render(f5);
              this.leftantlerspike2.render(f5);
@@ -151,14 +146,20 @@ public class ModelMoose extends ModelBase
              this.leftantlerspike6.render(f5);
              this.leftantlerbeginning.render(f5);
              this.leftantlerspike4.render(f5);
-             this.leg1.render(f5);
              this.rightantlerspike1.render(f5);
              this.rightantlerspike3.render(f5);
              this.leftantlerbase.render(f5);
-             this.leg3.render(f5);
-             this.snoot.render(f5);
-             this.body.render(f5);
              this.head.render(f5);
+             this.snoot.render(f5);
+             GlStateManager.popMatrix();
+             GlStateManager.pushMatrix();
+             GlStateManager.scale(0.6F, 0.6F, 0.6F);
+             GlStateManager.translate(0.0F, 16.0F * f5, 0.0F);
+            this.body.render(f5);
+            this.leg1.render(f5);
+            this.leg2.render(f5);
+            this.leg3.render(f5);
+            this.leg4.render(f5);
             GlStateManager.popMatrix();
         }
     	else

@@ -17,7 +17,7 @@ public class PorcaliRenderer extends RenderLiving<EntityPorcali>
 	public PorcaliRenderer(RenderManager rendermanagerIn)
 	{
 		super(rendermanagerIn, new ModelPorcali(0.0F), 0.7F);
-        this.addLayer(new PorcaliGlow((ModelPorcali) this.getMainModel()));
+        this.addLayer(new PorcaliGlow((this)));
 	}
 	
 	protected void scalePorc(EntityPorcali porc)

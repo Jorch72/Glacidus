@@ -1,4 +1,4 @@
-package com.legacy.glacidus.client.renders.entities;
+package com.legacy.glacidus.client.renders.entity;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.legacy.glacidus.client.models.entity.ModelDropSpider;
-import com.legacy.glacidus.client.renders.entities.layers.LayerDropSpiderEyes;
+import com.legacy.glacidus.client.renders.entity.layers.LayerDropSpiderEyes;
 import com.legacy.glacidus.entities.hostile.EntityDropSpider;
 
 @SideOnly(Side.CLIENT)

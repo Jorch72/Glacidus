@@ -17,7 +17,7 @@ public class AntlerGlow implements LayerRenderer<EntityMerialces>
 	private static final ResourceLocation GLOW = new ResourceLocation("glacidus", "textures/entity/merialces/antler_glow.png");
 
 	private final MerialcesRenderer renderer;
-	private final ModelMoose model = new ModelMoose(0.02F);
+	private final ModelMoose model = new ModelMoose(0.01F);
 
 	public AntlerGlow(MerialcesRenderer moose)
 	{

@@ -1,10 +1,10 @@
 package com.legacy.glacidus.client.renders;
 
-import com.legacy.glacidus.client.renders.entities.RenderDropSpider;
 import com.legacy.glacidus.entities.hostile.EntityDropSpider;
 import com.legacy.glacidus.client.renders.entity.GlimmerRenderer;
 import com.legacy.glacidus.client.renders.entity.MerialcesRenderer;
 import com.legacy.glacidus.client.renders.entity.PorcaliRenderer;
+import com.legacy.glacidus.client.renders.entity.RenderDropSpider;
 import com.legacy.glacidus.entities.passive.EntityMerialces;
 import com.legacy.glacidus.entities.passive.EntityPorcali;
 import com.legacy.glacidus.entities.util.EntityGlimmer;
