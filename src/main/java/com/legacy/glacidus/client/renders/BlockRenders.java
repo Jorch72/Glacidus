@@ -55,6 +55,12 @@ public class BlockRenders
 		register(BlocksGlacidus.underground_slab, "underground_slab");
 		register(BlocksGlacidus.underground_double_slab, "underground_planks");
 		register(BlocksGlacidus.underground_stairs, "underground_stairs");
+		register(BlocksGlacidus.frozen_antinatric_slab, "frozen_antinatric_slab");
+		register(BlocksGlacidus.frozen_antinatric_double_slab, "frozen_antinatric_stone");
+		register(BlocksGlacidus.frozen_antinatric_stairs, "frozen_antinatric_stairs");
+		register(BlocksGlacidus.thawed_antinatric_slab, "thawed_antinatric_slab");
+		register(BlocksGlacidus.thawed_antinatric_double_slab, "thawed_antinatric_stone");
+		register(BlocksGlacidus.thawed_antinatric_stairs, "thawed_antinatric_stairs");
 		register(BlocksGlacidus.solidifier, "solidifier");
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGlacidusPortal.class, new GlacidusPortalRenderer());
