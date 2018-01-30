@@ -77,7 +77,7 @@ public class ItemsGlacidus
 		crysium = register("crysium", new Item());
 		glacidite_fragment = register("glacidite_fragment", new Item());
 		
-		black_saddle = register("black_saddle", new Item());
+		black_saddle = register("black_saddle", new Item().setMaxStackSize(1));
 	}
 
 	private static Item register(String unlocalizedName, Item item)
