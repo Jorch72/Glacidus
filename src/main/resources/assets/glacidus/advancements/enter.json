@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "minecraft:packed_ice"
+            "item": "glacidus:glacidus_portal_frame"
         },
         "title": {
             "translate": "advancements.glacidus.enter"

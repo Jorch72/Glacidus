@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:thawed_antinatric_stone"
+        },
+        "title": {
+            "translate": "advancements.glacidus.the_core"
+        },
+        "description": {
+            "translate": "advancements.glacidus.the_core.desc"
+        },
+        "frame": "goal"
+    },
+    "parent": "glacidus:middle_layer",
+    "criteria": {
+        "at_core_level": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "position": {
+                    "y": {
+                        "min": 0.0,
+                        "max": 20.0
+                    }
+                }
+            }
+        }
+    }
+}

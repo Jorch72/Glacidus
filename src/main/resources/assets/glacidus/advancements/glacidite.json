@@ -1,0 +1,27 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:glacidite_fragment"
+        },
+        "title": {
+            "translate": "advancements.glacidus.glacidite"
+        },
+        "description": {
+            "translate": "advancements.glacidus.glacidite.desc"
+        },
+        "frame": "challenge"
+    },
+    "parent": "glacidus:get_wood",
+    "criteria": {
+        "have_glacidite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "glacidus:glacidite_fragment"
+                    }
+                ]
+            }
+        }
+    }
+}

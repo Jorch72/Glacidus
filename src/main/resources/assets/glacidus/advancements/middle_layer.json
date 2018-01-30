@@ -12,11 +12,16 @@
 	},
   	"parent": "glacidus:enter",
 	"criteria": {
-		"touch_grass": {
-			"trigger": "minecraft:enter_block",
-			"conditions": {
-				"block": "glacidus:lumicia_tallgrass"
-			}
-		}
-	}
+        "at_middle_layer": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "position": {
+                    "y": {
+                        "min": 30.0,
+                        "max": 55.0
+                    }
+                }
+            }
+        }
+    }
 }

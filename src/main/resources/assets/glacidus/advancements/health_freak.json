@@ -1,0 +1,25 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:grape_juice"
+        },
+        "title": {
+            "translate": "advancements.glacidus.health_freak"
+        },
+        "description": {
+            "translate": "advancements.glacidus.health_freak.desc"
+        }
+    },
+    "parent": "glacidus:middle_layer",
+    "criteria": {
+        "drink_grape_juice": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "item": "glacidus:grape_juice",
+                    "count": 1
+                }
+            }
+        }
+    }
+}

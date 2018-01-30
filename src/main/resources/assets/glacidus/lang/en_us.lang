@@ -42,7 +42,7 @@ tile.lumicia_tallgrass.name=Lumicia Double Grass
 tile.glacidus_portal.name=Glacidus Portal Block
 tile.lumicia_grass.name=Lumicia Grass Block
 tile.lumicia_dirt.name=Lumicia Dirt
-tile.thawed_antinatric_stone.name=Frozen Antinatric Stone
+tile.frozen_antinatric_stone.name=Frozen Antinatric Stone
 tile.thawed_antinatric_stone.name=Thawed Antinatric Stone
 tile.glacium.name=Glacium
 tile.underground_log.name=Underground Wood
@@ -60,14 +60,15 @@ tile.underground_sapling.name=Underground Sapling
 tile.underground_stairs.name=Underground Stairs
 underground_slab.name=Underground Slab
 tile.underground_double-slab.name=Underground Double Slab
-tile.thawed_antinatric_stairs.name=Frozen Antinatric Stairs
-thawed_antinatric_slab.name=Frozen Antinatric Slab
-tile.thawed_antinatric_double-slab.name=Frozen Antinatric Double Slab
-tile.thawed_antinatric_stairs.name=Frozen Antinatric Stairs
-thawed_antinatric_slab.name=Frozen Antinatric Slab
-tile.thawed_antinatric_double-slab.name=Frozen Antinatric Double Slab
+tile.frozen_antinatric_stairs.name=Frozen Antinatric Stairs
+frozen_antinatric_slab.name=Frozen Antinatric Slab
+tile.frozen_antinatric_double-slab.name=Frozen Antinatric Double Slab
+tile.thawed_antinatric_stairs.name=Thawed Antinatric Stairs
+thawed_antinatric_slab.name=Thawed Antinatric Slab
+tile.thawed_antinatric_double-slab.name=Thawed Antinatric Double Slab
 tile.crystal_block.name=Crystal Block
 tile.glacidus_portal_frame.name=Glacidus Portal Frame
+tile.glacidus_booster.name=Glacidus Booster
 
 # Entities
 entity.porcali.name=Porcali
@@ -82,6 +83,10 @@ advancements.glacidus.middle_layer=Don't Judge a Book by it's Cover
 advancements.glacidus.get_wood=New World, Same Routine
 advancements.glacidus.glowey_flowers=Glowey Flowers!
 advancements.glacidus.bounty_hunter=Bounty Hunter
+advancements.glacidus.bombs_away=Bombs Away!
+advancements.glacidus.glacidite=Dangerous, but Worth it!
+advancements.glacidus.the_core=The Core...
+advancements.glacidus.health_freak=Health Freak!
 
 # Advancement Descriptions
 advancements.glacidus.root.desc=The Glacidus dimension.
@@ -89,7 +94,11 @@ advancements.glacidus.enter.desc=Enter the Glacidus world.
 advancements.glacidus.middle_layer.desc=Find signs of plant life.
 advancements.glacidus.get_wood.desc=Punch an Underground tree and get a log.
 advancements.glacidus.glowey_flowers.desc=Find all 3 flowers.
-advancements.glacidus.bounty_hunter.desc=Slay a mob from the dimension.
+advancements.glacidus.bounty_hunter.desc=Slay a mob from the planet.
+advancements.glacidus.bombs_away.desc=Find a Booster and leave the planet.
+advancements.glacidus.glacidite.desc=Find Glacidite near a pool of Glacium.
+advancements.glacidus.the_core.desc=Make it down to the center of the planet.
+advancements.glacidus.health_freak.desc=Liquify grapes and drink Grape Juice.
 
 # Creative Tabs Names
 itemGroup.glacidus.blocks.tab=Glacidus Blocks

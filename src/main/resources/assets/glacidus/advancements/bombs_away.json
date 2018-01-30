@@ -1,0 +1,22 @@
+{
+  	"display": {
+	  	"icon": {
+			"item": "glacidus:glacidus_booster"
+		},
+		"title": {
+			"translate": "advancements.glacidus.bombs_away"
+		},
+		"description": {
+			"translate": "advancements.glacidus.bombs_away.desc"
+		}
+	},
+  	"parent": "glacidus:enter",
+	"criteria": {
+		"leave_dimension": {
+			"trigger": "minecraft:enter_block",
+			"conditions": {
+				"block": "glacidus:glacidus_booster"	
+			}
+		}
+	}
+}
