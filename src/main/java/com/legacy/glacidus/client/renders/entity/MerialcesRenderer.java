@@ -16,8 +16,8 @@ public class MerialcesRenderer extends RenderLiving<EntityMerialces>
 
 	public MerialcesRenderer(RenderManager rendermanagerIn)
 	{
-		super(rendermanagerIn, new ModelMoose(), 0.7F);
-        this.addLayer(new AntlerGlow((ModelMoose) this.getMainModel()));
+		super(rendermanagerIn, new ModelMoose(0.0F), 0.7F);
+        this.addLayer(new AntlerGlow(this));
 	}
 	
 	protected void scaleMoose(EntityMerialces moose)

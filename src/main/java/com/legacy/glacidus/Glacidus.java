@@ -51,8 +51,8 @@ public class Glacidus
 		ModUtils.registerEvent(new GlacidusEventHandler());
 		
 		FurnaceRecipes.instance().addSmelting(ItemsGlacidus.raw_porcali_meat, new ItemStack(ItemsGlacidus.grilled_porcali_meat), 0.35F);
-
-
+		FurnaceRecipes.instance().addSmelting(ItemsGlacidus.grapes, new ItemStack(ItemsGlacidus.raisins), 0.35F);
+		
 		proxy.initialization();
 	}
 
