@@ -39,13 +39,14 @@ public class ItemsGlacidus
 	
 	public static Item glacidite_pickaxe, glacidite_axe, glacidite_shovel, glacidite_hoe, glacidite_sword;
 		
-	public static Item grapes, raw_porcali_meat, grilled_porcali_meat;
+	public static Item grapes, raw_porcali_meat, grilled_porcali_meat, grape_juice, raisins;
 	
 	public static Item eukeite, glacidite_fragment, crysium;
+	
+	public static Item black_saddle;
 
 	public static void initialization()
 	{
-		
 		eukeite_pickaxe = registerTool("eukeite_pickaxe", new ItemEukeitePickaxe());
 		eukeite_axe = registerTool("eukeite_axe", new ItemEukeiteAxe());
 		eukeite_shovel = registerTool("eukeite_shovel", new ItemEukeiteShovel());
@@ -68,14 +69,15 @@ public class ItemsGlacidus
 		glacidite_sword = registerTool("glacidite_sword", new ItemGlaciditeSword());
 
 		grapes = register("grapes", new ItemFood(2, false));
+		grape_juice = register("grape_juice", new ItemGrapeJuice());
+		raisins = register("raisins", new ItemFood(3, false));
 		raw_porcali_meat = register("raw_porcali_meat", new ItemFood(3, true));
 		grilled_porcali_meat = register("grilled_porcali_meat", new ItemFood(6, true));
 		eukeite = register("eukeite", new Item());
 		crysium = register("crysium", new Item());
 		glacidite_fragment = register("glacidite_fragment", new Item());
 		
-		//FurnaceRecipes.instance().addSmelting(raw_porcali_meat, new ItemStack(grilled_porcali_meat), 0.35F);
-
+		black_saddle = register("black_saddle", new Item().setMaxStackSize(1));
 	}
 
 	private static Item register(String unlocalizedName, Item item)

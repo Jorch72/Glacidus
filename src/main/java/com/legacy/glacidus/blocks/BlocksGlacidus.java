@@ -120,6 +120,24 @@ public class BlocksGlacidus
 	
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_stairs")
 	public static Block underground_stairs;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_slab")
+	public static Block frozen_antinatric_slab;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_double_slab")
+	public static Block frozen_antinatric_double_slab;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_stairs")
+	public static Block frozen_antinatric_stairs;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":thawed_antinatric_slab")
+	public static Block thawed_antinatric_slab;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":thawed_antinatric_double_slab")
+	public static Block thawed_antinatric_double_slab;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":thawed_antinatric_stairs")
+	public static Block thawed_antinatric_stairs;
 
 	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_booster")
 	public static Block glacidus_booster;
@@ -182,6 +200,14 @@ public class BlocksGlacidus
 
 		glacidus_booster = register("glacidus_booster", new BlockGlacidusBooster());
 		//solidifier = register("solidifier", new BlockSolidifier());
+
+		frozen_antinatric_double_slab = register("frozen_antinatric_double_slab", new BlockGlacidusSlab("frozen_antinatric_double_slab", true, Material.ROCK).setHardness(1.5F).setResistance(10.0F)).setCreativeTab(null);
+		frozen_antinatric_slab = registerSlab("frozen_antinatric_slab", new BlockGlacidusSlab("frozen_antinatric_slab", false, Material.ROCK).setHardness(1.5F).setResistance(10.0F), frozen_antinatric_double_slab);
+		frozen_antinatric_stairs = register("frozen_antinatric_stairs", new BlockGlacidusStairs(frozen_antinatric_stone.getDefaultState()));
+		
+		thawed_antinatric_double_slab = register("thawed_antinatric_double_slab", new BlockGlacidusSlab("thawed_antinatric_double_slab", true, Material.ROCK).setHardness(1.5F).setResistance(10.0F)).setCreativeTab(null);
+		thawed_antinatric_slab = registerSlab("thawed_antinatric_slab", new BlockGlacidusSlab("thawed_antinatric_slab", false, Material.ROCK).setHardness(1.5F).setResistance(10.0F), thawed_antinatric_double_slab);
+		thawed_antinatric_stairs = register("thawed_antinatric_stairs", new BlockGlacidusStairs(thawed_antinatric_stone.getDefaultState()));
 
 		FurnaceRecipes.instance().addSmeltingRecipeForBlock(frozen_antinatric_stone, new ItemStack(thawed_antinatric_stone), 0.1F);
 	}
