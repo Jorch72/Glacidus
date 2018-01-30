@@ -5,6 +5,9 @@ item.crysium.name=Crysium
 item.raw_porcali_meat.name=Raw Porcali Meat
 item.grilled_porcali_meat.name=Grilled Porcali Meat
 item.glacidite_fragment.name=Glacidite Fragment
+item.black_saddle.name=Black Saddle
+item.raisins.name=Raisins
+item.grape_juice.name=Grape Juice
 
 # Tools
 item.eukeite_hoe.name=Eukeite Hoe
@@ -39,7 +42,7 @@ tile.lumicia_tallgrass.name=Lumicia Double Grass
 tile.glacidus_portal.name=Glacidus Portal Block
 tile.lumicia_grass.name=Lumicia Grass Block
 tile.lumicia_dirt.name=Lumicia Dirt
-tile.frozen_antinatric_stone.name=Frozen Antinatric Stone
+tile.thawed_antinatric_stone.name=Frozen Antinatric Stone
 tile.thawed_antinatric_stone.name=Thawed Antinatric Stone
 tile.glacium.name=Glacium
 tile.underground_log.name=Underground Wood
@@ -57,6 +60,12 @@ tile.underground_sapling.name=Underground Sapling
 tile.underground_stairs.name=Underground Stairs
 underground_slab.name=Underground Slab
 tile.underground_double-slab.name=Underground Double Slab
+tile.thawed_antinatric_stairs.name=Frozen Antinatric Stairs
+thawed_antinatric_slab.name=Frozen Antinatric Slab
+tile.thawed_antinatric_double-slab.name=Frozen Antinatric Double Slab
+tile.thawed_antinatric_stairs.name=Frozen Antinatric Stairs
+thawed_antinatric_slab.name=Frozen Antinatric Slab
+tile.thawed_antinatric_double-slab.name=Frozen Antinatric Double Slab
 tile.crystal_block.name=Crystal Block
 tile.glacidus_portal_frame.name=Glacidus Portal Frame
 
