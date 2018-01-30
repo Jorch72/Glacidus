@@ -55,7 +55,6 @@ public class BlockRenders
 		register(BlocksGlacidus.underground_slab, "underground_slab");
 		register(BlocksGlacidus.underground_double_slab, "underground_planks");
 		register(BlocksGlacidus.underground_stairs, "underground_stairs");
-		register(BlocksGlacidus.solidifier, "solidifier");
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGlacidusPortal.class, new GlacidusPortalRenderer());
 	}
