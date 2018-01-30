@@ -55,18 +55,26 @@ public class BlockGlaciumStatic extends BlockFluidClassic
     {
         if (this.blockMaterial == GlacidusMaterial.GLACIUM)
         {
-            boolean flag = false;
+            boolean lava = false;
 
+            boolean water = false;
+            
             for (EnumFacing enumfacing : EnumFacing.values())
             {
                 if (enumfacing != EnumFacing.DOWN && worldIn.getBlockState(pos.offset(enumfacing)).getMaterial() == Material.LAVA)
                 {
-                    flag = true;
+                    lava = true;
+                    break;
+                }
+                
+                if (enumfacing != EnumFacing.DOWN && worldIn.getBlockState(pos.offset(enumfacing)).getMaterial() == Material.WATER)
+                {
+                    water = true;
                     break;
                 }
             }
 
-            if (flag)
+            if (lava)
             {
                 Integer integer = (Integer)state.getValue(LEVEL);
 
@@ -83,6 +91,14 @@ public class BlockGlaciumStatic extends BlockFluidClassic
                     this.triggerMixEffects(worldIn, pos);
                     return true;
                 }
+            }
+            
+            if (water)
+            {
+                    worldIn.setBlockState(pos, Blocks.PACKED_ICE.getDefaultState());
+                    this.triggerMixEffects(worldIn, pos);
+                    return true;              
+                                            
             }
         }
 
@@ -112,7 +128,7 @@ public class BlockGlaciumStatic extends BlockFluidClassic
                 worldIn.playSound(d0, d1, d2, GlacidusSounds.BLOCK_GLACIUM_AMBIENT, SoundCategory.BLOCKS, 0.3F + rand.nextFloat() * 0.6F, 0.9F + rand.nextFloat() * 0.15F, false);
             }
             
-            if (rand.nextInt(50) == 0)
+            if (rand.nextInt(30) == 0)
             {
             	 double d8 = d0 + (double)rand.nextFloat();
                  double d4 = d1 + stateIn.getBoundingBox(worldIn, pos).maxY;
@@ -128,11 +144,27 @@ public class BlockGlaciumStatic extends BlockFluidClassic
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
     {
         this.checkForMixing(worldIn, pos, state);
+        
+        if (pos.getY() == 27)
+		{
+			worldIn.setBlockToAir(pos);
+			//worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);
+		}
     }
     
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
     {
         this.checkForMixing(worldIn, pos, state);
+        if (pos.getY() == 27)
+		{
+			worldIn.setBlockToAir(pos);
+			//worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);
+		}
     }
+    public int tickRate(World worldIn)
+    {
+    	return 3;
+    }
+    
 
 }
