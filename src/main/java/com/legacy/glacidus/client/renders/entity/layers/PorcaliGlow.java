@@ -39,8 +39,8 @@ public class PorcaliGlow implements LayerRenderer<EntityPorcali>
 	    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
 	    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 	    Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
-	    GlStateManager.translate(0.0D, -0.001D, 0.0D);
-	    GlStateManager.scale(1.001F, 1.001F, 1.001F);
+	    GlStateManager.translate(0.0001D, -0.0001D, 0.0001D);
+	    GlStateManager.scale(1.00018F, 1.0001F, 1.00018F);
 	    this.model.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
 	    Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
 	    i = entity.getBrightnessForRender();
