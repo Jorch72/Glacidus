@@ -27,7 +27,7 @@ public class BlockGlacidusBooster extends Block
 	@Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-		entityIn.motionY += 1.0F;
+		entityIn.motionY += 10.0F;
     }
 
 	@Override
@@ -73,7 +73,7 @@ public class BlockGlacidusBooster extends Block
     @Override
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
-    	return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID;
+    	return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID;
     }
 
     @Override

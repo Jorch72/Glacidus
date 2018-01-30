@@ -1,7 +1,69 @@
+
 {
-    "parent": "block/fire_up",
+    "ambientocclusion": false,
     "textures": {
         "particle": "glacidus:blocks/glacium_overlay",
-        "fire": "glacidus:blocks/glacium_overlay"
+        "fire": "glacidus:blocks/glacium_overlay",
+		"fire1": "glacidus:blocks/glacium_overlay"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 8.8 ],
+            "to": [ 16, 22.4, 8.8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": -22.5, "rescale": true },
+            "shade": false,
+            "faces": { "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#fire",  "tintindex": 0 }}
+        },
+        {   "from": [ 0, 0, 7.2 ],
+            "to": [ 16, 22.4, 7.2 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": 22.5, "rescale": true },
+            "shade": false,
+            "faces": { "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#fire",  "tintindex": 0 }}
+        },
+        {   "from": [ 8.8, 0, 0 ],
+            "to": [ 8.8, 22.4, 16 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "z", "angle": -22.5, "rescale": true },
+            "shade": false,
+            "faces": { "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#fire",  "tintindex": 0 }}
+        },
+        {   "from": [ 7.2, 0, 0 ],
+            "to": [ 7.2, 22.4, 16 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "z", "angle": 22.5, "rescale": true },
+            "shade": false,
+            "faces": { "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#fire",  "tintindex": 0 }}
+        },
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#fire1",   "cullface": "north",  "tintindex": 1 },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#fire1",   "cullface": "south",  "tintindex": 1 },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#fire1",   "cullface": "west",  "tintindex": 1 },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#fire1",   "cullface": "east",  "tintindex": 1 }
+            }
+        }
+    ],
+	"ctm_version": 1,
+    "ctm_overrides": {
+		"0": {
+			"layer": "CUTOUT",
+			"type": "normal",
+			"textures": [ "glacidus:blocks/glacium_overlay" ],
+			"extra": {
+				"light": {
+					"block": 15,
+					"sky": 0
+				}
+			}
+		},
+		"1": {
+			"layer": "CUTOUT",
+			"type": "normal",
+			"textures": [ "glacidus:blocks/glacium_overlay" ],
+			"extra": {
+				"light": {
+					"block": 15,
+					"sky": 0
+				}
+			}
+		}
     }
 }

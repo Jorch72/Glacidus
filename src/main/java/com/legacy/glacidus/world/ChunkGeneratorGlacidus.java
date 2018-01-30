@@ -23,6 +23,7 @@ import com.legacy.glacidus.blocks.BlocksGlacidus;
 import com.legacy.glacidus.world.features.GlacidusEntitySpawner;
 import com.legacy.glacidus.world.features.MapGenGlacidusCaves;
 import com.legacy.glacidus.world.features.MapGenGlacidusRavine;
+import com.legacy.glacidus.world.features.WorldGenBoosterIsland;
 import com.legacy.glacidus.world.features.WorldGenCoreLakes;
 
 public class ChunkGeneratorGlacidus implements IChunkGenerator
@@ -47,6 +48,8 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
 
     private MapGenBase caveGenerator = new MapGenGlacidusCaves();
     private MapGenBase ravineGenerator = new MapGenGlacidusRavine();
+
+    private final WorldGenBoosterIsland boosterIsland = new WorldGenBoosterIsland();
 
 	private World world;
 
@@ -428,6 +431,16 @@ public class ChunkGeneratorGlacidus implements IChunkGenerator
         this.random.setSeed((long)x * k + (long)z * l ^ this.world.getSeed());
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, this.world, this.random, x, z, false);
+
+        if (this.random.nextInt(24) == 0)
+        {
+            this.boosterIsland.generate(this.world, this.random, blockpos.add(this.random.nextInt(16) + 8, 110 + this.random.nextInt(16), this.random.nextInt(16) + 8));
+
+            if (this.random.nextInt(14) == 0)
+            {
+                this.boosterIsland.generate(this.world, this.random, blockpos.add(this.random.nextInt(16) + 8, 110 + this.random.nextInt(16), this.random.nextInt(16) + 8));
+            }
+        }
 
         if (this.random.nextInt(5) == 0)
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE))

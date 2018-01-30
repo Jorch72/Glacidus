@@ -34,13 +34,17 @@ public class PlayerCapability
 
 	public void onUpdate()
 	{
-		
 		boolean hasJumped = ReflectionHelper.getPrivateValue(EntityLivingBase.class, this.player, "isJumping", "field_70703_bu");
 
 		this.setJumping(hasJumped);
 		
 		if (this.player.dimension == ModConfig.dimensionID)
 		{
+			if (this.player.posY > 300.0D)
+			{
+				this.teleportPlayerToGlacidus();
+			}
+
 			if (this.player.onGround && this.activatedMoonJump)
 			{
 				this.activatedMoonJump = false;

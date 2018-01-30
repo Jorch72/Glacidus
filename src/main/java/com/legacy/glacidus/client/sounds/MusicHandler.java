@@ -74,7 +74,11 @@ public class MusicHandler implements ITickable
     				return;
     			}
 
-        		this.mc.getSoundHandler().playSound(this.topLayerAmbience);
+    			if (!this.mc.getSoundHandler().isSoundPlaying(this.topLayerAmbience))
+    			{
+            		this.mc.getSoundHandler().playSound(this.topLayerAmbience);
+    			}
+
         		this.ambienceMusicPlaying = true;
     		}
     	}
