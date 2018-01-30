@@ -122,12 +122,6 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_stairs")
 	public static Block underground_stairs;
 
-	@ObjectHolder(ModInfo.MOD_ID + ":liquefier")
-	public static Block liquefier;
-
-	@ObjectHolder(ModInfo.MOD_ID + ":solidifier")
-	public static Block solidifier;
-
     public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
     {
         @Override
@@ -184,7 +178,7 @@ public class BlocksGlacidus
 		underground_double_slab = register("underground_double_slab", new BlockGlacidusSlab("underground_double_slab", true, Material.WOOD).setHardness(2.0F).setResistance(5.0F)).setCreativeTab(null);
 		underground_slab = registerSlab("underground_slab", new BlockGlacidusSlab("underground_slab", false, Material.WOOD).setHardness(2.0F).setResistance(5.0F), underground_double_slab);
 
-		solidifier = register("solidifier", new BlockSolidifier());
+		//solidifier = register("solidifier", new BlockSolidifier());
 
 		FurnaceRecipes.instance().addSmeltingRecipeForBlock(frozen_antinatric_stone, new ItemStack(thawed_antinatric_stone), 0.1F);
 	}
