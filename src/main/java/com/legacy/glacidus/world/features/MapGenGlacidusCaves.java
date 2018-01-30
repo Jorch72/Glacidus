@@ -305,9 +305,10 @@ public class MapGenGlacidusCaves extends MapGenBase
 
         if (this.canReplaceBlock(state, up) || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock())
         {
-            if (y - 1 < 10)
+            if (y - 1 < 7)
             {
-                data.setBlockState(x, y, z, BLK_GLACIUM);
+                //data.setBlockState(x, y, z, BLK_GLACIUM);
+            	return;
             }
             else
             {

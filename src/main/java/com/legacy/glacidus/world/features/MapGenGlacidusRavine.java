@@ -245,9 +245,9 @@ public class MapGenGlacidusRavine extends MapGenBase
 
         if (state.getBlock() == Blocks.STONE || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock())
         {
-            if (y - 1 < 10)
+            if (y - 1 < 7)
             {
-                data.setBlockState(x, y, z, FLOWING_GLACIUM);
+                return;
             }
             else
             {
