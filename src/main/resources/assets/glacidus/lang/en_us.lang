@@ -87,6 +87,8 @@ advancements.glacidus.bombs_away=Bombs Away!
 advancements.glacidus.glacidite=Dangerous, but Worth it!
 advancements.glacidus.the_core=The Core...
 advancements.glacidus.health_freak=Health Freak!
+advancements.glacidus.so_many_uses=So Many Uses...
+advancements.glacidus.bred_alien_mob=Extraterrestrial!
 
 # Advancement Descriptions
 advancements.glacidus.root.desc=The Glacidus dimension.
@@ -99,6 +101,8 @@ advancements.glacidus.bombs_away.desc=Find a Booster and leave the planet.
 advancements.glacidus.glacidite.desc=Find Glacidite near a pool of Glacium.
 advancements.glacidus.the_core.desc=Make it down to the center of the planet.
 advancements.glacidus.health_freak.desc=Liquify grapes and drink Grape Juice.
+advancements.glacidus.so_many_uses.desc=Find another way to use grapes.
+advancements.glacidus.bred_alien_mob.desc=Breed an alien animal.
 
 # Creative Tabs Names
 itemGroup.glacidus.blocks.tab=Glacidus Blocks

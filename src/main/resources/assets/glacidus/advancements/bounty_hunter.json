@@ -27,12 +27,21 @@
                     "type": "glacidus:merialces"
                 }
             }
+        },
+        "drop_spider": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "glacidus:drop_spider"
+                }
+            }
         }
     },
     "requirements": [
         [
             "porcali",
-            "merialces"
+            "merialces",
+            "drop_spider"
         ]
     ]
 }

@@ -1,0 +1,38 @@
+{
+    "display": {
+        "icon": {
+            "item": "glacidus:grapes"
+        },
+        "title": {
+            "translate": "advancements.glacidus.bred_alien_mob"
+        },
+        "description": {
+            "translate": "advancements.glacidus.bred_alien_mob.desc"
+        }
+    },
+    "parent": "glacidus:middle_layer",
+    "criteria": {
+        "bred_porcali": {
+            "trigger": "minecraft:bred_animals",
+            "conditions": {
+                "parent": {
+                    "type": "glacidus:porcali"
+                }
+            }
+        },
+        "bred_merialces": {
+            "trigger": "minecraft:bred_animals",
+            "conditions": {
+                "partner": {
+                    "type": "glacidus:merialces"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "bred_porcali",
+            "bred_merialces"
+        ]
+    ]
+}
