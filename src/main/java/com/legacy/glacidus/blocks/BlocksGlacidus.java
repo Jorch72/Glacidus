@@ -14,7 +14,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import com.legacy.glacidus.blocks.container.BlockSolidifier;
 import com.legacy.glacidus.blocks.decoration.BlockGlacidusSlab;
 import com.legacy.glacidus.blocks.decoration.BlockGlacidusStairs;
 import com.legacy.glacidus.blocks.decoration.BlockUndergroundBookshelf;
@@ -122,6 +121,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_stairs")
 	public static Block underground_stairs;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_booster")
+	public static Block glacidus_booster;
+
     public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
     {
         @Override
@@ -178,6 +180,7 @@ public class BlocksGlacidus
 		underground_double_slab = register("underground_double_slab", new BlockGlacidusSlab("underground_double_slab", true, Material.WOOD).setHardness(2.0F).setResistance(5.0F)).setCreativeTab(null);
 		underground_slab = registerSlab("underground_slab", new BlockGlacidusSlab("underground_slab", false, Material.WOOD).setHardness(2.0F).setResistance(5.0F), underground_double_slab);
 
+		glacidus_booster = register("glacidus_booster", new BlockGlacidusBooster());
 		//solidifier = register("solidifier", new BlockSolidifier());
 
 		FurnaceRecipes.instance().addSmeltingRecipeForBlock(frozen_antinatric_stone, new ItemStack(thawed_antinatric_stone), 0.1F);

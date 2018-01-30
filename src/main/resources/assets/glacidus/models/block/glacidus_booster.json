@@ -1,0 +1,7 @@
+{
+    "parent": "block/fire_up",
+    "textures": {
+        "particle": "glacidus:blocks/glacium_overlay",
+        "fire": "glacidus:blocks/glacium_overlay"
+    }
+}
