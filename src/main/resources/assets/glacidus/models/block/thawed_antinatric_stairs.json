@@ -1,0 +1,16 @@
+{
+    
+	"parent": "block/stairs",
+    
+	"textures": 
+	{
+        
+		"bottom": "glacidus:blocks/thawed_antinatric_stone",
+        
+		"top": "glacidus:blocks/thawed_antinatric_stone",
+        
+		"side": "glacidus:blocks/thawed_antinatric_stone"
+    
+	}
+
+}

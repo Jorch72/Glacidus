@@ -1,0 +1,16 @@
+{
+    
+	"parent": "block/stairs",
+    
+	"textures": 
+	{
+        
+		"bottom": "glacidus:blocks/frozen_antinatric_stone",
+        
+		"top": "glacidus:blocks/frozen_antinatric_stone",
+        
+		"side": "glacidus:blocks/frozen_antinatric_stone"
+    
+	}
+
+}
