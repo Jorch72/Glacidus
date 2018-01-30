@@ -2,9 +2,7 @@ package com.legacy.glacidus.entities.util;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -26,7 +24,6 @@ public class EntityMount extends EntityGlacidusAnimal
 	@Override
     public void travel(float strafe, float vertical, float forward)
 	{
-
 		if (this.isBeingRidden() && this.canBeSteered())
 		{
 			EntityLivingBase entitylivingbase = (EntityLivingBase)this.getPassengers().get(0);

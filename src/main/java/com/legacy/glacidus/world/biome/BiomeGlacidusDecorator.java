@@ -45,13 +45,13 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
 
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, this.chunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE))
         {
-        	for (int j2 = 0; j2 < 15; ++j2)
+        	for (int j2 = 0; j2 < 30; ++j2)
             {
                 int k6 = random.nextInt(16) + 8;
                 int l = random.nextInt(16) + 8;
                 WorldGenAbstractTree worldgenabstracttree = biomeIn.getRandomTreeFeature(random);
                 worldgenabstracttree.setDecorationDefaults();
-                BlockPos blockpos = this.chunkPos.add(k6, random.nextInt(30) + 30, l);
+                BlockPos blockpos = this.chunkPos.add(k6, random.nextInt(35) + 37, l);
 
                 if (worldgenabstracttree.generate(worldIn, random, blockpos))
                 {
@@ -143,8 +143,6 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
         if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, this.eukieteGen, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM))
         this.genStandardOre1(worldIn, random, 6, this.eukieteGen, 28, 72);
         net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(worldIn, random, this.chunkPos));
-        
-        //this.genStandardOre1(worldIn, random, 6, this.glaciditeGen, 73, 90);
-       // net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(worldIn, random, this.chunkPos));
     }
+
 }

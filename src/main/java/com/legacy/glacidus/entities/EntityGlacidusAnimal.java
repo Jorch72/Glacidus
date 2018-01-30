@@ -1,7 +1,6 @@
 package com.legacy.glacidus.entities;
 
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +26,6 @@ public abstract class EntityGlacidusAnimal extends EntityAnimal
         int k = MathHelper.floor(this.posZ);
         BlockPos blockpos = new BlockPos(i, j, k);
 
-        System.out.println(blockpos.getY());
         return blockpos.getY() <= 71 && blockpos.getY() >= 34 && this.world.getBlockState(blockpos.down()).getBlock() == BlocksGlacidus.lumicia_grass && super.getCanSpawnHere();
     }
 

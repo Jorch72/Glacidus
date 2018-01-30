@@ -98,7 +98,7 @@ public class WorldGenUndergroundTree extends WorldGenAbstractTree
 
                                     if (state.getBlock().isAir(state, worldIn, blockpos) || state.getBlock().isLeaves(state, worldIn, blockpos))
                                     {
-                                        this.setBlockAndNotifyAdequately(worldIn, blockpos, this.metaLeaves.withProperty(BlockUndergroundLeaves.GLOWING, rand.nextInt(2) == 0));
+                                        this.setBlockAndNotifyAdequately(worldIn, blockpos, this.metaLeaves.withProperty(BlockUndergroundLeaves.GLOWING, rand.nextInt(1) == 0));
                                     }
                                 }
                             }
