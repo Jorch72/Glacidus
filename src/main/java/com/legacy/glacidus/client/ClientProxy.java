@@ -55,7 +55,7 @@ public class ClientProxy extends CommonProxy
 				colors[2] = colors[2] + 0.15F;
 			}
 			//Middle
-			else if (player.posY > 27)
+			else if (player.posY > 34)
 			{
 				float light = 0.03F;
 				
