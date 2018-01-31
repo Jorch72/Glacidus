@@ -168,7 +168,7 @@ public class EntityPorcali extends EntityMount
         {
             if (this.getSaddled())
             {
-                this.dropItem(Items.SADDLE, 1);
+                this.dropItem(ItemsGlacidus.black_saddle, 1);
             }
         }
     }
