@@ -69,10 +69,18 @@ public class BlockLumiciaVine extends BlockVine
     @Override
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
     {
-        if (!worldIn.isRemote && stack.getItem() == Items.SHEARS)
+        if (!worldIn.isRemote)
         {
-            player.addStat(StatList.getBlockStats(this));
-            spawnAsEntity(worldIn, pos, new ItemStack(BlocksGlacidus.lumicia_vine, 1, 0));
+        	if (stack.getItem() == Items.SHEARS)
+        	{
+                player.addStat(StatList.getBlockStats(this));
+                spawnAsEntity(worldIn, pos, new ItemStack(BlocksGlacidus.lumicia_vine, 1, 0));
+        	}
+
+        	if (worldIn.getBlockState(pos).getBlock() == BlocksGlacidus.lumicia_grape_vine)
+        	{
+            	spawnAsEntity(worldIn, pos, new ItemStack(ItemsGlacidus.grapes));
+        	}
         }
         else
         {
