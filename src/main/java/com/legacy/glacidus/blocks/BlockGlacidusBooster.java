@@ -7,6 +7,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.network.play.server.SPacketEntityVelocity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -27,7 +29,21 @@ public class BlockGlacidusBooster extends Block
 	@Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-		entityIn.motionY += 10.0F;
+        double d1 = entityIn.motionX;
+        double d2 = entityIn.motionY;
+        double d3 = entityIn.motionZ;
+
+        entityIn.motionY += 10.0F;
+
+        if (entityIn instanceof EntityPlayerMP && entityIn.velocityChanged)
+        {
+            ((EntityPlayerMP)entityIn).connection.sendPacket(new SPacketEntityVelocity(entityIn));
+            entityIn.velocityChanged = false;
+            entityIn.motionX = d1;
+            entityIn.motionY = d2;
+            entityIn.motionZ = d3;
+        }
+
     }
 
 	@Override
