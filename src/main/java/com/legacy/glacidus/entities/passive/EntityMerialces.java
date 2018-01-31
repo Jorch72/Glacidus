@@ -28,6 +28,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -159,6 +160,11 @@ public class EntityMerialces extends EntityMount
                 //player.startRiding(this);
                 this.setSaddled(true);
                 itemstack.shrink(1);
+                
+                if (player.world.isRemote)
+				{
+            		player.world.playSound(player, player.getPosition(), SoundEvents.ENTITY_PIG_SADDLE, SoundCategory.AMBIENT, 1.0F, 1.0F);
+				}
                 return true;
             }
             else
