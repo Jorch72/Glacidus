@@ -28,29 +28,32 @@ public class MooseSaddleGlow implements LayerRenderer<EntityMerialces>
 	@Override
 	public void doRenderLayer(EntityMerialces entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
 	{
-		RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();	
-		renderManager.renderEngine.bindTexture(SADDLE_GLOW);
+		if (entity.getSaddled())
+        {
+			RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();	
+			renderManager.renderEngine.bindTexture(SADDLE_GLOW);
 
-	    GlStateManager.enableBlend();
-	    GlStateManager.disableAlpha();
-	    GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
-	    GlStateManager.depthMask(true);
-	    int i = 61680;
-	    int j = i % 65536;
-	    int k = i / 65536;
-	    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
-	    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-	    Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
-	    this.model.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-        this.model.setModelAttributes(this.renderer.getMainModel());
-        this.model.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
-        Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
-	    i = entity.getBrightnessForRender();
-	    j = i % 65536;
-	    k = i / 65536;
-	    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
-	    GlStateManager.disableBlend();
-	    GlStateManager.enableAlpha();
+		    GlStateManager.enableBlend();
+		    GlStateManager.disableAlpha();
+		    GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+		    GlStateManager.depthMask(true);
+		    int i = 61680;
+		    int j = i % 65536;
+		    int k = i / 65536;
+		    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+		    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+		    Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
+		    this.model.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
+	        this.model.setModelAttributes(this.renderer.getMainModel());
+	        this.model.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+	        Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
+		    i = entity.getBrightnessForRender();
+		    j = i % 65536;
+		    k = i / 65536;
+		    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+		    GlStateManager.disableBlend();
+		    GlStateManager.enableAlpha();
+	    }
 	}
 
 	@Override
