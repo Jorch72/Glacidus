@@ -1,4 +1,4 @@
-package com.legacy.glacidus.client.renders.entity.layers;
+package com.legacy.glacidus.client.renders.entity.layers.merialces;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -7,29 +7,29 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 
-import com.legacy.glacidus.client.models.entity.ModelPorcali;
-import com.legacy.glacidus.client.renders.entity.PorcaliRenderer;
-import com.legacy.glacidus.entities.passive.EntityPorcali;
+import com.legacy.glacidus.client.models.entity.ModelMoose;
+import com.legacy.glacidus.client.renders.entity.MerialcesRenderer;
+import com.legacy.glacidus.entities.passive.EntityMerialces;
 
-public class PorcaliGlow implements LayerRenderer<EntityPorcali>
+public class MooseSaddleGlow implements LayerRenderer<EntityMerialces>
 {
 
-	private static final ResourceLocation GLOW = new ResourceLocation("glacidus", "textures/entity/porcali/porcali_glow.png");
+	private static final ResourceLocation SADDLE_GLOW = new ResourceLocation("glacidus", "textures/entity/merialces/saddle/moose_saddle_glow.png");
 
-	private final PorcaliRenderer renderer;
-	private final ModelPorcali model = new ModelPorcali(0.01F);
+	private final MerialcesRenderer renderer;
+	private final ModelMoose model = new ModelMoose(0.51F);
 
-	public PorcaliGlow(PorcaliRenderer porc)
+	public MooseSaddleGlow(MerialcesRenderer moose)
 	{
 		super();
-		this.renderer = porc;
+		this.renderer = moose;
 	}
 
 	@Override
-	public void doRenderLayer(EntityPorcali entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
+	public void doRenderLayer(EntityMerialces entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
 	{
 		RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();	
-		renderManager.renderEngine.bindTexture(GLOW);
+		renderManager.renderEngine.bindTexture(SADDLE_GLOW);
 
 	    GlStateManager.enableBlend();
 	    GlStateManager.disableAlpha();
@@ -40,8 +40,6 @@ public class PorcaliGlow implements LayerRenderer<EntityPorcali>
 	    int k = i / 65536;
 	    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
 	    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-	  //GlStateManager.translate(0.0001D, -0.0001D, 0.0001D);
-	  //GlStateManager.scale(1.00018F, 1.0001F, 1.00018F);
 	    Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
 	    this.model.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
         this.model.setModelAttributes(this.renderer.getMainModel());
@@ -60,4 +58,5 @@ public class PorcaliGlow implements LayerRenderer<EntityPorcali>
 	{
 		return false;
 	}
+
 }

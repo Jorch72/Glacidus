@@ -21,6 +21,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
@@ -30,7 +34,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
 public class EntityMerialces extends EntityMount
-{
+{	
+    private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityPorcali.class, DataSerializers.BOOLEAN);
+
     public EntityMerialces(World worldIn)
     {
         super(worldIn);
@@ -55,6 +61,40 @@ public class EntityMerialces extends EntityMount
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000298023224D);
     }
+    
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(SADDLED, Boolean.valueOf(false));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("Saddle", this.getSaddled());
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound compound)
+    {
+        super.readEntityFromNBT(compound);
+        this.setSaddled(compound.getBoolean("Saddle"));
+    }
+  
+    public void onDeath(DamageSource cause)
+    {
+        super.onDeath(cause);
+
+        if (!this.world.isRemote)
+        {
+            if (this.getSaddled())
+            {
+                this.dropItem(ItemsGlacidus.black_saddle, 1);
+            }
+        }
+    }
 
     protected SoundEvent getAmbientSound()
     {
@@ -73,7 +113,7 @@ public class EntityMerialces extends EntityMount
 
     protected void playStepSound(BlockPos pos, Block blockIn)
     {
-        this.playSound(SoundEvents.ENTITY_COW_STEP, 0.15F, 1.0F);
+        this.playSound(SoundEvents.ENTITY_HORSE_STEP, 0.15F, 1.0F);
     }
     
     protected float getSoundVolume()
@@ -104,10 +144,21 @@ public class EntityMerialces extends EntityMount
                 itemstack.interactWithEntity(player, this, hand);
                 return true;
             }
+            else if (this.getSaddled() && !this.isBeingRidden() && this.getAttackingEntity() == null)
+            {
+                if (!this.world.isRemote)
+                {
+                    player.startRiding(this);
+                }
+
+                return true;
+            }
             else if (itemstack.getItem() == ItemsGlacidus.black_saddle && !this.isChild())
             {
                 itemstack.interactWithEntity(player, this, hand);
-                player.startRiding(this);
+                //player.startRiding(this);
+                this.setSaddled(true);
+                itemstack.shrink(1);
                 return true;
             }
             else
@@ -118,6 +169,23 @@ public class EntityMerialces extends EntityMount
         else
         {
             return true;
+        }
+    }
+    
+    public boolean getSaddled()
+    {
+        return ((Boolean)this.dataManager.get(SADDLED)).booleanValue();
+    }
+
+    public void setSaddled(boolean saddled)
+    {
+        if (saddled)
+        {
+            this.dataManager.set(SADDLED, Boolean.valueOf(true));
+        }
+        else
+        {
+            this.dataManager.set(SADDLED, Boolean.valueOf(false));
         }
     }
 

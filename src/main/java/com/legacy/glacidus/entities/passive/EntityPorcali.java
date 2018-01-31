@@ -58,7 +58,7 @@ public class EntityPorcali extends EntityMount
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
     
@@ -94,10 +94,7 @@ public class EntityPorcali extends EntityMount
         super.writeEntityToNBT(compound);
         compound.setBoolean("Saddle", this.getSaddled());
     }
-
-    /**
-     * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
+    
     public void readEntityFromNBT(NBTTagCompound compound)
     {
         super.readEntityFromNBT(compound);
@@ -147,8 +144,9 @@ public class EntityPorcali extends EntityMount
             else if (itemstack.getItem() == ItemsGlacidus.black_saddle && !this.isChild())
             {
                 itemstack.interactWithEntity(player, this, hand);
-                //this.setSaddled(true);
-                player.startRiding(this);
+                this.setSaddled(true);
+                itemstack.shrink(1);
+                //player.startRiding(this);
                 return true;
             }
             else
@@ -181,17 +179,11 @@ public class EntityPorcali extends EntityMount
         return GlacidusLootTables.porcali;
     }
 
-    /**
-     * Returns true if the pig is saddled.
-     */
     public boolean getSaddled()
     {
         return ((Boolean)this.dataManager.get(SADDLED)).booleanValue();
     }
 
-    /**
-     * Set or remove the saddle of the pig.
-     */
     public void setSaddled(boolean saddled)
     {
         if (saddled)

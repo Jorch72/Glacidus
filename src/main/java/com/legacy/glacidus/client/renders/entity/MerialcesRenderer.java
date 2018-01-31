@@ -6,7 +6,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 import com.legacy.glacidus.client.models.entity.ModelMoose;
-import com.legacy.glacidus.client.renders.entity.layers.AntlerGlow;
+import com.legacy.glacidus.client.renders.entity.layers.merialces.AntlerGlow;
+import com.legacy.glacidus.client.renders.entity.layers.merialces.MooseSaddle;
+import com.legacy.glacidus.client.renders.entity.layers.merialces.MooseSaddleGlow;
 import com.legacy.glacidus.entities.passive.EntityMerialces;
 
 public class MerialcesRenderer extends RenderLiving<EntityMerialces>
@@ -18,6 +20,8 @@ public class MerialcesRenderer extends RenderLiving<EntityMerialces>
 	{
 		super(rendermanagerIn, new ModelMoose(0.0F), 0.7F);
         this.addLayer(new AntlerGlow(this));
+        this.addLayer(new MooseSaddle((this)));
+        this.addLayer(new MooseSaddleGlow((this)));
 	}
 	
 	protected void scaleMoose(EntityMerialces moose)
