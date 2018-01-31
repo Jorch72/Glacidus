@@ -20,7 +20,7 @@ public class MusicHandler implements ITickable
     private final Minecraft mc;
     private ISound currentMusic;
     private boolean ambienceMusicPlaying;
-    private final LayerAmbientSound topLayerAmbience;
+    private LayerAmbientSound topLayerAmbience;
     private int timeUntilNextMusic = 100;
 
     private static MusicHandler INSTANCE;
@@ -48,8 +48,8 @@ public class MusicHandler implements ITickable
     {
     	if (!this.mc.getSoundHandler().isSoundPlaying(this.topLayerAmbience) && this.ambienceMusicPlaying)
     	{
-    		this.topLayerAmbience.resetSong();
     		this.mc.getSoundHandler().stopSound(this.topLayerAmbience);
+    		this.topLayerAmbience = new LayerAmbientSound(this.mc.player, GlacidusSounds.AMBIENT_WIND_HUM, 0);
     		this.ambienceMusicPlaying = false;
     		return;
     	}
@@ -68,9 +68,9 @@ public class MusicHandler implements ITickable
     		{
     			if (this.mc.getSoundHandler().isSoundPlaying(this.topLayerAmbience))
     			{
-    				this.topLayerAmbience.resetSong();
-    				this.ambienceMusicPlaying = false;
     				this.mc.getSoundHandler().stopSound(this.topLayerAmbience);
+    	    		this.topLayerAmbience = new LayerAmbientSound(this.mc.player, GlacidusSounds.AMBIENT_WIND_HUM, 0);
+    				this.ambienceMusicPlaying = false;
     				return;
     			}
 

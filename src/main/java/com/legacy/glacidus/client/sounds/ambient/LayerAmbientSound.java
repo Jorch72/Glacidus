@@ -1,5 +1,6 @@
 package com.legacy.glacidus.client.sounds.ambient;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.SoundCategory;
@@ -49,6 +50,12 @@ public class LayerAmbientSound extends MovingSound
 			return;
 		}
 
+		if (!Minecraft.getMinecraft().getSoundHandler().isSoundPlaying(this))
+		{
+			this.donePlaying = true;
+			return;
+		}
+
 		/*if ((this.layerId == 0 && !this.isInRange(73, 255)) || (this.layerId == 1 && !this.isInRange(51, 72)) || (this.layerId == 2 && !this.isInRange(0, 50)))
 		{
 			this.volume -= 0.1F;
@@ -57,6 +64,7 @@ public class LayerAmbientSound extends MovingSound
 		if (this.volume <= 0.0F)
 		{
 			this.donePlaying = true;
+			return;
 		}
 	}
 
