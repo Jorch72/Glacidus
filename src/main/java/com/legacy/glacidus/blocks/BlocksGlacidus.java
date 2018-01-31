@@ -210,6 +210,10 @@ public class BlocksGlacidus
 		thawed_antinatric_stairs = register("thawed_antinatric_stairs", new BlockGlacidusStairs(thawed_antinatric_stone.getDefaultState()));
 
 		FurnaceRecipes.instance().addSmeltingRecipeForBlock(frozen_antinatric_stone, new ItemStack(thawed_antinatric_stone), 0.1F);
+		
+		crysium_ore.setHarvestLevel("pickaxe", 0);
+		eukeite_ore.setHarvestLevel("pickaxe", 1);
+		glacidite_ore.setHarvestLevel("pickaxe", 2);
 	}
 
 	private static boolean readyToInitialize()
