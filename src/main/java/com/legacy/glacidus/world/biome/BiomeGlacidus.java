@@ -44,6 +44,12 @@ public class BiomeGlacidus extends Biome
 	}
 
 	@Override
+    public int getWaterColorMultiplier()
+    {
+    	return 0xFF5555;
+    }
+
+	@Override
     public void decorate(World worldIn, Random rand, BlockPos pos)
     {
         super.decorate(worldIn, rand, pos);
