@@ -3,6 +3,7 @@ package com.legacy.glacidus.world.features;
 import java.util.Random;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -71,9 +72,27 @@ public class WorldGenCoreMinable extends WorldGenerator
                                     BlockPos blockpos = new BlockPos(l1, i2, j2);
 
                                     IBlockState state = worldIn.getBlockState(blockpos);
-                                    if (state.getBlock() == BlocksGlacidus.frozen_antinatric_stone)
+
+                                    if (state.getBlock() == BlocksGlacidus.frozen_antinatric_stone && this.oreBlock.getBlock() != BlocksGlacidus.glacidite_ore)
                                     {
                                         worldIn.setBlockState(blockpos, this.oreBlock, 2);
+                                    }
+                                    else if (state.getBlock() == BlocksGlacidus.frozen_antinatric_stone)
+                                    {
+                                    	boolean flag = false;
+                                    	
+                                    	for (EnumFacing face : EnumFacing.HORIZONTALS)
+                                    	{
+                                    		if (!flag)
+                                    		{
+                                        		flag = worldIn.getBlockState(blockpos.offset(face)).getBlock() == BlocksGlacidus.glacium;
+                                    		}
+                                    	}
+
+                                    	if (flag)
+                                    	{
+                                        	worldIn.setBlockState(blockpos, this.oreBlock, 2);
+                                    	}
                                     }
                                 }
                             }

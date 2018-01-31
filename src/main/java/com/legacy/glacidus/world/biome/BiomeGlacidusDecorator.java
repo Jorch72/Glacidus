@@ -142,6 +142,8 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
         this.genStandardOre1(worldIn, random, 20, this.dirtGen, 28, 70);
         if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, this.eukieteGen, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM))
         this.genStandardOre1(worldIn, random, 8, this.eukieteGen, 28, 72);
+        if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, this.glaciditeGen, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM))
+        this.genStandardOre1(worldIn, random, 20, this.glaciditeGen, 84, 85);
         net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(worldIn, random, this.chunkPos));
     }
 
