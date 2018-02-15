@@ -1,9 +1,9 @@
 {
   "ambientocclusion": false,
   "textures": {
-    "cross": "glacidus:blocks/auransucus_flower",
-    "overlay": "glacidus:blocks/auransucus_flower_bud",
-    "particle": "glacidus:blocks/auransucus_flower"
+    "cross": "glacidus:blocks/aurantiacus_flower",
+    "overlay": "glacidus:blocks/aurantiacus_flower_bud",
+    "particle": "glacidus:blocks/aurantiacus_flower"
   },
   "elements": [
     {   "from": [ 0.8, 0, 8 ],
