@@ -41,6 +41,16 @@
                     }
                 ]
             }
+        },
+      "flower4": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "item": "glacidus:auransucus_flower"
+            }
+          ]
         }
+      }
     }
 }
