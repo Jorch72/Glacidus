@@ -13,6 +13,3 @@ You will need exactly 30 packed ice blocks and 1 glowstone block. Once you are d
 ## Music
 Glacidus Music by Jon Lachney
 https://lachney.bandcamp.com/album/glacidus
-
-## License
-Solely the Glacidus Minecraft mod code is under the GPL license (a copy of which is included in this repository), the texture assets are licensed separately (the license for them is included in the same folder).
