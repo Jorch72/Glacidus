@@ -12,7 +12,7 @@
 		"category": "music",
 		"sounds":[
 			{
-				"name": "glacidus:music/sicut_terrae",
+				"name": "glacidus:music/indigo",
 				"stream": true
 			}
 		]
@@ -30,7 +30,7 @@
 		"category": "music",
 		"sounds":[
 			{
-				"name": "glacidus:music/mitescere",
+				"name": "glacidus:music/sicut_terrae",
 				"stream": true
 			}
 		]
@@ -39,7 +39,7 @@
 		"category": "music",
 		"sounds":[
 			{
-				"name": "glacidus:music/indigo",
+				"name": "glacidus:music/mitescere",
 				"stream": true
 			}
 		]
