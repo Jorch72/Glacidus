@@ -1,13 +1,5 @@
 {
-	
-	"variants": {
-		
-		"normal": {
-			
-			"model": "glacidus:lumicia_tallgrass"
-		
-		}
-	
-	}
-
+    "variants": {
+        "normal": { "model": "glacidus:lumicia_tallgrass" }
+    }
 }

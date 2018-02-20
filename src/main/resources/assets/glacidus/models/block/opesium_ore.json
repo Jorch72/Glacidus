@@ -1,8 +1,8 @@
 {   "parent": "block/block",
     "textures": {
-        "particle": "glacidus:blocks/eukeite_ore",
-        "sprite": "glacidus:blocks/eukeite_ore",
-        "overlay": "glacidus:blocks/eukeite_ore_overlay"
+        "particle": "glacidus:blocks/opesium_ore",
+        "sprite": "glacidus:blocks/opesium_ore",
+        "overlay": "glacidus:blocks/opesium_ore_overlay"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],
@@ -17,14 +17,14 @@
             }
         },
         {   "from": [ 0, 0, 0 ],
-            "to": [ 17, 17, 17 ],
+            "to": [ 16.1, 16.1, 16.1 ],
             "faces": {
-                "down":  { "uv": [ 0, 0, 17, 17 ], "texture": "#overlay", "cullface": "down",  "tintindex": 0 },
-                "up":    { "uv": [ 0, 0, 17, 17 ], "texture": "#overlay", "cullface": "up",    "tintindex": 0 },
-                "north": { "uv": [ 0, 0, 17, 17], "texture": "#overlay", "cullface": "north", "tintindex": 0 },
-                "south": { "uv": [ 0, 0, 17, 17 ], "texture": "#overlay", "cullface": "south", "tintindex": 0 },
-                "west":  { "uv": [ 0, 0, 17, 17 ], "texture": "#overlay", "cullface": "west",  "tintindex": 0 },
-                "east":  { "uv": [ 0, 0, 17, 17 ], "texture": "#overlay", "cullface": "east",  "tintindex": 0 }
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "down",  "tintindex": 0 },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "up",    "tintindex": 0 },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "north", "tintindex": 0 },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "south", "tintindex": 0 },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "west",  "tintindex": 0 },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "east",  "tintindex": 0 }
             }
         }
     ],
@@ -33,7 +33,7 @@
         "0": {
             "layer": "CUTOUT_MIPPED",
             "type": "normal",
-            "textures": [ "glacidus:blocks/eukeite_ore_overlay" ],
+            "textures": [ "glacidus:blocks/opesium_ore_overlay" ],
             "extra": {
                 "light": {
                     "block": 15,

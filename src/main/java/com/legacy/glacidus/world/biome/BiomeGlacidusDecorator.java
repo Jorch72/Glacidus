@@ -24,6 +24,8 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
 
 	public WorldGenCoreMinable eukieteGen = new WorldGenCoreMinable(BlocksGlacidus.eukeite_ore.getDefaultState(), 10);
 	
+	public WorldGenCoreMinable opesiumGen = new WorldGenCoreMinable(BlocksGlacidus.opesium_ore.getDefaultState(), 7);
+	
 	public WorldGenCoreMinable glaciditeGen = new WorldGenCoreMinable(BlocksGlacidus.glacidite_ore.getDefaultState(), 5);
 
 	@Override
@@ -171,6 +173,9 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
         if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, this.glaciditeGen, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM))
         this.genStandardOre1(worldIn, random, 20, this.glaciditeGen, 84, 85);
         net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(worldIn, random, this.chunkPos));
+        this.genStandardOre1(worldIn, random, 4, this.opesiumGen, 28, 72);
+        if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, this.glaciditeGen, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM));
+
     }
 
 }

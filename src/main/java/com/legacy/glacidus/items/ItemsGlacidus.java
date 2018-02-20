@@ -41,7 +41,7 @@ public class ItemsGlacidus
 		
 	public static Item grapes, raw_porcali_meat, grilled_porcali_meat, grape_juice, raisins;
 	
-	public static Item eukeite, glacidite_fragment, crysium;
+	public static Item eukeite, glacidite_fragment, crysium, opesium;
 	
 	public static Item black_saddle;
 
@@ -76,6 +76,7 @@ public class ItemsGlacidus
 		eukeite = register("eukeite", new Item());
 		crysium = register("crysium", new Item());
 		glacidite_fragment = register("glacidite_fragment", new Item());
+		opesium = register("opesium", new Item());
 		
 		black_saddle = register("black_saddle", new Item().setMaxStackSize(1));
 	}

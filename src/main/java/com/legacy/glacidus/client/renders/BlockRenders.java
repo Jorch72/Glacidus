@@ -52,6 +52,7 @@ public class BlockRenders
 		register(BlocksGlacidus.glacidite_ore, "glacidite_ore");
 		register(BlocksGlacidus.eukeite_ore, "eukeite_ore");
 		register(BlocksGlacidus.crysium_ore, "crysium_ore");
+		register(BlocksGlacidus.opesium_ore, "opesium_ore");
 		register(BlocksGlacidus.underground_door, "underground_door");
 		register(BlocksGlacidus.underground_bookshelf, "underground_bookshelf");
 		register(BlocksGlacidus.underground_slab, "underground_slab");

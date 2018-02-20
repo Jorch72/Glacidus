@@ -43,6 +43,7 @@ public class ItemRenders
 		register(ItemsGlacidus.eukeite, "eukeite");
 		register(ItemsGlacidus.glacidite_fragment, "glacidite_fragment");
 		register(ItemsGlacidus.crysium, "crysium");
+		register(ItemsGlacidus.opesium, "opesium");
 		register(ItemsGlacidus.raisins, "raisins");
 		register(ItemsGlacidus.grape_juice, "grape_juice");
 		register(ItemsGlacidus.black_saddle, "black_saddle");

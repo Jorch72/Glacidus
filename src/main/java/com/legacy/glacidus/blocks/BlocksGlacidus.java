@@ -29,6 +29,7 @@ import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
 import com.legacy.glacidus.blocks.natural.BlockLumiciaVine;
+import com.legacy.glacidus.blocks.natural.BlockOpesiumOre;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLeaves;
 import com.legacy.glacidus.blocks.natural.BlockUndergroundLog;
 import com.legacy.glacidus.creativetab.GlacidusCreativeTabs;
@@ -111,6 +112,9 @@ public class BlocksGlacidus
 
 	@ObjectHolder(ModInfo.MOD_ID + ":crysium_ore")
 	public static Block crysium_ore;
+	
+	@ObjectHolder(ModInfo.MOD_ID + ":opesium_ore")
+	public static Block opesium_ore;
 	
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_bookshelf")
 	public static Block underground_bookshelf;
@@ -196,6 +200,7 @@ public class BlocksGlacidus
 		glacidite_ore = register("glacidite_ore", new BlockGlaciditeOre());
 		eukeite_ore = register("eukeite_ore", new BlockEukeiteOre());
 		crysium_ore = register("crysium_ore", new BlockCrysiumOre());
+		opesium_ore = register("opesium_ore", new BlockOpesiumOre());
 		
 		underground_bookshelf = register("underground_bookshelf", new BlockUndergroundBookshelf());
 		
