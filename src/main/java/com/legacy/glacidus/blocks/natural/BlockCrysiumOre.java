@@ -20,8 +20,7 @@ public class BlockCrysiumOre extends Block
 
 		this.setHardness(3.0F);
 		this.setResistance(5.0F);
-		this.setSoundType(SoundType.GLASS);
-		this.setLightLevel(1F);
+		this.setSoundType(SoundType.STONE);
 	}
 	
 	 public int quantityDroppedWithBonus(int fortune, Random random)

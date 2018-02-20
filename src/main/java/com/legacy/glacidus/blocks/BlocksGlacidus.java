@@ -58,6 +58,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":aurantiacus_flower")
 	public static Block aurantiacus_flower;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":flavula_flower")
+	public static Block flavula_flower;
+
 	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_tallgrass")
 	public static Block lumicia_tallgrass;
 
@@ -169,6 +172,7 @@ public class BlocksGlacidus
 		pulphorus_flower = register("pulphorus_flower", new BlockGlacidusFlower());
 		aurantiacus_flower = register("aurantiacus_flower", new BlockGlacidusFlower());
 		solegia_flower = register("solegia_flower", new BlockGlacidusFlower());
+		flavula_flower = register("flavula_flower", new BlockGlacidusFlower());
 		lumicia_tallgrass = register("lumicia_tallgrass", new BlockLumiciaTallGrass());
 		dead_lumicia = register("dead_lumicia", new BlockDeadLumicia());
 

@@ -190,9 +190,9 @@ public class GlacidusSkyRenderer extends IRenderHandler
         for (int i = 0; i < 2500; ++i)
         {
         	int type = random.nextInt(4);
-        	float R = type == 0 ? 0.490F : type == 1 ? 1.0F : type == 2 ? 1.0F : type == 3 ? 1.0F : 1.0F;
-        	float G = type == 0 ? 1.0F : type == 1 ? 0.992F : type == 2 ? 0.501F : type == 3 ? 0.529F :  1.0F;
-        	float B = type == 0 ? 0.990F : type == 1 ? 0.513F : type == 2 ? 0.152F : type == 3 ? 0.545F : 1.0F;
+        	float R = type == 0 ? 0.790F : type == 1 ? 1.0F : type == 2 ? 1.0F : type == 3 ? 1.0F : 1.0F;
+        	float G = type == 0 ? 1.0F : type == 1 ? 0.992F : type == 2 ? 0.725F : type == 3 ? 0.729F :  1.0F;
+        	float B = type == 0 ? 0.790F : type == 1 ? 0.713F : type == 2 ? 0.725F : type == 3 ? 0.745F : 1.0F;
 
             double d0 = (double)(random.nextFloat() * 2.0F - 1.0F);
             double d1 = (double)(random.nextFloat() * 2.0F - 1.0F);

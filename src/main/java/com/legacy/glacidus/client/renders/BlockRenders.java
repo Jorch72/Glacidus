@@ -34,6 +34,7 @@ public class BlockRenders
 		register(BlocksGlacidus.crysial_flower, "crysial_flower");
 		register(BlocksGlacidus.pulphorus_flower, "pulphorus_flower");
 		register(BlocksGlacidus.solegia_flower, "solegia_flower");
+		register(BlocksGlacidus.flavula_flower, "flavula_flower");
 		register(BlocksGlacidus.aurantiacus_flower, "aurantiacus_flower");
 		register(BlocksGlacidus.lumicia_tallgrass, "lumicia_tallgrass");
 		register(BlocksGlacidus.dead_lumicia, "dead_lumicia");

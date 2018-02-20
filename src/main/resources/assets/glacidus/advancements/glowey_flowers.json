@@ -51,6 +51,16 @@
             }
           ]
         }
-      }
+      },
+        "flower5": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "glacidus:flavula_flower"
+                    }
+                ]
+            }
+        }
     }
 }
