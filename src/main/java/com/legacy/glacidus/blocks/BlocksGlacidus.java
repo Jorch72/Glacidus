@@ -1,5 +1,6 @@
 package com.legacy.glacidus.blocks;
 
+import com.legacy.glacidus.blocks.decoration.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
@@ -14,10 +15,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import com.legacy.glacidus.blocks.decoration.BlockGlacidusSlab;
-import com.legacy.glacidus.blocks.decoration.BlockGlacidusStairs;
-import com.legacy.glacidus.blocks.decoration.BlockUndergroundBookshelf;
-import com.legacy.glacidus.blocks.decoration.BlockUndergroundPlanks;
 import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
 import com.legacy.glacidus.blocks.natural.BlockCrysiumOre;
 import com.legacy.glacidus.blocks.natural.BlockDeadLumicia;
@@ -130,6 +127,9 @@ public class BlocksGlacidus
 	
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_stairs")
 	public static Block underground_stairs;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_brick")
+	public static Block frozen_antinatric_brick;
 	
 	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_slab")
 	public static Block frozen_antinatric_slab;
@@ -139,6 +139,15 @@ public class BlocksGlacidus
 	
 	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_stairs")
 	public static Block frozen_antinatric_stairs;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_brick_slab")
+	public static Block frozen_antinatric_brick_slab;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_brick_double_slab")
+	public static Block frozen_antinatric_brick_double_slab;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":frozen_antinatric_brick_stairs")
+	public static Block frozen_antinatric_brick_stairs;
 	
 	@ObjectHolder(ModInfo.MOD_ID + ":thawed_antinatric_slab")
 	public static Block thawed_antinatric_slab;
@@ -188,6 +197,8 @@ public class BlocksGlacidus
 		frozen_antinatric_stone = register("frozen_antinatric_stone", new BlockAntinatricStone());
 		thawed_antinatric_stone = register("thawed_antinatric_stone", new BlockAntinatricStone());
 
+		frozen_antinatric_brick = register("frozen_antinatric_brick", new BlockAntinatricBrick());
+
 		glacium = register("glacium", new BlockGlaciumStatic().setCreativeTab(null));
 
 		underground_log = register("underground_log", new BlockUndergroundLog());
@@ -217,7 +228,11 @@ public class BlocksGlacidus
 		frozen_antinatric_double_slab = register("frozen_antinatric_double_slab", new BlockGlacidusSlab("frozen_antinatric_double_slab", true, Material.ROCK).setHardness(1.5F).setResistance(10.0F)).setCreativeTab(null);
 		frozen_antinatric_slab = registerSlab("frozen_antinatric_slab", new BlockGlacidusSlab("frozen_antinatric_slab", false, Material.ROCK).setHardness(1.5F).setResistance(10.0F), frozen_antinatric_double_slab);
 		frozen_antinatric_stairs = register("frozen_antinatric_stairs", new BlockGlacidusStairs(frozen_antinatric_stone.getDefaultState()));
-		
+
+		frozen_antinatric_brick_double_slab = register("frozen_antinatric_brick_double_slab", new BlockGlacidusSlab("frozen_antinatric_brick_double_slab", true, Material.ROCK).setHardness(1.5F).setResistance(10.0F)).setCreativeTab(null);
+		frozen_antinatric_brick_slab = registerSlab("frozen_antinatric_brick_slab", new BlockGlacidusSlab("frozen_antinatric_brick_slab", false, Material.ROCK).setHardness(1.5F).setResistance(10.0F), frozen_antinatric_double_slab);
+		frozen_antinatric_brick_stairs = register("frozen_antinatric_brick_stairs", new BlockGlacidusStairs(frozen_antinatric_brick.getDefaultState()));
+
 		thawed_antinatric_double_slab = register("thawed_antinatric_double_slab", new BlockGlacidusSlab("thawed_antinatric_double_slab", true, Material.ROCK).setHardness(1.5F).setResistance(10.0F)).setCreativeTab(null);
 		thawed_antinatric_slab = registerSlab("thawed_antinatric_slab", new BlockGlacidusSlab("thawed_antinatric_slab", false, Material.ROCK).setHardness(1.5F).setResistance(10.0F), thawed_antinatric_double_slab);
 		thawed_antinatric_stairs = register("thawed_antinatric_stairs", new BlockGlacidusStairs(thawed_antinatric_stone.getDefaultState()));

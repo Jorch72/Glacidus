@@ -44,6 +44,7 @@ public class BlockRenders
 		register(BlocksGlacidus.glacidus_portal, "glacidus_portal");
 		register(BlocksGlacidus.frozen_antinatric_stone, "frozen_antinatric_stone");
 		register(BlocksGlacidus.thawed_antinatric_stone, "thawed_antinatric_stone");
+		register(BlocksGlacidus.frozen_antinatric_brick, "frozen_antinatric_brick");
 		register(BlocksGlacidus.underground_leaves, "underground_leaves");
 		register(BlocksGlacidus.underground_log, "underground_log");
 		register(BlocksGlacidus.underground_planks, "underground_planks");
@@ -62,6 +63,9 @@ public class BlockRenders
 		register(BlocksGlacidus.frozen_antinatric_slab, "frozen_antinatric_slab");
 		register(BlocksGlacidus.frozen_antinatric_double_slab, "frozen_antinatric_stone");
 		register(BlocksGlacidus.frozen_antinatric_stairs, "frozen_antinatric_stairs");
+		register(BlocksGlacidus.frozen_antinatric_brick_slab, "frozen_antinatric_brick_slab");
+		register(BlocksGlacidus.frozen_antinatric_brick_double_slab, "frozen_antinatric_brick");
+		register(BlocksGlacidus.frozen_antinatric_brick_stairs, "frozen_antinatric_brick_stairs");
 		register(BlocksGlacidus.thawed_antinatric_slab, "thawed_antinatric_slab");
 		register(BlocksGlacidus.thawed_antinatric_double_slab, "thawed_antinatric_stone");
 		register(BlocksGlacidus.thawed_antinatric_stairs, "thawed_antinatric_stairs");

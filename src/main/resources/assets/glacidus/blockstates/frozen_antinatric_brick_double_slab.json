@@ -1,0 +1,12 @@
+
+{
+    
+	"variants": 
+	{
+        
+		"half=bottom": { "model": "glacidus:frozen_antinatric_brick" },
+        			"half=top": { "model": "glacidus:frozen_antinatric_brick" }
+    
+	}
+
+}

@@ -1,0 +1,19 @@
+{
+	
+	"variants": {
+		
+		"normal": [
+			
+            { "model": "glacidus:frozen_antinatric_brick" },
+
+            { "model": "glacidus:frozen_antinatric_brick" },
+
+            { "model": "glacidus:frozen_antinatric_brick", "y": 180 },
+
+            { "model": "glacidus:frozen_antinatric_brick", "y": 180 }
+		
+		]
+	
+	}
+
+}
