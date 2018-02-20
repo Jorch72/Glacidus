@@ -146,7 +146,8 @@ public class MusicHandler implements ITickable
         GoodbyePlanet(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_ONE), 1500, 4400),
         SicutTerrae(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_TWO), 1500, 4400),
         Underground(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_THREE), 1500, 4400),
-        Mitescere(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_FOUR), 1500, 4400);
+        Mitescere(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_FOUR), 1500, 4400),
+    	Indigo(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_FIVE), 1500, 4400);
 
         private final ISound sound;
         private final int minDelay;
