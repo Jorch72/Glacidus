@@ -7,9 +7,9 @@
   "mcversion": "${mcversion}",
   "url": "http://moddinglegacy.com",
   "updateUrl": "",
-  "authorList": ["115kino, KingPhygieBoo, xJonL"],
+  "authorList": ["xJonL, 115kino, KingPhygieBoo, River Leviathan"],
   "credits": "The ModOff team for allowing this mod to be entered in the competition.",
-  "logoFile": "",
+  "logoFile": "assets/glacidus/textures/logo.png",
   "screenshots": [],
   "dependencies": []
 }
