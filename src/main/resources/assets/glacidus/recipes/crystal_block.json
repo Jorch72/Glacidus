@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "glacidus:crysium"
+      }
+    ]
+  },
+  "result": {
+    "item": "glacidus:crystal_block"
+  }
+}

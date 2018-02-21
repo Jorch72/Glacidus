@@ -119,6 +119,12 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_door")
 	public static Block underground_door;
 	
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_fence")
+	public static Block underground_fence;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_trapdoor")
+	public static Block underground_trapdoor;
+
 	@ObjectHolder(ModInfo.MOD_ID + ":underground_slab")
 	public static Block underground_slab;
 	
@@ -158,6 +164,9 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":thawed_antinatric_stairs")
 	public static Block thawed_antinatric_stairs;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":crystal_block")
+	public static Block crystal_block;
+	
 	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_booster")
 	public static Block glacidus_booster;
 
@@ -199,6 +208,8 @@ public class BlocksGlacidus
 
 		frozen_antinatric_brick = register("frozen_antinatric_brick", new BlockAntinatricBrick());
 
+		crystal_block = register("crystal_block", new Block(Material.GLASS).setHardness(1.3F).setLightLevel(0.7F));
+		
 		glacium = register("glacium", new BlockGlaciumStatic().setCreativeTab(null));
 
 		underground_log = register("underground_log", new BlockUndergroundLog());
@@ -219,6 +230,11 @@ public class BlocksGlacidus
 
 		underground_door = register("underground_door", new BlockUndergroundDoor(), ItemGlacidusDoor.class);
 		
+		underground_fence = register("underground_fence", new BlockGlacidusFence());
+		
+		underground_trapdoor = register("underground_trapdoor", new BlockGlacidusTrapdoor(Material.WOOD).setHardness(2.0F).setResistance(5.0F));
+
+		
 		underground_double_slab = register("underground_double_slab", new BlockGlacidusSlab("underground_double_slab", true, Material.WOOD).setHardness(2.0F).setResistance(5.0F)).setCreativeTab(null);
 		underground_slab = registerSlab("underground_slab", new BlockGlacidusSlab("underground_slab", false, Material.WOOD).setHardness(2.0F).setResistance(5.0F), underground_double_slab);
 
@@ -230,7 +246,7 @@ public class BlocksGlacidus
 		frozen_antinatric_stairs = register("frozen_antinatric_stairs", new BlockGlacidusStairs(frozen_antinatric_stone.getDefaultState()));
 
 		frozen_antinatric_brick_double_slab = register("frozen_antinatric_brick_double_slab", new BlockGlacidusSlab("frozen_antinatric_brick_double_slab", true, Material.ROCK).setHardness(1.5F).setResistance(10.0F)).setCreativeTab(null);
-		frozen_antinatric_brick_slab = registerSlab("frozen_antinatric_brick_slab", new BlockGlacidusSlab("frozen_antinatric_brick_slab", false, Material.ROCK).setHardness(1.5F).setResistance(10.0F), frozen_antinatric_double_slab);
+		frozen_antinatric_brick_slab = registerSlab("frozen_antinatric_brick_slab", new BlockGlacidusSlab("frozen_antinatric_brick_slab", false, Material.ROCK).setHardness(1.5F).setResistance(10.0F), frozen_antinatric_brick_double_slab);
 		frozen_antinatric_brick_stairs = register("frozen_antinatric_brick_stairs", new BlockGlacidusStairs(frozen_antinatric_brick.getDefaultState()));
 
 		thawed_antinatric_double_slab = register("thawed_antinatric_double_slab", new BlockGlacidusSlab("thawed_antinatric_double_slab", true, Material.ROCK).setHardness(1.5F).setResistance(10.0F)).setCreativeTab(null);
@@ -242,6 +258,7 @@ public class BlocksGlacidus
 		crysium_ore.setHarvestLevel("pickaxe", 0);
 		eukeite_ore.setHarvestLevel("pickaxe", 1);
 		glacidite_ore.setHarvestLevel("pickaxe", 2);
+		crystal_block.setHarvestLevel("pickaxe", 0);
 	}
 
 	private static boolean readyToInitialize()

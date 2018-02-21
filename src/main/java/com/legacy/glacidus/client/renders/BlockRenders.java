@@ -48,6 +48,8 @@ public class BlockRenders
 		register(BlocksGlacidus.underground_leaves, "underground_leaves");
 		register(BlocksGlacidus.underground_log, "underground_log");
 		register(BlocksGlacidus.underground_planks, "underground_planks");
+		register(BlocksGlacidus.underground_fence, "underground_fence");
+		register(BlocksGlacidus.underground_trapdoor, "underground_trapdoor");
 		register(BlocksGlacidus.lumicia_vine, "lumicia_vine");
 		register(BlocksGlacidus.lumicia_grape_vine, "lumicia_grape_vine");
 		register(BlocksGlacidus.glacidite_ore, "glacidite_ore");
@@ -69,6 +71,7 @@ public class BlockRenders
 		register(BlocksGlacidus.thawed_antinatric_slab, "thawed_antinatric_slab");
 		register(BlocksGlacidus.thawed_antinatric_double_slab, "thawed_antinatric_stone");
 		register(BlocksGlacidus.thawed_antinatric_stairs, "thawed_antinatric_stairs");
+		register(BlocksGlacidus.crystal_block, "crystal_block");
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGlacidusPortal.class, new GlacidusPortalRenderer());
 	}

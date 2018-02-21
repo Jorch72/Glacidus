@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "glacidus:frozen_antinatric_stone"
+      }
+    ]
+  },
+  "result": {
+    "item": "glacidus:frozen_antinatric_brick"
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/trapdoor_open",
+    "textures": {
+        "texture": "glacidus:blocks/underground_trapdoor"
+    }
+}
