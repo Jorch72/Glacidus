@@ -21,17 +21,17 @@ public class WorldProviderGlacidus extends WorldProvider
         this.hasSkyLight = true;
         this.biomeProvider = new BiomeProviderSingle(WorldGlacidus.baseBiome);
 
-        this.registerSkyRenderer();
+        //this.registerSkyRenderer();
     }
 
-    @SideOnly(Side.CLIENT)
+    /*@SideOnly(Side.CLIENT)
 	private void registerSkyRenderer()
 	{
     	if (this.world instanceof WorldClient)
     	{
         	this.setSkyRenderer(new GlacidusSkyRenderer());
     	}
-	}
+	}*/
 	@Override
     public IChunkGenerator createChunkGenerator()
     {
