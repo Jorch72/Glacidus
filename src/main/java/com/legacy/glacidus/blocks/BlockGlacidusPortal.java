@@ -12,15 +12,20 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+import com.legacy.glacidus.client.sounds.GlacidusSounds;
 import com.legacy.glacidus.player.PlayerCapability;
 import com.legacy.glacidus.tiles.TileEntityGlacidusPortal;
 
@@ -36,6 +41,15 @@ public class BlockGlacidusPortal extends BlockContainer
 		this.setBlockUnbreakable();
 		this.setResistance(99999999F);
 	}
+	
+	   @SideOnly(Side.CLIENT)
+	    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+	    {
+	        if (rand.nextInt(100) == 0)
+	        {
+	            worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, GlacidusSounds.BLOCK_GLACIDUS_PORTAL_IDLE, SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
+	        }
+	    }
 
     public EnumBlockRenderType getRenderType(IBlockState state)
     {

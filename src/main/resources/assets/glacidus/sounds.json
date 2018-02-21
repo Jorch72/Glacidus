@@ -70,6 +70,42 @@
 			}
 		]
 	},
+	"block.glacidus_portal.idle": {
+		"category": "block",
+		"subtitle": "subtitles.block.glacidus_portal.idle",
+		"sounds": [
+			{
+				"name": "glacidus:glacidus_portal_ambient"
+			}
+		]
+	},
+	"block.glacidus_booster.idle": {
+		"category": "block",
+		"subtitle": "subtitles.block.glacidus_booster.idle",
+		"sounds": [
+			{
+				"name": "glacidus:glacidus_booster_idle"
+			}
+		]
+	},
+	"block.glacidus_booster.launch": {
+		"category": "block",
+		"subtitle": "subtitles.block.booster.launch",
+		"sounds": [
+			{
+				"name": "glacidus:glacidus_booster_launch"
+			}
+		]
+	},
+	"random.advancement_jingle": {
+		"category": "neutral",
+		"subtitle": "subtitles.random.advancement_jingle",
+		"sounds": [
+			{
+				"name": "glacidus:glacidus_advancement_jingle"
+			}
+		]
+	},
 	"mob.porcali.say": {
 		"category": "neutral",
 		"subtitle": "subtitles.mob.porcali.say",
