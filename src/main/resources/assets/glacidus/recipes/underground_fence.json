@@ -1,0 +1,20 @@
+{
+  "type": "crafting_shaped",
+  "group": "wooden_fence",
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "glacidus:underground_planks"
+    }
+  },
+  "result": {
+    "item": "glacidus:underground_fence",
+    "count": 3
+  }
+}
