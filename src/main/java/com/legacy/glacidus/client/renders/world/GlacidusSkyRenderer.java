@@ -38,6 +38,8 @@ public class GlacidusSkyRenderer extends IRenderHandler
 
     private boolean vboEnabled;
 
+    private float rotation;
+
 	public GlacidusSkyRenderer()
 	{
         this.vboEnabled = OpenGlHelper.useVbo();
@@ -240,6 +242,13 @@ public class GlacidusSkyRenderer extends IRenderHandler
 	@Override
 	public void render(float partialTicks, WorldClient world, Minecraft mc)
 	{
+		if (this.rotation >= 360.0F)
+		{
+			this.rotation = 0.0F;
+		}
+
+		this.rotation += 0.005F;
+
         GlStateManager.disableTexture2D();
         Vec3d vec3d = world.getSkyColor(mc.getRenderViewEntity(), partialTicks);
         float f = (float)vec3d.x;
@@ -328,8 +337,8 @@ public class GlacidusSkyRenderer extends IRenderHandler
         GlStateManager.pushMatrix();
         float f16 = 1.0F - world.getRainStrength(partialTicks);
         GlStateManager.color(1.0F, 1.0F, 1.0F, f16);
-        GlStateManager.rotate(-90.0F, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+        GlStateManager.rotate(-this.rotation, 0.0F, 1.0F, 0.0F);
+        GlStateManager.rotate(this.rotation, 1.0F, 0.0F, 0.0F);
         float f17 = 30.0F;
         /*this.renderEngine.bindTexture(SUN_TEXTURES);
         bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX);

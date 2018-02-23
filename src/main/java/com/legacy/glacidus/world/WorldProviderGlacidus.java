@@ -1,6 +1,5 @@
 package com.legacy.glacidus.world;
 
-import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
@@ -21,17 +20,17 @@ public class WorldProviderGlacidus extends WorldProvider
         this.hasSkyLight = true;
         this.biomeProvider = new BiomeProviderSingle(WorldGlacidus.baseBiome);
 
-        //this.registerSkyRenderer();
+        this.registerSkyRenderer();
     }
 
-    /*@SideOnly(Side.CLIENT)
 	private void registerSkyRenderer()
 	{
-    	if (this.world instanceof WorldClient)
+    	if (this.world.isRemote)
     	{
         	this.setSkyRenderer(new GlacidusSkyRenderer());
     	}
-	}*/
+	}
+
 	@Override
     public IChunkGenerator createChunkGenerator()
     {
