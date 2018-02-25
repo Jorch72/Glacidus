@@ -59,6 +59,7 @@ public class GlacidusSounds
 		MUSIC_TRACK_THREE = register("music.track_three");
 		MUSIC_TRACK_FOUR = register("music.track_four");
 		MUSIC_TRACK_FIVE = register("music.track_five");
+		MUSIC_TRACK_SIX = register("music.track_six");
 		
 		//MUSIC_DISC_ONE = register("music.disc_one");
 		AMBIENT_WIND_HUM = register("ambient.wind_hum");
