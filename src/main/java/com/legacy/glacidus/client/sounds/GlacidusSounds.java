@@ -19,7 +19,8 @@ public class GlacidusSounds
 	public static SoundEvent MUSIC_TRACK_THREE;
 	public static SoundEvent MUSIC_TRACK_FOUR;
 	public static SoundEvent MUSIC_TRACK_FIVE;
-	
+	public static SoundEvent MUSIC_TRACK_SIX;
+
 	public static SoundEvent MUSIC_DISC_ONE;
 	
 	public static SoundEvent PORCALI_SAY;
