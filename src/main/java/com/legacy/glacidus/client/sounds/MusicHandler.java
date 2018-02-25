@@ -137,7 +137,7 @@ public class MusicHandler implements ITickable
 
     private MusicHandler.MusicType getRandomMusicType()
     {
-    	return MusicHandler.MusicType.values()[this.rand.nextInt(5)];
+    	return MusicHandler.MusicType.values()[this.rand.nextInt(6)];
     }
 
     @SideOnly(Side.CLIENT)
