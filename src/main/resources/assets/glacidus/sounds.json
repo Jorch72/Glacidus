@@ -53,6 +53,15 @@
 			}
 		]
 	},
+	"music.track_seven": {
+		"category": "music",
+		"sounds":[
+			{
+				"name": "glacidus:music/dromada",
+				"stream": true
+			}
+		]
+	},
 	"ambient.wind_hum": {
 		"category": "ambient",
 		"sounds":[

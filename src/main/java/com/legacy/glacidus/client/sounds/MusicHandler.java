@@ -137,7 +137,7 @@ public class MusicHandler implements ITickable
 
     private MusicHandler.MusicType getRandomMusicType()
     {
-    	return MusicHandler.MusicType.values()[this.rand.nextInt(6)];
+    	return MusicHandler.MusicType.values()[this.rand.nextInt(7)];
     }
 
     @SideOnly(Side.CLIENT)
@@ -148,7 +148,8 @@ public class MusicHandler implements ITickable
         Underground(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_THREE), 1500, 4400),
         SicutTerrae(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_FOUR), 1500, 4400),
         Mitescere(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_FIVE), 1500, 4400),
-        Lumicia(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_SIX), 1500, 4400);
+        Lumicia(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_SIX), 1500, 4400),
+        Dromada(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_SEVEN), 1500, 4400);
 
 
         private final ISound sound;
