@@ -62,6 +62,15 @@
 			}
 		]
 	},
+	"music.track_eight": {
+		"category": "music",
+		"sounds":[
+			{
+				"name": "glacidus:music/oxygen",
+				"stream": true
+			}
+		]
+	},
 	"ambient.wind_hum": {
 		"category": "ambient",
 		"sounds":[
