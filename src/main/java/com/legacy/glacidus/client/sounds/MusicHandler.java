@@ -150,7 +150,8 @@ public class MusicHandler implements ITickable
         Mitescere(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_FIVE), 1500, 4400),
         Lumicia(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_SIX), 1500, 4400),
         Dromada(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_SEVEN), 1500, 4400),
-        Oxygen(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_EIGHT), 1500, 4400);
+        Oxygen(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_EIGHT), 1500, 4400),
+        Antinatric(PositionedSoundRecord.getMusicRecord(GlacidusSounds.MUSIC_TRACK_NINE), 1500, 4400);
 
 
         private final ISound sound;
