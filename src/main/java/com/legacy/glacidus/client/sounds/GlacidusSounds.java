@@ -21,6 +21,7 @@ public class GlacidusSounds
 	public static SoundEvent MUSIC_TRACK_FIVE;
 	public static SoundEvent MUSIC_TRACK_SIX;
 	public static SoundEvent MUSIC_TRACK_SEVEN;
+	public static SoundEvent MUSIC_TRACK_EIGHT;
 
 	public static SoundEvent MUSIC_DISC_ONE;
 	
@@ -62,6 +63,7 @@ public class GlacidusSounds
 		MUSIC_TRACK_FIVE = register("music.track_five");
 		MUSIC_TRACK_SIX = register("music.track_six");
 		MUSIC_TRACK_SEVEN = register("music.track_seven");
+		MUSIC_TRACK_EIGHT = register("music.track_eight");
 		
 		//MUSIC_DISC_ONE = register("music.disc_one");
 		AMBIENT_WIND_HUM = register("ambient.wind_hum");
