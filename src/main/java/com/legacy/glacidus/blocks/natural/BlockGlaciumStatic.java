@@ -120,12 +120,12 @@ public class BlockGlaciumStatic extends BlockFluidClassic
                 double d4 = d1 + stateIn.getBoundingBox(worldIn, pos).maxY;
                 double d6 = d2 + (double)rand.nextFloat();
                 
-                worldIn.playSound(d8, d4, d6, GlacidusSounds.BLOCK_GLACIUM_POP, SoundCategory.BLOCKS, 0.3F + rand.nextFloat() * 0.6F, 0.9F + rand.nextFloat() * 0.15F, false);
+                //worldIn.playSound(d8, d4, d6, GlacidusSounds.BLOCK_GLACIUM_POP, SoundCategory.BLOCKS, 0.3F + rand.nextFloat() * 0.6F, 0.9F + rand.nextFloat() * 0.15F, false);
             }
 
             if (rand.nextInt(200) == 0)
             {
-                worldIn.playSound(d0, d1, d2, GlacidusSounds.BLOCK_GLACIUM_AMBIENT, SoundCategory.BLOCKS, 0.3F + rand.nextFloat() * 0.6F, 0.9F + rand.nextFloat() * 0.15F, false);
+                //worldIn.playSound(d0, d1, d2, GlacidusSounds.BLOCK_GLACIUM_AMBIENT, SoundCategory.BLOCKS, 0.3F + rand.nextFloat() * 0.6F, 0.9F + rand.nextFloat() * 0.15F, false);
             }
             
             if (rand.nextInt(30) == 0)

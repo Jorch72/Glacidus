@@ -22,6 +22,8 @@ public class PlayerCapability
 	
 	private boolean isJumping;
 
+	private int timeSinceEcholocate;
+
 	public PlayerCapability(EntityPlayer player)
 	{
 		this.player = player;
@@ -32,8 +34,20 @@ public class PlayerCapability
 		return player.getCapability(PlayerRegistry.PLAYER_CAPABILITY, null);
 	}
 
+	public int getTimeSinceEcholocate()
+	{
+		return this.timeSinceEcholocate;
+	}
+
+	public void setTimeSinceEcholocate(int timeSinceEcholocate)
+	{
+		this.timeSinceEcholocate = timeSinceEcholocate;
+	}
+
 	public void onUpdate()
 	{
+		this.timeSinceEcholocate++;
+
 		boolean hasJumped = ReflectionHelper.getPrivateValue(EntityLivingBase.class, this.player, "isJumping", "field_70703_bu");
 
 		this.setJumping(hasJumped);

@@ -13,6 +13,14 @@ import com.legacy.glacidus.util.ModUtils;
 public class ClientProxy extends CommonProxy
 {
 
+	private ClientEventHandler clientEventHandler;
+
+	@Override
+	public ClientEventHandler getClientEventHandler()
+	{
+		return this.clientEventHandler;
+	}
+
 	@Override
 	public void preInitialization()
 	{
@@ -27,7 +35,9 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void initialization()
 	{
-		ModUtils.registerEvent(new ClientEventHandler());
+		this.clientEventHandler = new ClientEventHandler();
+
+		ModUtils.registerEvent(this.clientEventHandler);
 	}
 
 	@Override

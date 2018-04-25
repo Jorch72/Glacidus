@@ -10,7 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
-public class BlockOpesiumOre extends Block
+public class BlockOpesiumOre extends Block implements IOre
 {
 
 	public BlockOpesiumOre()

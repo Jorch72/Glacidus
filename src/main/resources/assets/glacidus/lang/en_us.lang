@@ -131,6 +131,8 @@ subtitles.block.glacium.pop=Glacium pops
 subtitles.block.glacidus_booster.idle=Booster wubs
 subtitles.block.glacidus_booster.launch=Booster Fires
 subtitles.block.glacidus_portal.idle=Portal crackles
+subtitles.random.echolocation_discovery=Echolocation returns
+subtitles.random.echolocation_searching=Echolocation hums
 
 # Death messages
 death.attack.glacium_frosted=%1$s died of Hyopthermia

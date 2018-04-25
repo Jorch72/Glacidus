@@ -142,6 +142,24 @@
 			}
 		]
 	},
+	"random.echolocation_discovery": {
+		"category": "neutral",
+		"subtitle": "subtitles.random.echolocation_discovery",
+		"sounds": [
+			{
+				"name": "glacidus:glacidus_echolocation_discovery"
+			}
+		]
+	},
+	"random.echolocation_searching": {
+		"category": "neutral",
+		"subtitle": "subtitles.random.echolocation_searching",
+		"sounds": [
+			{
+				"name": "glacidus:glacidus_echolocation_searching"
+			}
+		]
+	},
 	"mob.porcali.say": {
 		"category": "neutral",
 		"subtitle": "subtitles.mob.porcali.say",

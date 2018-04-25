@@ -44,6 +44,9 @@ public class GlacidusSounds
 	
 	public static SoundEvent RANDOM_ADVANCEMENT_JINGLE;
 
+	public static SoundEvent ECHOLOCATION_DISCOVERY;
+	public static SoundEvent ECHOLOCATION_SEARCHING;
+
 	public static void initialization(IForgeRegistry<SoundEvent> registry)
 	{
 		iSoundRegistry = registry;
@@ -77,6 +80,9 @@ public class GlacidusSounds
 		BLOCK_GLACIDUS_BOOSTER_LAUNCH = register("block.glacidus_portal.launch");
 		
 		RANDOM_ADVANCEMENT_JINGLE = register("random.advancement_jingle");
+
+		ECHOLOCATION_DISCOVERY = register("random.echolocation_discovery");
+		ECHOLOCATION_SEARCHING = register("random.echolocation_searching");
 	}
 
 	private static SoundEvent register(String name)

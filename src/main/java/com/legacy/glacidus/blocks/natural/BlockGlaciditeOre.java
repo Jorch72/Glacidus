@@ -10,7 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
-public class BlockGlaciditeOre extends Block
+public class BlockGlaciditeOre extends Block implements IOre
 {
 
 	public BlockGlaciditeOre()
