@@ -21,7 +21,7 @@ public class MusicHandler implements ITickable
     private ISound currentMusic;
     private boolean ambienceMusicPlaying;
     private LayerAmbientSound topLayerAmbience;
-    private int timeUntilNextMusic = 1;
+    private int timeUntilNextMusic = 100;
 
     private static MusicHandler INSTANCE;
 
