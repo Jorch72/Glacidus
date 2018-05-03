@@ -1,6 +1,7 @@
 package com.legacy.glacidus.items;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -45,6 +46,10 @@ public class ItemsGlacidus
 	
 	public static Item black_saddle;
 
+	public static Item underground_stick;
+
+	public static Item underground_bucket;
+
 	public static void initialization()
 	{
 		eukeite_pickaxe = registerTool("eukeite_pickaxe", new ItemEukeitePickaxe());
@@ -79,6 +84,10 @@ public class ItemsGlacidus
 		opesium = register("opesium", new Item());
 		
 		black_saddle = register("black_saddle", new Item().setMaxStackSize(1));
+
+		underground_stick = register("underground_stick", new Item());
+		underground_bucket = register("underground_bucket", new ItemGlacidusBucket());
+
 	}
 
 	private static Item register(String unlocalizedName, Item item)

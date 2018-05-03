@@ -1,0 +1,7 @@
+{
+  "parent": "block/ladder",
+  "textures": {
+    "texture": "glacidus:blocks/underground_ladder",
+    "particle": "glacidus:blocks/underground_planks"
+  }
+}

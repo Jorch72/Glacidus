@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "glacidus:underground_ladder" },
+    "facing=east": { "model": "glacidus:underground_ladder", "y": 90 },
+    "facing=south": { "model": "glacidus:underground_ladder", "y": 180 },
+    "facing=west": { "model": "glacidus:underground_ladder", "y": 270 }
+  }
+}

@@ -36,6 +36,7 @@ public class BlockRenders
 		register(BlocksGlacidus.solegia_flower, "solegia_flower");
 		register(BlocksGlacidus.flavula_flower, "flavula_flower");
 		register(BlocksGlacidus.aurantiacus_flower, "aurantiacus_flower");
+		register(BlocksGlacidus.lumicia_sapling, "lumicia_sapling");
 		register(BlocksGlacidus.lumicia_tallgrass, "lumicia_tallgrass");
 		register(BlocksGlacidus.dead_lumicia, "dead_lumicia");
 		register(BlocksGlacidus.lumicia_grass, "lumicia_grass");
@@ -50,6 +51,7 @@ public class BlockRenders
 		register(BlocksGlacidus.underground_planks, "underground_planks");
 		register(BlocksGlacidus.underground_fence, "underground_fence");
 		register(BlocksGlacidus.underground_trapdoor, "underground_trapdoor");
+		register(BlocksGlacidus.underground_ladder, "underground_ladder");
 		register(BlocksGlacidus.lumicia_vine, "lumicia_vine");
 		register(BlocksGlacidus.lumicia_grape_vine, "lumicia_grape_vine");
 		register(BlocksGlacidus.glacidite_ore, "glacidite_ore");

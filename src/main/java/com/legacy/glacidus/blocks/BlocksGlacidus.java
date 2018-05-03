@@ -1,6 +1,7 @@
 package com.legacy.glacidus.blocks;
 
 import com.legacy.glacidus.blocks.decoration.*;
+import com.legacy.glacidus.blocks.natural.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
@@ -15,20 +16,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import com.legacy.glacidus.blocks.natural.BlockAntinatricStone;
-import com.legacy.glacidus.blocks.natural.BlockCrysiumOre;
-import com.legacy.glacidus.blocks.natural.BlockDeadLumicia;
-import com.legacy.glacidus.blocks.natural.BlockEukeiteOre;
-import com.legacy.glacidus.blocks.natural.BlockGlaciditeOre;
-import com.legacy.glacidus.blocks.natural.BlockGlacidusFlower;
-import com.legacy.glacidus.blocks.natural.BlockGlaciumStatic;
-import com.legacy.glacidus.blocks.natural.BlockLumiciaDirt;
-import com.legacy.glacidus.blocks.natural.BlockLumiciaGrass;
-import com.legacy.glacidus.blocks.natural.BlockLumiciaTallGrass;
-import com.legacy.glacidus.blocks.natural.BlockLumiciaVine;
-import com.legacy.glacidus.blocks.natural.BlockOpesiumOre;
-import com.legacy.glacidus.blocks.natural.BlockUndergroundLeaves;
-import com.legacy.glacidus.blocks.natural.BlockUndergroundLog;
 import com.legacy.glacidus.creativetab.GlacidusCreativeTabs;
 import com.legacy.glacidus.items.block.ItemGlacidusDoor;
 import com.legacy.glacidus.items.block.ItemGlacidusSlab;
@@ -170,6 +157,12 @@ public class BlocksGlacidus
 	@ObjectHolder(ModInfo.MOD_ID + ":glacidus_booster")
 	public static Block glacidus_booster;
 
+	@ObjectHolder(ModInfo.MOD_ID + ":lumicia_sapling")
+	public static Block lumicia_sapling;
+
+	@ObjectHolder(ModInfo.MOD_ID + ":underground_ladder")
+	public static Block underground_ladder;
+
     public static final Fluid GLACIUM = new Fluid("glacium", ModInfo.locate("blocks/glacium_still"), ModInfo.locate("blocks/glacium_flow"))
     {
         @Override
@@ -197,6 +190,7 @@ public class BlocksGlacidus
 		flavula_flower = register("flavula_flower", new BlockGlacidusFlower());
 		lumicia_tallgrass = register("lumicia_tallgrass", new BlockLumiciaTallGrass());
 		dead_lumicia = register("dead_lumicia", new BlockDeadLumicia());
+		lumicia_sapling = register("lumicia_sapling", new BlockGlacidusSapling());
 
 		glacidus_portal  = register("glacidus_portal", new BlockGlacidusPortal());
 		glacidus_portal_frame = register("glacidus_portal_frame", new BlockGlacidusPortalFrame());
@@ -215,6 +209,7 @@ public class BlocksGlacidus
 		underground_log = register("underground_log", new BlockUndergroundLog());
 		underground_planks = register("underground_planks", new BlockUndergroundPlanks());
 		underground_leaves = register("underground_leaves", new BlockUndergroundLeaves());
+		underground_ladder = register("underground_ladder", new BlockGlacidusLadder());
 
 		lumicia_vine = register("lumicia_vine", new BlockLumiciaVine());
 		lumicia_grape_vine = register("lumicia_grape_vine", new BlockLumiciaVine());

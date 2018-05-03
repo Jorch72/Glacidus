@@ -36,6 +36,8 @@ public class ItemRenders
 		register(ItemsGlacidus.glacidite_shovel, "glacidite_shovel");
 		register(ItemsGlacidus.glacidite_hoe, "glacidite_hoe");
 		register(ItemsGlacidus.glacidite_sword, "glacidite_sword");
+		register(ItemsGlacidus.underground_stick, "underground_stick");
+		register(ItemsGlacidus.underground_bucket, "underground_bucket");
 		
 		register(ItemsGlacidus.grapes, "grapes");
 		register(ItemsGlacidus.raw_porcali_meat, "raw_porcali_meat");
