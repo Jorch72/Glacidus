@@ -143,19 +143,19 @@ public class BiomeGlacidusDecorator extends BiomeDecorator
             }
         }
 
-        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, chunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+        for (int i3 = 0; i3 < 10; ++i3)
         {
-            for (int i3 = 0; i3 < 8; ++i3)
-            {
-                int j7 = random.nextInt(16) + 8;
-                int i11 = random.nextInt(16) + 8;
-                int k14 = worldIn.getHeight(this.chunkPos.add(j7, 0, i11)).getY() * 2;
+            int j7 = random.nextInt(16) + 8;
+            int i11 = random.nextInt(16) + 8;
+            int k14 = worldIn.getHeight(this.chunkPos.add(j7, 0, i11)).getY() * 2;
 
-                if (k14 > 0)
-                {
-                    int l17 = random.nextInt(k14);
-                    biomeIn.getRandomWorldGenForGrass(random).generate(worldIn, random, this.chunkPos.add(j7, l17, i11));
-                }
+            if (k14 > 0)
+            {
+            	if (this.chunkPos.getY() < 68)
+            	{
+                int l17 = random.nextInt(k14);
+                biomeIn.getRandomWorldGenForGrass(random).generate(worldIn, random, this.chunkPos.add(j7, l17, i11));
+            	}
             }
         }
 
