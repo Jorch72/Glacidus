@@ -80,6 +80,15 @@
 			}
 		]
 	},
+	"music.track_ten": {
+		"category": "music",
+		"sounds":[
+			{
+				"name": "glacidus:music/decipher",
+				"stream": true
+			}
+		]
+	},
 	"ambient.wind_hum": {
 		"category": "ambient",
 		"sounds":[
